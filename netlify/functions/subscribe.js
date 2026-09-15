@@ -1,5 +1,5 @@
 const BREVO_DOI_URL = 'https://api.brevo.com/v3/contacts/doubleOptinConfirmation';
-const REDIRECTION_URL = 'https://thequietaddress.com/merci.html';
+const SITE = 'https://thequietaddress.com';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 const json = (statusCode, body) => ({
@@ -25,17 +25,18 @@ exports.handler = async (event) => {
   if (!EMAIL_RE.test(email)) return json(400, { ok: false, error: 'invalid_email' });
 
   const ville = Array.isArray(payload.ville) ? payload.ville.join(', ') : String(payload.ville || '');
+  const langue = String(payload.langue || 'en').slice(0, 2).toLowerCase();
 
   const body = {
     email,
     includeListIds: [Number(process.env.BREVO_LIST_ID)],
     templateId: Number(process.env.BREVO_DOI_TEMPLATE_ID),
-    redirectionUrl: REDIRECTION_URL,
+    redirectionUrl: `${SITE}/${langue === 'fr' ? 'merci.html' : 'merci-en.html'}`,
     attributes: {
       PRENOM: String(payload.prenom || '').trim(),
       VILLE_INTERET: ville,
       SOURCE: String(payload.source || 'carte'),
-      LANGUE: String(payload.langue || 'en'),
+      LANGUE: langue,
       DATE_INSCRIPTION: new Date().toISOString().slice(0, 10),
     },
   };
