@@ -53,8 +53,9 @@
           </sc-for>
         </div>
       </div>
-      <button onClick="{{ submit }}" style="align-self:stretch;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.08em;font-weight:400;padding:18px 32px;min-height:56px;background:{{ btnBg }};border:1px solid {{ btnBorder }};color:{{ btnColor }};cursor:{{ btnCursor }};transition:background .6s,color .6s">Keep me posted</button>
-      <p style="margin:0;font-size:14px;line-height:1.6;color:#5A554E">{{ status }}</p>
+      <input value="{{ hp }}" onChange="{{ setHp }}" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <button onClick="{{ submit }}" disabled="{{ btnDisabled }}" style="align-self:stretch;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.08em;font-weight:400;padding:18px 32px;min-height:56px;background:{{ btnBg }};border:1px solid {{ btnBorder }};color:{{ btnColor }};cursor:{{ btnCursor }};transition:background .6s,color .6s">{{ btnLabel }}</button>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:{{ statusColor }}">{{ status }}</p>
     </div>
   </sc-if>
 
@@ -76,15 +77,38 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;en&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;fr&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:420,&quot;height&quot;:1100}}">
 class Component extends DCLogic {
-  state = { name: '', email: '', cities: [], sent: false, tried: false };
+  state = { name: '', email: '', cities: [], hp: '', sent: false, tried: false, sending: false, failed: false };
   _toggleCity(k) {
     const has = this.state.cities.indexOf(k) >= 0;
     const next = has ? this.state.cities.filter(c => c !== k) : this.state.cities.concat([k]);
-    this.setState({ cities: next, tried: false });
+    this.setState({ cities: next, tried: false, failed: false });
+  }
+  async _subscribe() {
+    const { name, email, cities, hp } = this.state;
+    this.setState({ sending: true, failed: false });
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          prenom: name.trim(),
+          email: email.trim(),
+          ville: cities,
+          langue: document.documentElement.lang || 'en',
+          source: new URLSearchParams(location.search).get('a') || 'carte',
+          hp,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.ok) this.setState({ sending: false, sent: true });
+      else this.setState({ sending: false, failed: true });
+    } catch (e) {
+      this.setState({ sending: false, failed: true });
+    }
   }
   renderVals() {
     const fr = this.props.lang === 'fr';
-    const { name, email, cities: picked, sent, tried } = this.state;
+    const { name, email, cities: picked, hp, sent, tried, sending, failed } = this.state;
     const defs = fr
       ? [['paris','Paris','trois appartements'],['athens','Athènes','un appartement'],['nice','Nice','un appartement']]
       : [['paris','Paris','three apartments'],['athens','Athens','one apartment'],['nice','Nice','one apartment']];
@@ -102,22 +126,39 @@ class Component extends DCLogic {
     const okEmail = /.+@.+\..+/.test(email);
     const ready = name.trim().length > 0 && okEmail && picked.length > 0;
     let status;
-    if (!tried) status = fr
+    let statusColor = '#5A554E';
+    if (sending) status = fr ? 'Envoi en cours…' : 'Sending…';
+    else if (failed) {
+      statusColor = '#8A5A46';
+      status = fr
+        ? 'L’envoi n’a pas abouti. Réessayez dans un instant, ou écrivez à hello@thequietaddress.com.'
+        : 'That did not go through. Try again in a moment, or write to hello@thequietaddress.com.';
+    }
+    else if (!tried) status = fr
       ? 'Plusieurs villes possibles. Nous n’écrivons jamais plus d’une fois tous les deux mois, et jamais pour vendre autre chose.'
       : 'Pick as many as you like. We write no more than once every other month, and never to sell you anything else.';
     else if (!name.trim()) status = fr ? 'Il nous manque votre prénom.' : 'We are missing your first name.';
     else if (!okEmail) status = fr ? 'Cette adresse ne semble pas complète.' : 'That address does not look complete.';
     else status = fr ? 'Choisissez au moins une ville.' : 'Choose at least one city.';
     return {
-      asking: !sent, done: sent, cities, name, email,
-      setName: e => this.setState({ name: e.target.value, tried: false }),
-      setEmail: e => this.setState({ email: e.target.value, tried: false }),
-      submit: () => ready ? this.setState({ sent: true }) : this.setState({ tried: true }),
+      asking: !sent, done: sent, cities, name, email, hp,
+      setName: e => this.setState({ name: e.target.value, tried: false, failed: false }),
+      setEmail: e => this.setState({ email: e.target.value, tried: false, failed: false }),
+      setHp: e => this.setState({ hp: e.target.value }),
+      submit: () => {
+        if (sending) return;
+        if (ready) this._subscribe();
+        else this.setState({ tried: true });
+      },
+      btnLabel: sending
+        ? (fr ? 'Envoi…' : 'Sending…')
+        : (fr ? 'Tenez-moi au courant' : 'Keep me posted'),
+      btnDisabled: sending,
       btnBg: ready ? '#2B2926' : 'transparent',
       btnBorder: ready ? '#2B2926' : 'rgba(43,41,38,.35)',
       btnColor: ready ? '#F3EEE6' : '#5A554E',
-      btnCursor: ready ? 'pointer' : 'default',
-      status,
+      btnCursor: sending ? 'default' : (ready ? 'pointer' : 'default'),
+      status, statusColor,
       confirmLine: fr
         ? 'Un message part vers ' + (email || 'votre adresse') + '.'
         : 'A message is on its way to ' + (email || 'your address') + '.',
