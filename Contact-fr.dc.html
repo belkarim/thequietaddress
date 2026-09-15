@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3EEE6}a{color:#2B2926}a:hover{color:#5C6670}::placeholder{color:#B9B2A8}</style>
+</helmet>
+<div data-screen-label="Contact + Pour les propriétaires + Legal" style="container-type:inline-size;background:#F3EEE6;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5cqw,72px)">
+  <a href="index-fr.html" style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926;text-decoration:none">The Quiet Address</a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <nav style="display:flex;flex-wrap:wrap;gap:16px 36px;font-size:14px;letter-spacing:.03em;font-weight:400">
+    <a href="index-fr.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Les villes</a>
+    <a href="City-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Les appartements</a>
+    <a href="Services-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Services</a>
+    <a href="Journal-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Le Journal</a>
+    <a href="Approach-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Notre approche</a>
+  </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:.04em;font-weight:400">
+    <span><a href="Contact.dc.html" style="color:#5A554E;text-decoration:none;transition:color .5s" style-hover="color:#2B2926">EN</a> <span style="color:#2B2926">/ FR</span> <a href="Contact-el.dc.html" style="color:#5A554E;text-decoration:none">/ ΕΛ</a></span>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><a href="Contact-fr.dc.html" style="text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:2px">Demande de séjour</a></sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.04em;color:#2B2926;cursor:pointer;padding:10px 0;min-height:44px">Menu</button></sc-if>
+  </div>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ ovTop }};min-height:100vh;z-index:80;background:#F3EEE6;display:flex;flex-direction:column;padding:26px clamp(20px,6cqw,56px) 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <span style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926">The Quiet Address</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5A554E;cursor:pointer;padding:10px 0;min-height:44px">Fermer</button>
+    </div>
+    <nav style="margin-top:clamp(28px,8cqw,52px);display:flex;flex-direction:column">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" style="font-family:'EB Garamond',serif;font-size:clamp(28px,8cqw,34px);line-height:1.1;color:#2B2926;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(43,41,38,.12)">{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <span style="margin-top:clamp(28px,7cqw,44px);font-size:13px;letter-spacing:.04em;color:#5A554E">hello@thequietaddress.com &nbsp;·&nbsp; <span style="color:#5C6670">Paris · Athènes · Nice</span></span>
+  </div>
+</sc-if>
+
+<section data-screen-label="Contact" style="padding:clamp(48px,7cqw,112px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E">Contact</span>
+    <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(44px,5.5cqw,88px);line-height:1;letter-spacing:-.01em;max-width:14ch">Écrivez-nous. Quelqu'un vous répond.</h1>
+    <p style="margin:0;max-width:40ch;color:#5A554E">Une seule adresse pour tout. Nous la lisons nous-mêmes et répondons dans la journée, en français, en anglais, et en grec depuis Athènes.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:36px">
+    <a href="mailto:hello@thequietaddress.com" style="font-family:'EB Garamond',serif;font-size:clamp(28px,2.8cqw,40px);color:#2B2926;text-decoration:none;border-bottom:1px solid rgba(43,41,38,.3);align-self:flex-start;padding-bottom:4px;transition:color .5s,border-color .5s" style-hover="color:#5C6670;border-color:#5C6670">hello@thequietaddress.com</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;font-size:15px;line-height:1.6">
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'EB Garamond',serif;font-size:22px">Paris <span style="font-style:italic;color:#5C6670">· Karim</span></span><span style="color:#5A554E">+33 1 00 00 00 00<br>De neuf à dix-neuf heures, heure de Paris.<br>Arrivées sur rendez-vous, à toute heure.</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'EB Garamond',serif;font-size:22px">Athènes <span style="font-style:italic;color:#5F6B4E">· Kostas</span></span><span style="color:#5A554E">+30 21 0000 0000<br>De neuf à vingt heures, heure d'Athènes.<br>Ελληνικά, français, anglais.</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="font-family:'EB Garamond',serif;font-size:22px">Nice <span style="font-style:italic;color:#B07A45">· Mathilde</span></span><span style="color:#5A554E">+33 4 00 00 00 00<br>De neuf à dix-neuf heures, heure de Paris.</span></div>
+    </div>
+    <div style="font-size:15px;color:#5A554E;border-top:1px solid rgba(43,41,38,.12);padding-top:22px;line-height:1.7"><span style="font-weight:400;color:#2B2926">The Quiet Address SAS</span> · 00 rue Duphot, 75001 Paris · Presse et partenariats : même adresse, objet « presse ».</div>
+  </div>
+</section>
+
+<section data-screen-label="For owners" style="background:#EAE3D8;padding:clamp(72px,9cqw,144px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E">Propriétaires</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(36px,4cqw,64px);line-height:1.05;letter-spacing:-.005em;max-width:16ch;text-wrap:pretty">Confiez-nous vos clés, pas votre appartement.</h2>
+    <div style="aspect-ratio:4/5;overflow:hidden;max-width:360px;margin-top:8px"><img loading="lazy" decoding="async" src="assets/w/merri-09.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(.96)"></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.7;max-width:56ch">
+    <p style="margin:0">Nous prenons très peu d'appartements, dans les villes dont nous avons déjà les clés, et seulement ceux où nous séjournerions nous-mêmes. Si le vôtre a de la lumière, une rue qui se raconte, et un propriétaire attaché à la façon dont on le traite, nous aimerions le visiter.</p>
+    <p style="margin:0">Ce que nous faisons : le photographier comme il faut, en parler honnêtement, choisir les voyageurs, remettre les clés nous-mêmes, tenir le ménage, le linge et les petites réparations, et vous régler chaque mois avec un relevé lisible. Ce que nous ne faisons pas : jouer sur les prix à la nuit, laisser entrer des inconnus par une boîte à clés, ou louer plus de quatorze nuits d'affilée.</p>
+    <p style="margin:0">Nos honoraires sont une part de ce que l'appartement rapporte, convenue avant de commencer et jamais modifiée en silence. Vous gardez pour vous les semaines que vous voulez.</p>
+    <form style="display:flex;flex-direction:column;gap:26px;margin-top:8px;font-family:'EB Garamond',serif;font-size:clamp(22px,1.9cqw,28px);line-height:1.8">
+      <p style="margin:0">Je possède un appartement à <input placeholder="Paris, Athènes ou Nice" style="font:inherit;color:#2B2926;background:transparent;border:0;border-bottom:1px solid #8C7F72;outline:0;width:14ch;padding:0 4px" style-focus="border-color:#2B2926">, on <input placeholder="rue ou quartier" style="font:inherit;color:#2B2926;background:transparent;border:0;border-bottom:1px solid #8C7F72;outline:0;width:16ch;padding:0 4px" style-focus="border-color:#2B2926">. Je m'appelle <input placeholder="votre nom" style="font:inherit;color:#2B2926;background:transparent;border:0;border-bottom:1px solid #8C7F72;outline:0;width:11ch;padding:0 4px" style-focus="border-color:#2B2926"> et vous pouvez écrire à <input placeholder="email" style="font:inherit;color:#2B2926;background:transparent;border:0;border-bottom:1px solid #8C7F72;outline:0;width:12ch;padding:0 4px" style-focus="border-color:#2B2926">.</p>
+      <button type="button" style="align-self:flex-start;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.08em;font-weight:400;padding:16px 32px;background:transparent;border:1px solid #2B2926;color:#2B2926;cursor:pointer;transition:background .6s,color .6s" style-hover="background:#2B2926;color:#F3EEE6">Parlez-nous-en</button>
+    </form>
+  </div>
+</section>
+
+<section data-screen-label="Legal" style="padding:clamp(72px,9cqw,144px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E">Mentions légales · Confidentialité</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(36px,4cqw,64px);line-height:1.05;max-width:14ch">Les petites lignes, en corps lisible.</h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:28px;font-size:16px;line-height:1.7;max-width:60ch;color:#5A554E">
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-weight:400;color:#2B2926;font-size:13px;letter-spacing:.06em">ÉDITEUR</span><p style="margin:0">The Quiet Address SAS, capital de 00 000 €, RCS Paris 000 000 000, siège social 00 rue Duphot, 75001 Paris. Directeur de la publication : [nom]. TVA FR00 000000000. Hébergeur : [hébergeur], [adresse].</p></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-weight:400;color:#2B2926;font-size:13px;letter-spacing:.06em">ENREGISTREMENT MEUBLÉ DE TOURISME</span><p style="margin:0">Chaque appartement est déclaré comme meublé de tourisme dans sa ville, et les numéros d'enregistrement figurent sur le contrat que nous vous envoyons. La taxe de séjour est collectée pour le compte de chaque ville et comprise dans le tarif annoncé.</p></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-weight:400;color:#2B2926;font-size:13px;letter-spacing:.06em">VOS DONNÉES</span><p style="margin:0">Nous conservons ce que vous nous transmettez — nom, coordonnées, dates, et le numéro de passeport que la loi grecque exige pour les séjours à Athènes — le temps d'organiser le séjour, puis aussi longtemps que la loi nous oblige à garder les factures. Nous ne les vendons pas, ne les communiquons à aucun annonceur et ne les utilisons pas pour vous suivre sur internet. Aucun cookie publicitaire ; un seul cookie technique, pour la langue. Écrivez à hello@thequietaddress.com pour consulter, corriger ou faire supprimer ce que nous détenons.</p></div>
+    <div style="display:flex;flex-direction:column;gap:8px"><span style="font-weight:400;color:#2B2926;font-size:13px;letter-spacing:.06em">CONDITIONS DE SÉJOUR</span><p style="margin:0">Séjour de quatre nuits minimum, quatorze au maximum. Un acompte d'un tiers confirme la réservation ; le solde est dû trente jours avant l'arrivée. Annulation à plus de soixante jours : acompte rendu. Plus près de la date : nous cherchons à relouer et rendons ce que nous récupérons. L'arrivée se fait en personne à partir de 16 h, le départ avant 11 h. Les photographies de ce site montrent les appartements tels qu'ils sont. Médiateur de la consommation : [médiateur].</p></div>
+    <p style="margin:0;font-size:13px;color:#5A554E;letter-spacing:.03em">Les éléments entre crochets sont à compléter par votre conseil avant publication.</p>
+  </div>
+</section>
+
+<footer style="background:#3A3631;color:#EAE3D8;padding:clamp(56px,7cqw,96px) clamp(20px,5cqw,72px) 36px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px clamp(32px,4cqw,64px);padding-bottom:clamp(48px,6cqw,80px);border-bottom:1px solid rgba(234,227,216,.18)">
+    <div style="display:flex;flex-direction:column;gap:18px"><span style="font-family:'EB Garamond',serif;font-size:26px">The Quiet Address</span><p style="margin:0;max-width:30ch;color:#B9B2A8;line-height:1.6">Des appartements de caractère à Paris, Athènes et Nice. Les clés remises de la main à la main.</p></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">Les villes</span><a href="City-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Paris</a><a href="City%20Athens-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Athènes</a><a href="City%20Nice-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Nice</a></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">La maison</span><a href="Approach-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Notre approche</a><a href="Services-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Services</a><a href="Journal-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Le Journal</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Demande de séjour</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Propriétaires</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Contact</a></div>
+    <div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8">Lettres des villes</span><p style="margin:0;color:#B9B2A8;line-height:1.6;max-width:32ch">Une lettre tous les deux mois. Une ville, un appartement, une table qui vaut le détour.</p><div style="display:flex;border-bottom:1px solid rgba(234,227,216,.4);padding-bottom:10px;gap:12px"><input type="email" placeholder="Votre e-mail" style="flex:1;background:transparent;border:0;outline:0;color:#F3EEE6;font:inherit;font-size:15px;min-width:0"><button style="background:transparent;border:0;color:#EAE3D8;font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer">S'abonner</button></div></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;padding-top:28px;font-size:13px;color:#B9B2A8;letter-spacing:.03em"><span>© 2026 The Quiet Address</span><div style="display:flex;gap:28px;flex-wrap:wrap"><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Mentions légales</a><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Confidentialité</a><a href="https://instagram.com/" style="color:#B9B2A8;text-decoration:none" target="_blank" rel="noopener">Instagram</a><span><a href="Contact.dc.html" style="color:#B9B2A8;text-decoration:none">English</a> · <span style="color:#EAE3D8">Français</span> · <a href="Contact-el.dc.html" style="color:#B9B2A8;text-decoration:none">Ελληνικά</a></span></div></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, narrow: false, ovTop: 0 }; renderVals() { const mobile = !!this.props.mobile || this.state.narrow; return { menuOpen: this.state.menuOpen, toggleMenu: () => this._toggleMenu(), ovTop: this.state.ovTop + 'px', navLinks: [{"href":"index-fr.html","label":"Les villes"},{"href":"City-fr.dc.html","label":"Les appartements"},{"href":"Services-fr.dc.html","label":"Services"},{"href":"Journal-fr.dc.html","label":"Le Journal"},{"href":"Approach-fr.dc.html","label":"Notre approche"},{"href":"Contact-fr.dc.html","label":"Demande de séjour"}],  mobile, desktop: !mobile }; } }
+</script>
+</body>
+</html>

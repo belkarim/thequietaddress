@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#E8E4DD;font-family:'Source Sans 3',system-ui,sans-serif;color:#2B2926}a{color:#2B2926}a:hover{color:#5C6670}.dv-turn{padding:48px 56px 40px;scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:12px;margin:0 0 28px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#2B2926;color:#F3EEE6;border-radius:4px;text-decoration:none}.dv-tname{font:400 22px/1.2 'EB Garamond',serif;color:#2B2926}.dv-opts{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(43,41,38,.1);color:#2B2926;border-radius:4px;text-decoration:none}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px/1.3 'Source Sans 3',sans-serif;color:#5A554E}.dv-card{max-width:100%;background:#F3EEE6;border:1px solid rgba(43,41,38,.1);overflow:hidden}.dv-opt:target .dv-oid{background:#5C6670;color:#F3EEE6}.dv-next{margin:28px 0 0;font:300 13px/1.5 'Source Sans 3',sans-serif;color:#5A554E}.dv-h{font:400 13px/1 'Source Sans 3',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72;margin:56px 0 20px}.dv-p{font:300 15px/1.6 'Source Sans 3',sans-serif;color:#5A554E;max-width:72ch;margin:0}</style>
+</helmet>
+<section class="dv-turn" id="t12">
+<div class="dv-thd"><a class="dv-tid" href="#t12">12</a><span class="dv-tname">Athènes photographiée — le projet est entièrement sur vos images</span></div>
+<p class="dv-p" style="margin-bottom:28px">Vos huit photos remplacent tout : la terrasse sous la pergola de jasmin ouvre la page en plein cadre, puis la même terrasse de nuit avec le rocher éclairé en bandeau, le lit et le bureau face à l'Acropole, le studio en entier, trois verticales — palmier et fleurs, douche vitrée sur le grenadier, lit et écran — et l'Acropole au soleil couchant pour finir. La prose est corrigée d'après ce qu'on voit : murs vert sourd, lit sur estrade, canapé de cuir, kilim, enceintes, écran qui descend du plafond, table de pierre pour huit sur la terrasse. Plus aucune photo sous licence libre dans le projet — tout est à vous — et plus aucun numéro d'enregistrement affiché — ils figureront sur le contrat, c'est dit une fois dans les mentions légales.</p>
+<div class="dv-opts">
+  <div class="dv-opt" id="12a"><div class="dv-olabel"><a class="dv-oid" href="#12a">12a</a>Appartement · Lepeniotou, Athènes · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Apartment Athens" hint-size="1440px,5800px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="12b"><div class="dv-olabel"><a class="dv-oid" href="#12b">12b</a>Ville · Athènes · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="City Athens" hint-size="1440px,4400px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="12c"><div class="dv-olabel"><a class="dv-oid" href="#12c">12c</a>Accueil · trois villes, toutes photographiées · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Home" city-count="3" hint-size="1440px,4400px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="12d"><div class="dv-olabel"><a class="dv-oid" href="#12d">12d</a>Lepeniotou · mobile 390</div><div class="dv-card" style="width:390px"><dc-import name="Apartment Athens" mobile="{{ yes }}" hint-size="390px,6400px" style="width:390px;display:block"></dc-import></div></div>
+</div>
+</section>
+
+<section class="dv-turn" id="t11">
+<div class="dv-thd"><a class="dv-tid" href="#t11">11</a><span class="dv-tname">Nice — vos photos, et un appartement réécrit</span></div>
+<p class="dv-p" style="margin-bottom:28px">Vos photos montrent un appartement de <b style="font-weight:500;color:#2B2926">front de mer</b> — balcon carrelé face à l'eau, palmiers à hauteur d'œil, colline en terrasses derrière, chambre séparée, cuisine équipée — et non le logement du Vieux-Nice que j'avais inventé. J'ai donc abandonné la fiction : la page s'appelle provisoirement <b style="font-weight:500;color:#2B2926">Bord de Mer</b>, la prose décrit ce que l'on voit, le couchage passe à 2–4 avec le canapé, et ce qui reste inconnu est écrit comme tel — « à confirmer » pour l'adresse, l'étage, l'ascenseur, les distances et le numéro d'enregistrement. La signature de la ville devient « Palms at eye level, painted façades, and the sea across the road », sur l'accueil comme sur la page ville. Les photos Wikimedia ne servent plus qu'en vignette de rue ; tous les heros sont les vôtres.</p>
+<p class="dv-p" style="margin-bottom:28px">À me confirmer : le nom de l'appartement, la rue, l'étage, la surface — et que l'immeuble est bien à Nice : la falaise et les cultures en terrasses de vos photos ne ressemblent pas à la Baie des Anges, et je préfère ne pas inventer de repères que je ne peux pas vérifier.</p>
+<div class="dv-opts">
+  <div class="dv-opt" id="11a"><div class="dv-olabel"><a class="dv-oid" href="#11a">11a</a>Appartement · Bord de Mer · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Apartment Nice" hint-size="1440px,5400px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="11b"><div class="dv-olabel"><a class="dv-oid" href="#11b">11b</a>Ville · Nice · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="City Nice" hint-size="1440px,4200px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="11c"><div class="dv-olabel"><a class="dv-oid" href="#11c">11c</a>Accueil · trois villes · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Home" city-count="3" hint-size="1440px,4400px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="11d"><div class="dv-olabel"><a class="dv-oid" href="#11d">11d</a>Bord de Mer · mobile 390</div><div class="dv-card" style="width:390px"><dc-import name="Apartment Nice" mobile="{{ yes }}" hint-size="390px,6000px" style="width:390px;display:block"></dc-import></div></div>
+</div>
+</section>
+
+<section class="dv-turn" id="t10">
+<div class="dv-thd"><a class="dv-tid" href="#t10">10</a><span class="dv-tname">Athènes et Nice : photographies provisoires sous licence libre <span style="font-style:italic;font-size:16px;color:#8C7F72">— remplacées depuis par vos photos, voir le tour 12</span></span></div>
+<p class="dv-p" style="margin-bottom:28px">Je n'utilise pas d'images de magazines ou de banques payantes, même en maquette : c'est du contenu protégé et cela vous exposerait au moment de la mise en ligne. J'ai donc pris des photographies <b style="font-weight:500;color:#2B2926">Wikimedia Commons sous licence CC BY / CC BY-SA</b>, libres de réutilisation avec crédit : Monastiraki et l'Acropole, la vue depuis Philopappou, le panorama depuis l'Aréopage pour Athènes ; la rue Droite et la place Rossetti pour le Vieux-Nice. Elles portent la mention « Photographie provisoire » en bas de cadre et sont à remplacer par vos prises de vue — le crédit complet devra figurer dans les mentions légales si elles restent. Les vues d'extérieur et de quartier sont donc habillées ; les intérieurs restent en zones à déposer, parce qu'aucune photo libre ne peut faire croire à l'intérieur de vos appartements.</p>
+<p class="dv-p" style="margin-bottom:28px"><b style="font-weight:500;color:#2B2926">Ce qui manque encore, précisément.</b> Athènes : la terrasse avec l'Acropole de jour et au soir, la chambre, la douche à toit de verre, l'escalier de marbre et la rue Lepeniotou. Nice : tout l'intérieur, plus une façade et une échappée sur la mer — à photographier quand l'appartement sera signé.</p>
+<div class="dv-opts">
+  <div class="dv-opt" id="10a"><div class="dv-olabel"><a class="dv-oid" href="#10a">10a</a>Appartement · Lepeniotou, Athènes · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Apartment Athens" hint-size="1440px,5600px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="10b"><div class="dv-olabel"><a class="dv-oid" href="#10b">10b</a>Appartement · Rue Rossetti, Nice · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Apartment Nice" hint-size="1440px,5600px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="10c"><div class="dv-olabel"><a class="dv-oid" href="#10c">10c</a>Ville · Athènes · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="City Athens" hint-size="1440px,4400px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="10d"><div class="dv-olabel"><a class="dv-oid" href="#10d">10d</a>Ville · Nice · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="City Nice" hint-size="1440px,4200px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="10e"><div class="dv-olabel"><a class="dv-oid" href="#10e">10e</a>Accueil · trois villes habillées · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Home" city-count="3" hint-size="1440px,4400px" style="width:1440px;display:block"></dc-import></div></div>
+</div>
+</section>
+
+<section class="dv-turn" id="t9">
+<div class="dv-thd"><a class="dv-tid" href="#t9">9</a><span class="dv-tname">Saint-Merri photographié — plus aucune image d'annonce</span></div>
+<p class="dv-p" style="margin-bottom:28px">Galerie sur vos douze photos : la façade flamboyante de Saint-Merri vue de la fenêtre ouvre la page, puis le salon sous poutres en deux vues larges, le canapé-lit ouvert et fermé, une rangée de verticales — cuisine étroite, salle d'eau, rue Saint-Martin — et enfin l'entrée et la rue au niveau des cafés. La photo de rue sert de guide de quartier. Les dernières images Airbnb du projet sont supprimées ; les trois appartements parisiens sont désormais entièrement sur vos fichiers. Saint-Merri alimente aussi la page Paris, deux articles du Journal, Notre approche et Contact.</p>
+<div class="dv-opts">
+  <div class="dv-opt" id="9a"><div class="dv-olabel"><a class="dv-oid" href="#9a">9a</a>Saint-Merri · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Apartment" hint-size="1440px,6000px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="9b"><div class="dv-olabel"><a class="dv-oid" href="#9b">9b</a>Saint-Merri · mobile 390</div><div class="dv-card" style="width:390px"><dc-import name="Apartment" mobile="{{ yes }}" hint-size="390px,6800px" style="width:390px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="9c"><div class="dv-olabel"><a class="dv-oid" href="#9c">9c</a>Page Paris · trois appartements photographiés · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="City" hint-size="1440px,4600px" style="width:1440px;display:block"></dc-import></div></div>
+</div>
+</section>
+
+<section class="dv-turn" id="t8">
+<div class="dv-thd"><a class="dv-tid" href="#t8">8</a><span class="dv-tname">Rue de Bièvre photographiée, et plus aucun nom d'hôte</span></div>
+<p class="dv-p" style="margin-bottom:28px"><b style="font-weight:500;color:#2B2926">Rue de Bièvre.</b> Galerie construite sur vos dix photos, les images Airbnb retirées : la vue sur la flèche de Notre-Dame ouvre la page en plein cadre, puis le salon en deux vues larges, la cuisine et le coin repas, et une rangée de verticales pour la douche et la salle d'eau. La vue sert aussi de hero à la page Paris et illustre l'article du Journal sur les toits. <b style="font-weight:500;color:#2B2926">Noms d'hôtes.</b> Supprimés partout — pages appartement, guides signés, page ville, Journal, Notre approche, Contact et la piste de formulaire <a class="dv-oid" href="#1l">1l</a>. Les guides sont désormais signés « The keyholder in… » et les articles « Keyholder ». Les prénoms réapparaîtront quand vous me les donnerez.</p>
+<div class="dv-opts">
+  <div class="dv-opt" id="8a"><div class="dv-olabel"><a class="dv-oid" href="#8a">8a</a>Rue de Bièvre · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Apartment Bievre" hint-size="1440px,5600px" style="width:1440px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="8b"><div class="dv-olabel"><a class="dv-oid" href="#8b">8b</a>Rue de Bièvre · mobile 390</div><div class="dv-card" style="width:390px"><dc-import name="Apartment Bievre" mobile="{{ yes }}" hint-size="390px,6400px" style="width:390px;display:block"></dc-import></div></div>
+  <div class="dv-opt" id="8c"><div class="dv-olabel"><a class="dv-oid" href="#8c">8c</a>Notre approche · sans noms · 1440</div><div class="dv-card" style="width:1440px"><dc-import name="Approach" hint-size="1440px,4400px" style="width:1440px;display:block"></dc-import></div></div>
+</div>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Keyholder — identité visuelle et maquettes</span></div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px 56px;max-width:1400px;margin-bottom:8px">
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <span class="dv-h" style="margin:0 0 6px">Ce que j'ai compris</span>
+    <p class="dv-p">Un site qui se lit comme un magazine et se réserve comme une lettre. Premium sans le dire : pas de prix en gros, pas de grille, pas d'urgence. Une seule maison, plusieurs villes, chacune avec sa lumière. Le système doit être aussi juste avec une ville qu'avec cinq.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <span class="dv-h" style="margin:0 0 6px">Décisions</span>
+    <p class="dv-p"><b style="font-weight:500;color:#2B2926">Bilingue.</b> Les noms de rubriques sont français et font partie de la marque (Le Journal, Notre approche, Demande de séjour) ; la prose est en anglais pour la clientèle. Le sélecteur EN / FR est dans l'entête.<br><b style="font-weight:500;color:#2B2926">Photos.</b> Les vôtres pour Paris, avec un léger étalonnage « lumière grise » en CSS. Athènes et Nice reçoivent des zones à remplir dans la teinte de la ville.<br><b style="font-weight:500;color:#2B2926">Nice.</b> Signature provisoire ocre / volets, marquée « à définir ».</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <span class="dv-h" style="margin:0 0 6px">Une ville ou cinq</span>
+    <p class="dv-p">Les villes sont des blocs pleine largeur, jamais des cartes : un bloc seul remplit l'écran sans avoir l'air d'attendre ses voisins. À une ville, un bandeau « Prochainement » en typographie seule annonce les suivantes ; il disparaît de lui-même quand elles ouvrent. Au-delà de trois villes, les blocs se raccourcissent (54 → 40 cqw) plutôt que de se multiplier en grille.</p>
+  </div>
+</div>
+
+<span class="dv-h">Logo</span>
+<div class="dv-opts">
+  <div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Recommandé — bas de casse serif, ville en italique</div>
+    <div class="dv-card" style="width:560px;padding:56px 48px;display:flex;flex-direction:column;gap:40px">
+      <span style="font-family:'EB Garamond',serif;font-size:64px;line-height:1;letter-spacing:.005em">Keyholder</span>
+      <div style="display:flex;align-items:center;gap:18px;font-family:'EB Garamond',serif;font-size:40px;line-height:1"><span>Keyholder</span><span style="width:1px;height:26px;background:#5C6670"></span><span style="font-style:italic;color:#5C6670">Paris</span></div>
+      <div style="display:flex;align-items:center;gap:18px;font-family:'EB Garamond',serif;font-size:40px;line-height:1"><span>Keyholder</span><span style="width:1px;height:26px;background:#5F6B4E"></span><span style="font-style:italic;color:#5F6B4E">Athens</span></div>
+      <div style="display:flex;align-items:center;gap:18px;font-family:'EB Garamond',serif;font-size:40px;line-height:1"><span>Keyholder</span><span style="width:1px;height:26px;background:#5F6B4E"></span><span style="font-style:italic;color:#5F6B4E">Ἀθῆναι</span></div>
+      <p class="dv-p" style="font-size:13px">Le filet vertical porte la couleur de la ville ; le nom en italique la prononce. Fonctionne seul, en grec polytonique, et à 16 px dans un pied de page.</p>
+    </div>
+  </div>
+  <div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Petites capitales espacées, point médian</div>
+    <div class="dv-card" style="width:520px;padding:56px 48px;display:flex;flex-direction:column;gap:40px">
+      <span style="font-family:'EB Garamond',serif;font-size:34px;letter-spacing:.22em;text-transform:uppercase;line-height:1">Keyholder</span>
+      <span style="font-family:'EB Garamond',serif;font-size:26px;letter-spacing:.22em;text-transform:uppercase;line-height:1">Keyholder <span style="color:#5C6670">·</span> Paris</span>
+      <span style="font-family:'EB Garamond',serif;font-size:26px;letter-spacing:.22em;text-transform:uppercase;line-height:1">Keyholder <span style="color:#5F6B4E">·</span> Athens</span>
+      <p class="dv-p" style="font-size:13px">Plus institutionnel, plus « hôtel ». Tient très bien en petit ; perd un peu de chaleur.</p>
+    </div>
+  </div>
+  <div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Empilé — nom serif, ville en sans sous filet</div>
+    <div class="dv-card" style="width:420px;padding:56px 48px;display:flex;flex-direction:column;gap:48px">
+      <div style="display:inline-flex;flex-direction:column;gap:10px;align-self:flex-start"><span style="font-family:'EB Garamond',serif;font-size:48px;line-height:1">Keyholder</span></div>
+      <div style="display:inline-flex;flex-direction:column;gap:10px;align-self:flex-start"><span style="font-family:'EB Garamond',serif;font-size:48px;line-height:1">Keyholder</span><span style="height:1px;background:#5C6670"></span><span style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#5C6670;font-weight:400">Paris</span></div>
+      <div style="display:inline-flex;flex-direction:column;gap:10px;align-self:flex-start"><span style="font-family:'EB Garamond',serif;font-size:48px;line-height:1">Keyholder</span><span style="height:1px;background:#5F6B4E"></span><span style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#5F6B4E;font-weight:400">Athens</span></div>
+      <p class="dv-p" style="font-size:13px">Bon pour le linge, les clés, la papeterie. Moins fluide dans une ligne de navigation.</p>
+    </div>
+  </div>
+</div>
+
+<span class="dv-h">Palette</span>
+<div class="dv-card" style="width:1400px;padding:48px;display:flex;flex-direction:column;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Neutres de marque — jamais de blanc pur, jamais de noir pur</span>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px">
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:96px;background:#F3EEE6;border:1px solid rgba(43,41,38,.1)"></div><span style="font-size:13px">Crème · <span style="color:#8C7F72">#F3EEE6</span></span><span style="font-size:12px;color:#8C7F72">Fond principal</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:96px;background:#EAE3D8"></div><span style="font-size:13px">Os · <span style="color:#8C7F72">#EAE3D8</span></span><span style="font-size:12px;color:#8C7F72">Bandeaux, surfaces secondaires</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:96px;background:#B9B2A8"></div><span style="font-size:13px">Gris pierre · <span style="color:#8C7F72">#B9B2A8</span></span><span style="font-size:12px;color:#8C7F72">Placeholders, texte tertiaire</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:96px;background:#8C7F72"></div><span style="font-size:13px">Taupe · <span style="color:#8C7F72">#8C7F72</span></span><span style="font-size:12px;color:#8C7F72">Étiquettes, métadonnées</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:96px;background:#5A554E"></div><span style="font-size:13px">Encre douce · <span style="color:#8C7F72">#5A554E</span></span><span style="font-size:12px;color:#8C7F72">Texte secondaire</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px"><div style="height:96px;background:#2B2926"></div><span style="font-size:13px">Encre · <span style="color:#8C7F72">#2B2926</span></span><span style="font-size:12px;color:#8C7F72">Texte, filets, bouton plein · pied de page #3A3631</span></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5C6670">Paris — pierre claire, zinc, lumière grise</span>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#EDE9E2;border:1px solid rgba(43,41,38,.1)"></div><span style="font-size:12px">Sol · #EDE9E2</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#8E99A3"></div><span style="font-size:12px">Zinc clair · #8E99A3</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#5C6670"></div><span style="font-size:12px">Zinc · #5C6670</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5F6B4E">Athènes — chaux, marbre, lumière franche</span>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#F6F4EF;border:1px solid rgba(43,41,38,.1)"></div><span style="font-size:12px">Chaux · #F6F4EF</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#9AA28A"></div><span style="font-size:12px">Olivier clair · #9AA28A</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#5F6B4E"></div><span style="font-size:12px">Laurier · #5F6B4E</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#B07A45">Nice — à définir (proposition : ocre, volets, sel)</span>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#F4EDE2;border:1px solid rgba(43,41,38,.1)"></div><span style="font-size:12px">Sel · #F4EDE2</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#D3A876"></div><span style="font-size:12px">Ocre clair · #D3A876</span></div>
+        <div style="display:flex;flex-direction:column;gap:8px"><div style="height:72px;background:#B07A45"></div><span style="font-size:12px">Ocre · #B07A45</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="dv-p" style="font-size:13px">Chaque ville reçoit trois valeurs : un <b style="font-weight:500">sol</b> (fond de page de la ville, un demi-ton du crème), un <b style="font-weight:500">accent clair</b> (filets sur photo) et un <b style="font-weight:500">accent</b> (étiquettes, survols, filet du logo). L'accent n'est jamais utilisé en aplat de plus de 2 px de haut.</p>
+</div>
+
+<span class="dv-h">Typographie</span>
+<div class="dv-card" style="width:1400px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:56px">
+  <div style="display:flex;flex-direction:column;gap:28px">
+    <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Display · EB Garamond 400 · 80–160 px · interlignage .9–1.08</span><span style="font-family:'EB Garamond',serif;font-size:96px;line-height:.95;letter-spacing:-.01em">Paris, slowly.</span></div>
+    <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Titre · 40–56 px · 1.12</span><span style="font-family:'EB Garamond',serif;font-size:48px;line-height:1.12;max-width:20ch;text-wrap:pretty">A handful of apartments, each one known by heart.</span></div>
+    <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Intertitre italique · 20–26 px · 1.4</span><span style="font-family:'EB Garamond',serif;font-style:italic;font-size:24px;color:#5A554E">Pale stone, zinc roofs and a grey, forgiving light.</span></div>
+    <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Prose · Source Sans 3 300 · 17–18 px · 1.65–1.7 · 56 ch max</span><p style="margin:0;font-weight:300;font-size:18px;line-height:1.7;max-width:56ch">We do not run a platform. We keep a few apartments in cities we love, and we look after them the way you would look after a house you intend to grow old in.</p></div>
+    <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Étiquette · 12 px · 400 · .14 em · capitales</span><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5C6670">Paris · Le Marais · 4th</span></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:24px;border-left:1px solid rgba(43,41,38,.12);padding-left:48px">
+    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Grec polytonique — vérifié</span>
+    <span style="font-family:'EB Garamond',serif;font-size:56px;line-height:1.05">Ἀθῆναι, ἀργά.</span>
+    <span style="font-family:'EB Garamond',serif;font-style:italic;font-size:24px;color:#5A554E">Λευκὸς ἀσβέστης, μάρμαρο καὶ φῶς ποὺ δὲν κρύβει τίποτα.</span>
+    <p style="margin:0;font-weight:300;font-size:17px;line-height:1.65">Τὰ κλειδιὰ παραδίδονται προσωπικά. Κάποιος ποὺ ζεῖ στὴν πόλη σᾶς περιμένει στὴν πόρτα καὶ σᾶς λέει ποῦ ἀγοράζουν ψωμί.</p>
+    <p class="dv-p" style="font-size:13px"><b style="font-weight:500;color:#2B2926">EB Garamond</b> (Google Fonts, OFL) couvre le grec, grec étendu et le polytonique complet — esprits, accents, iota souscrit. <b style="font-weight:500;color:#2B2926">Source Sans 3</b> couvre le grec et le grec étendu. Les deux sont libres, variables, et s'auto-hébergent. Si vous souhaitez plus tard une licence commerciale plus « Canela », Cormorant Garamond n'a pas de grec ; GT Sectra et Tiempos en ont sur demande.</p>
+  </div>
+</div>
+
+<span class="dv-h">Mécanisme de signature par ville</span>
+<div class="dv-opts">
+  <div class="dv-opt" id="1d"><div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Filet + accent — la couleur n'apparaît qu'en traits</div>
+    <div class="dv-card" style="width:440px">
+      <div style="display:flex;flex-direction:column">
+        <div style="position:relative;height:220px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/w/paris-rooftops.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(.96)"><div style="position:absolute;left:28px;bottom:24px;display:flex;flex-direction:column;gap:10px;color:#F3EEE6"><span style="width:40px;height:2px;background:#8E99A3"></span><span style="font-family:'EB Garamond',serif;font-size:48px;line-height:1">Paris</span></div></div>
+        <div style="position:relative;height:220px;overflow:hidden;background:#F6F4EF"><div style="position:absolute;inset:0;background:linear-gradient(160deg,#F6F4EF,#E4E1DB)"></div><div style="position:absolute;left:28px;bottom:24px;display:flex;flex-direction:column;gap:10px;color:#2B2926"><span style="width:40px;height:2px;background:#5F6B4E"></span><span style="font-family:'EB Garamond',serif;font-size:48px;line-height:1">Athens</span></div></div>
+      </div>
+      <p class="dv-p" style="font-size:13px;padding:20px 28px 24px">Le plus discret. Un filet de 2 px, les étiquettes, les liens survolés. L'unité tient parce que 98 % de la page reste dans les neutres.</p>
+    </div>
+  </div>
+  <div class="dv-opt" id="1e"><div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Étalonnage photo — même image, deux lumières</div>
+    <div class="dv-card" style="width:440px">
+      <div style="display:grid;grid-template-columns:1fr 1fr">
+        <div style="position:relative;height:260px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/w/paris-street.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:60% 50%;filter:saturate(.7) contrast(.92) brightness(1.02) sepia(.06)"><span style="position:absolute;left:16px;bottom:14px;color:#F3EEE6;font-size:11px;letter-spacing:.14em;text-transform:uppercase">Paris · gris</span></div>
+        <div style="position:relative;height:260px;overflow:hidden"><img loading="lazy" decoding="async" src="assets/w/paris-street.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:60% 50%;filter:saturate(1.05) contrast(1.12) brightness(1.08)"><span style="position:absolute;left:16px;bottom:14px;color:#F3EEE6;font-size:11px;letter-spacing:.14em;text-transform:uppercase">Athènes · franc</span></div>
+      </div>
+      <p class="dv-p" style="font-size:13px;padding:20px 28px 24px">Paris : saturation −18 %, contraste −5 %, très légère chaleur. Athènes : contraste +12 %, luminosité +8 %, blancs poussés. La différence se sent avant de se voir. À appliquer aussi à la prise de vue, pas seulement en CSS.</p>
+    </div>
+  </div>
+  <div class="dv-opt" id="1f"><div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Sol de page — le crème glisse d'un demi-ton</div>
+    <div class="dv-card" style="width:440px">
+      <div style="display:grid;grid-template-columns:1fr 1fr">
+        <div style="background:#EDE9E2;padding:28px;height:204px;display:flex;flex-direction:column;justify-content:space-between"><span style="font-family:'EB Garamond',serif;font-size:22px">Keyholder <span style="font-style:italic;color:#5C6670">Paris</span></span><div style="display:flex;flex-direction:column;gap:8px"><span style="height:1px;background:rgba(43,41,38,.15)"></span><span style="font-size:12px;color:#8C7F72">Sol #EDE9E2 — gris pierre</span></div></div>
+        <div style="background:#F6F4EF;padding:28px;height:204px;display:flex;flex-direction:column;justify-content:space-between"><span style="font-family:'EB Garamond',serif;font-size:22px">Keyholder <span style="font-style:italic;color:#5F6B4E">Athens</span></span><div style="display:flex;flex-direction:column;gap:8px"><span style="height:1px;background:rgba(43,41,38,.15)"></span><span style="font-size:12px;color:#8C7F72">Sol #F6F4EF — chaux</span></div></div>
+      </div>
+      <p class="dv-p" style="font-size:13px;padding:20px 28px 24px">Toute la page ville et ses appartements passent sur le sol de la ville. L'accueil global reste crème. Presque subliminal ; très juste quand on passe d'une ville à l'autre.</p>
+    </div>
+  </div>
+</div>
+<p class="dv-next">Recommandation : <a class="dv-oid" href="#1d">1d</a> + <a class="dv-oid" href="#1e">1e</a> + <a class="dv-oid" href="#1f">1f</a> ensemble, chacun à faible dose — c'est ce que font les maquettes ci-dessous. Retirer l'un des trois si l'ensemble paraît trop marqué à cinq villes.</p>
+
+<span class="dv-h">Système d'espacement</span>
+<div class="dv-card" style="width:1400px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:56px">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <sc-for list="{{ spacing }}" as="s" hint-placeholder-count="8">
+      <div style="display:grid;grid-template-columns:64px 1fr 220px;align-items:center;gap:20px;font-size:13px">
+        <span style="color:#8C7F72;letter-spacing:.1em">{{ s.name }}</span>
+        <div style="height:14px;background:#B9B2A8;width:{{ s.px }}px;max-width:100%"></div>
+        <span style="color:#5A554E">{{ s.px }} px · {{ s.use }}</span>
+      </div>
+    </sc-for>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <p class="dv-p" style="font-size:14px">Une échelle en 8 qui s'écarte vite : 4 · 8 · 16 · 24 · 40 · 64 · 104 · 168. Les grandes valeurs sont fluides en <code style="font-family:ui-monospace,Menlo,monospace;font-size:12px;background:rgba(43,41,38,.06);padding:1px 5px">clamp()</code> — par exemple la marge de section vaut <code style="font-family:ui-monospace,Menlo,monospace;font-size:12px;background:rgba(43,41,38,.06);padding:1px 5px">clamp(72px, 10vw, 168px)</code> — pour que le desktop respire et que le mobile ne gaspille pas.</p>
+    <p class="dv-p" style="font-size:14px"><b style="font-weight:500;color:#2B2926">Gouttière de page</b> : clamp(20px, 5vw, 72px). <b style="font-weight:500;color:#2B2926">Mesure</b> : prose 56 ch, titres 16–22 ch, accroches 34–48 ch. <b style="font-weight:500;color:#2B2926">Colonnes</b> : grille auto-fit à 280 px minimum, une seule colonne sous 620 px.</p>
+    <p class="dv-p" style="font-size:14px"><b style="font-weight:500;color:#2B2926">Mouvement</b> : fondus de 600 à 900 ms, courbe ease ; zoom photo 1.02 en 1.4–1.6 s au survol ; parallaxe des heros limitée à 6 % de la hauteur. Aucun rebond, aucune élasticité.</p>
+  </div>
+</div>
+
+<span class="dv-h">États de survol — liens et boutons (survolez)</span>
+<div class="dv-card" style="width:1400px;padding:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:40px">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Lien de navigation</span>
+    <a href="#" style="align-self:flex-start;font-size:14px;letter-spacing:.03em;font-weight:400;text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Le Journal</a>
+    <span style="font-size:12px;color:#8C7F72">Repos : encre. Survol : accent ville en 500 ms. Actif : filet 1 px accent.</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Lien éditorial</span>
+    <a href="#" style="align-self:flex-start;font-size:14px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:3px;transition:color .5s,border-color .5s" style-hover="color:#5C6670;border-color:#5C6670">See the apartment</a>
+    <span style="font-size:12px;color:#8C7F72">Filet à 35 % d'encre, décalé de 3 px. Au survol, texte et filet passent à l'accent. Jamais de flèche.</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Bouton</span>
+    <button style="align-self:flex-start;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.08em;font-weight:400;padding:16px 32px;background:transparent;border:1px solid #2B2926;color:#2B2926;cursor:pointer;transition:background .6s,color .6s" style-hover="background:#2B2926;color:#F3EEE6">Send the request</button>
+    <span style="font-size:12px;color:#8C7F72">Un seul bouton par page. Contour 1 px, angles vifs ; se remplit d'encre en 600 ms. Pas de pilule, pas d'ombre.</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px;background:#3A3631;margin:-48px -48px -48px 0;padding:48px">
+    <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Sur fond sombre / photo</span>
+    <a href="#" style="align-self:flex-start;font-size:14px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#F3EEE6;border-bottom:1px solid rgba(243,238,230,.5);padding-bottom:3px;transition:border-color .5s" style-hover="border-color:#F3EEE6">Explore Paris</a>
+    <button style="align-self:flex-start;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.08em;font-weight:400;padding:16px 32px;background:transparent;border:1px solid #EAE3D8;color:#EAE3D8;cursor:pointer;transition:background .6s,color .6s" style-hover="background:#EAE3D8;color:#2B2926">Subscribe</button>
+    <span style="font-size:12px;color:#B9B2A8">Crème sur encre. Le filet monte de 50 % à 100 % ; le bouton s'inverse.</span>
+  </div>
+</div>
+
+<span class="dv-h">Hero d'accueil — trois pistes</span>
+<div class="dv-opts">
+  <div class="dv-opt" id="1g"><div class="dv-olabel"><a class="dv-oid" href="#1g">1g</a>Recommandé — plein cadre, titre bas gauche (utilisé ci-dessous)</div>
+    <div class="dv-card" style="width:640px;height:400px;position:relative">
+      <img loading="lazy" decoding="async" src="assets/w/paris-street.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;filter:saturate(.82) contrast(.96)">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,41,38,0) 40%,rgba(43,41,38,.55) 100%)"></div>
+      <div style="position:absolute;left:32px;right:32px;top:24px;display:flex;justify-content:space-between;color:#F3EEE6;font-size:11px;letter-spacing:.04em"><span style="font-family:'EB Garamond',serif;font-size:18px;letter-spacing:0">Keyholder</span><span>Les Villes · Le Journal · Notre approche</span></div>
+      <div style="position:absolute;left:32px;right:32px;bottom:32px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;color:#F3EEE6"><span style="font-family:'EB Garamond',serif;font-size:36px;line-height:1.08;max-width:16ch;text-wrap:pretty">Apartments of character, in cities worth lingering in.</span><span style="font-size:11px;max-width:22ch;line-height:1.5">Three apartments in Paris. Athens and Nice will follow, slowly.</span></div>
+    </div>
+  </div>
+  <div class="dv-opt" id="1h"><div class="dv-olabel"><a class="dv-oid" href="#1h">1h</a>Page de garde — crème, titre seul, photo en dessous</div>
+    <div class="dv-card" style="width:640px;height:400px;position:relative;background:#F3EEE6;display:flex;flex-direction:column">
+      <div style="padding:24px 32px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.04em"><span style="font-family:'EB Garamond',serif;font-size:18px;letter-spacing:0">Keyholder</span><span>Les Villes · Le Journal · Notre approche</span></div>
+      <div style="padding:16px 32px 28px;display:flex;flex-direction:column;gap:14px"><span style="font-family:'EB Garamond',serif;font-size:44px;line-height:1;letter-spacing:-.01em;max-width:18ch;text-wrap:pretty">Apartments of character, in cities worth lingering in.</span><span style="font-family:'EB Garamond',serif;font-style:italic;font-size:15px;color:#5A554E">Paris, now. Athens and Nice to follow.</span></div>
+      <div style="flex:1;overflow:hidden;margin:0 32px"><img loading="lazy" decoding="async" src="assets/w/paris-rooftops.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 70%;filter:saturate(.82) contrast(.96)"></div>
+    </div>
+  </div>
+  <div class="dv-opt" id="1i"><div class="dv-olabel"><a class="dv-oid" href="#1i">1i</a>Diptyque — texte à gauche, photo verticale à droite</div>
+    <div class="dv-card" style="width:640px;height:400px;position:relative;background:#F3EEE6;display:grid;grid-template-columns:1fr 1fr">
+      <div style="padding:24px 32px;display:flex;flex-direction:column;justify-content:space-between"><span style="font-family:'EB Garamond',serif;font-size:18px">Keyholder</span><div style="display:flex;flex-direction:column;gap:16px"><span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1.08;text-wrap:pretty">Apartments of character, in cities worth lingering in.</span><span style="font-size:11px;letter-spacing:.04em;border-bottom:1px solid rgba(43,41,38,.35);align-self:flex-start;padding-bottom:3px">Discover the apartments</span></div><span style="font-size:11px;color:#8C7F72;letter-spacing:.04em">Paris · Athens 2027 · Nice 2027</span></div>
+      <div style="overflow:hidden"><img loading="lazy" decoding="async" src="assets/w/barres-living.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:20% 50%;filter:saturate(.82) contrast(.96)"></div>
+    </div>
+  </div>
+</div>
+
+<span class="dv-h">Formulaire de demande — trois pistes</span>
+<div class="dv-opts">
+  <div class="dv-opt" id="1j"><div class="dv-olabel"><a class="dv-oid" href="#1j">1j</a>Recommandé — la lettre : une phrase à compléter (utilisé ci-dessous)</div>
+    <div class="dv-card" style="width:560px;padding:40px;display:flex;flex-direction:column;gap:24px;font-family:'EB Garamond',serif;font-size:24px;line-height:1.8">
+      <p style="margin:0">I would like to stay at <em style="color:#5C6670">Rue des Barres</em> from <span style="border-bottom:1px solid #8C7F72;display:inline-block;width:6ch;color:#B9B2A8;text-align:center;font-size:20px">arrival</span> to <span style="border-bottom:1px solid #8C7F72;display:inline-block;width:7ch;color:#B9B2A8;text-align:center;font-size:20px">departure</span>. We will be <span style="border-bottom:1px solid #8C7F72;display:inline-block;width:3ch;color:#B9B2A8;text-align:center;font-size:20px">two</span>.</p>
+      <p style="margin:0">My name is <span style="border-bottom:1px solid #8C7F72;display:inline-block;width:10ch;color:#B9B2A8;font-size:20px">your name</span>, reach me at <span style="border-bottom:1px solid #8C7F72;display:inline-block;width:12ch;color:#B9B2A8;font-size:20px">email</span>.</p>
+      <div style="display:flex;align-items:center;gap:24px"><button style="font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:.08em;font-weight:400;padding:14px 28px;background:transparent;border:1px solid #2B2926;color:#2B2926;cursor:pointer;transition:background .6s,color .6s" style-hover="background:#2B2926;color:#F3EEE6">Send the request</button><span style="font-family:'Source Sans 3',sans-serif;font-size:13px;color:#8C7F72;font-weight:300">A person replies within the day.</span></div>
+    </div>
+  </div>
+  <div class="dv-opt" id="1k"><div class="dv-olabel"><a class="dv-oid" href="#1k">1k</a>Classique sobre — champs empilés, filets fins</div>
+    <div class="dv-card" style="width:440px;padding:40px;display:flex;flex-direction:column;gap:26px;font-family:'Source Sans 3',sans-serif;font-weight:300">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px"><div style="display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #8C7F72;padding-bottom:10px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Arrival</span><span style="font-size:16px;color:#B9B2A8">12 Oct 2026</span></div><div style="display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #8C7F72;padding-bottom:10px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Departure</span><span style="font-size:16px;color:#B9B2A8">19 Oct 2026</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #8C7F72;padding-bottom:10px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Guests</span><span style="font-size:16px;color:#B9B2A8">Two</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #8C7F72;padding-bottom:10px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Name</span><span style="font-size:16px;color:#B9B2A8">&nbsp;</span></div>
+      <div style="display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #8C7F72;padding-bottom:10px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8C7F72">Email</span><span style="font-size:16px;color:#B9B2A8">&nbsp;</span></div>
+      <button style="align-self:flex-start;font-size:13px;letter-spacing:.08em;font-weight:400;padding:14px 28px;background:transparent;border:1px solid #2B2926;color:#2B2926;cursor:pointer;transition:background .6s,color .6s" style-hover="background:#2B2926;color:#F3EEE6">Send the request</button>
+    </div>
+  </div>
+  <div class="dv-opt" id="1l"><div class="dv-olabel"><a class="dv-oid" href="#1l">1l</a>Conversation — le concierge écrit d'abord</div>
+    <div class="dv-card" style="width:480px;padding:40px;display:flex;flex-direction:column;gap:24px;font-family:'Source Sans 3',sans-serif;font-weight:300">
+      <div style="display:flex;gap:16px;align-items:flex-start"><div style="width:40px;height:40px;border-radius:50%;background:#B9B2A8;flex:none"></div><div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;color:#8C7F72;letter-spacing:.04em">Keyholder · Paris</span><p style="margin:0;font-family:'EB Garamond',serif;font-size:20px;line-height:1.4">Hello. Tell me when you'd like to come and how many of you there are, and I'll write back today with the dates confirmed.</p></div></div>
+      <div style="border:1px solid rgba(43,41,38,.2);padding:16px 18px;font-size:16px;color:#B9B2A8;min-height:96px">Write to us…</div>
+      <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:#8C7F72">Or call +33 1 …</span><button style="font-size:13px;letter-spacing:.08em;font-weight:400;padding:14px 28px;background:transparent;border:1px solid #2B2926;color:#2B2926;cursor:pointer;transition:background .6s,color .6s" style-hover="background:#2B2926;color:#F3EEE6">Send</button></div>
+    </div>
+  </div>
+</div>
+
+<p class="dv-next">Les écrans de ce tour et les tours 2 à 7 sont archivés dans <b style="font-weight:500;color:#2B2926">Keyholder Archive.dc.html</b>, pour garder ce document réactif.</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      yes: true,
+      spacing: [
+        { name:'XXS', px:4, use:'filet → texte' },
+        { name:'XS', px:8, use:'étiquette → titre' },
+        { name:'S', px:16, use:'entre paragraphes' },
+        { name:'M', px:24, use:'groupes dans un bloc' },
+        { name:'L', px:40, use:'gouttières de grille' },
+        { name:'XL', px:64, use:'entre sous-sections' },
+        { name:'XXL', px:104, use:'marge de section (mobile)' },
+        { name:'XXXL', px:168, use:'marge de section (desktop)' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

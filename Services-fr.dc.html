@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3EEE6}a{color:#2B2926}a:hover{color:#5C6670}::placeholder{color:#B9B2A8}</style>
+</helmet>
+<div data-screen-label="Services" style="container-type:inline-size;background:#F3EEE6;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5cqw,72px)">
+  <a href="index-fr.html" style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926;text-decoration:none">The Quiet Address</a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <nav style="display:flex;flex-wrap:wrap;gap:16px 36px;font-size:14px;letter-spacing:.03em;font-weight:400">
+    <a href="index-fr.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Les villes</a>
+    <a href="City-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Les appartements</a>
+    <a href="Services-fr.dc.html" style="text-decoration:none;color:#5C6670;border-bottom:1px solid #5C6670;padding-bottom:2px">Services</a>
+    <a href="Journal-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Le Journal</a>
+    <a href="Approach-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Notre approche</a>
+  </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:.04em;font-weight:400">
+    <span><a href="Services.dc.html" style="color:#5A554E;text-decoration:none;transition:color .5s" style-hover="color:#2B2926">EN</a> <span style="color:#2B2926">/ FR</span></span>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><a href="Contact-fr.dc.html" style="text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:2px;transition:color .5s,border-color .5s" style-hover="color:#5C6670;border-color:#5C6670">Demande de séjour</a></sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.04em;color:#2B2926;cursor:pointer;padding:10px 0;min-height:44px">Menu</button></sc-if>
+  </div>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ ovTop }};min-height:100vh;z-index:80;background:#F3EEE6;display:flex;flex-direction:column;padding:26px clamp(20px,6cqw,56px) 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <span style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926">The Quiet Address</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5A554E;cursor:pointer;padding:10px 0;min-height:44px">Fermer</button>
+    </div>
+    <nav style="margin-top:clamp(28px,8cqw,52px);display:flex;flex-direction:column">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" style="font-family:'EB Garamond',serif;font-size:clamp(28px,8cqw,34px);line-height:1.1;color:#2B2926;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(43,41,38,.12)">{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <span style="margin-top:clamp(28px,7cqw,44px);font-size:13px;letter-spacing:.04em;color:#5A554E">hello@thequietaddress.com &nbsp;·&nbsp; <span style="color:#5C6670">Paris · Athènes · Nice</span></span>
+  </div>
+</sc-if>
+
+<section style="padding:clamp(48px,7cqw,112px) clamp(20px,5cqw,72px) clamp(40px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px clamp(40px,8cqw,120px);align-items:end">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E">Services</span>
+    <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(44px,6cqw,96px);line-height:1;letter-spacing:-.01em;max-width:16ch;text-wrap:pretty">Tout ce que fait un bon hôtel, sans l'hôtel.</h1>
+  </div>
+  <p style="margin:0;font-size:18px;line-height:1.7;max-width:52ch">Vous avez l'appartement et celui qui en garde les clés. Le reste, c'est ce que nous organisons autour : un chauffeur à l'aéroport, une loge à l'opéra retenue six semaines à l'avance, une table complète le jour où vous appelez, un cuisinier qui travaille dans votre cuisine et la laisse propre. Demandez une seule chose, ou toute la semaine.</p>
+</section>
+
+<section style="height:clamp(340px,44cqw,640px);overflow:hidden"><img loading="lazy" decoding="async" src="assets/w/duphot-01.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:saturate(.82) contrast(.96)"></section>
+
+<section style="padding:clamp(56px,7cqw,112px) clamp(20px,5cqw,72px) 0;display:flex;flex-direction:column;gap:12px">
+  <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">Avant votre arrivée</span>
+  <span style="width:140px;height:1px;background:rgba(43,41,38,.35)"></span>
+</section>
+
+<section style="padding:clamp(32px,4cqw,56px) clamp(20px,5cqw,72px) clamp(56px,7cqw,112px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5cqw,80px)">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Une semaine préparée par lettre</h2>
+    <p style="margin:0;color:#5A554E;max-width:46ch">Trois semaines avant votre départ, nous vous écrivons avec un rythme proposé pour les journées : ce qu'il faut réserver dès maintenant, ce qu'il vaut mieux laisser libre, et quel matin garder pour le marché, qui n'a lieu que le jeudi. Vous corrigez ; nous réservons.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Opéra, théâtre, concerts</h2>
+    <p style="margin:0;color:#5A554E;max-width:46ch">Des places au Palais Garnier et à l'Opéra Bastille, à la Philharmonie, au Théâtre du Châtelet ; à l'Odéon d'Hérode Atticus, sous l'Acropole, l'été ; à l'Opéra de Nice. Nous les prenons dès l'ouverture de la saison, seule façon d'être bien placé, et nous vous disons franchement quand une production ne vaut pas la soirée.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Les tables</h2>
+    <p style="margin:0;color:#5A554E;max-width:46ch">Les trois-étoiles qui ouvrent leur cahier deux mois à l'avance, et les douze couverts qui ne répondent qu'à un nom connu. Réservé à votre nom, avec un mot sur ce qu'il faut commander et le temps à prévoir.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Les musées, hors des heures</h2>
+    <p style="margin:0;color:#5A554E;max-width:46ch">Ouvertures privées et entrées matinales là où elles existent : le Louvre avant l'ouverture des portes, le musée de l'Acropole après la fermeture, l'appartement d'un collectionneur que le public ne voit jamais. Avec un guide qui est historien, pas porte-voix.</p>
+  </div>
+</section>
+
+<section style="background:#EAE3D8;padding:clamp(56px,7cqw,112px) clamp(20px,5cqw,72px)">
+  <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:clamp(32px,4cqw,56px)">
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">Pendant votre séjour</span>
+    <span style="width:140px;height:1px;background:rgba(43,41,38,.35)"></span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,5cqw,80px)">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Un chauffeur, pas un taxi</h2>
+      <p style="margin:0;color:#5A554E;max-width:46ch">Le même chauffeur pendant tout le séjour, berline ou van, qui attend votre avion, votre nom à la main, et patiente quand il a du retard. Au transfert, à la demi-journée ou à la journée. Français, anglais, grec ; sièges enfants installés avant que vous atterrissiez.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Un cuisinier dans votre cuisine</h2>
+      <p style="margin:0;color:#5A554E;max-width:46ch">Un dîner pour deux ou pour huit, cuisiné là où vous logez : le marché le matin avec le cuisinier si l'envie vous prend, la table mise, la cuisine rendue telle qu'elle était. Également le petit-déjeuner sur la terrasse pour un anniversaire, et un cours de cuisine qui en est vraiment un.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Ménage et blanchisserie</h2>
+      <p style="margin:0;color:#5A554E;max-width:46ch">Ménage quotidien ou au milieu du séjour, linge changé quand vous le demandez plutôt qu'au planning, chemises repassées et rendues le jour même, pressing pris à domicile. Le réfrigérateur rempli avant votre arrivée, d'après votre liste ou la nôtre.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Se reposer, se soigner</h2>
+      <p style="margin:0;color:#5A554E;max-width:46ch">Massages et soins à domicile, un coiffeur avant la soirée, un coach pour le matin, une piscine ou un hammam à pied. Un médecin, un dentiste ou une pharmacie qui parle votre langue à n'importe quelle heure — c'est en général à une mauvaise heure que l'on en a besoin.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Les enfants, discrètement</h2>
+      <p style="margin:0;color:#5A554E;max-width:46ch">Lit parapluie, chaise haute et un jouet de bain en place avant votre arrivée ; une garde d'enfants vérifiée et assurée pour le soir où vous voulez dîner tard ; une poussette qui rentre dans un taxi. Les grands-parents sont bienvenus, leurs siestes aussi.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.4cqw,34px);line-height:1.2">Des journées hors de la ville</h2>
+      <p style="margin:0;color:#5A554E;max-width:46ch">De Paris : une maison de champagne qui ne reçoit que six personnes, ou la Loire en voiture et le retour pour le dîner. D'Athènes : une journée en voilier vers Égine ou le cap Sounion, à la bonne heure pour la lumière. De Nice : le train du littoral jusqu'en Italie, ou un bateau du vieux port avec un cuisinier à bord.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(64px,8cqw,128px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E">Comment cela marche</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(32px,3.4cqw,52px);line-height:1.12;max-width:18ch;text-wrap:pretty">Une seule personne, une seule facture, aucune commission cachée dedans.</h2>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.7;max-width:56ch">
+    <p style="margin:0">La conciergerie est comprise dans le séjour : écrire, organiser, réserver, rester joignable pendant que vous êtes là. Demander ne coûte rien.</p>
+    <p style="margin:0">Tout ce qui est acheté pour vous — billets, chauffeurs, cuisiniers, gardes d'enfants, soins — vous est refacturé à son prix, avec des frais de gestion convenus par écrit avant toute réservation. Nous ne touchons aucune commission des restaurants, des guides ni des boutiques : c'est ce qui nous permet de vous dire quand quelque chose n'en vaut pas la peine.</p>
+    <p style="margin:0">Une seule facture à la fin du séjour, détaillée, en euros.</p>
+    <a href="Contact-fr.dc.html" style="align-self:flex-start;margin-top:8px;font-size:14px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:3px;transition:color .5s,border-color .5s" style-hover="color:#5C6670;border-color:#5C6670">Nous demander quelque chose</a>
+  </div>
+</section>
+
+<footer style="background:#3A3631;color:#EAE3D8;padding:clamp(56px,7cqw,96px) clamp(20px,5cqw,72px) 36px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px clamp(32px,4cqw,64px);padding-bottom:clamp(48px,6cqw,80px);border-bottom:1px solid rgba(234,227,216,.18)">
+    <div style="display:flex;flex-direction:column;gap:18px"><span style="font-family:'EB Garamond',serif;font-size:26px">The Quiet Address</span><p style="margin:0;max-width:30ch;color:#B9B2A8;line-height:1.6">Des appartements de caractère à Paris, Athènes et Nice. Les clés remises de la main à la main.</p></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">Les villes</span><a href="City-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Paris</a><a href="City%20Athens-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Athènes</a><a href="City%20Nice-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Nice</a></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">La maison</span><a href="Approach-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Notre approche</a><a href="Services-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Services</a><a href="Journal-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Le Journal</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Demande de séjour</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Propriétaires</a></div>
+    <div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8">Lettres des villes</span><p style="margin:0;color:#B9B2A8;line-height:1.6;max-width:32ch">Une lettre tous les deux mois. Une ville, un appartement, une table qui vaut le détour.</p><div style="display:flex;border-bottom:1px solid rgba(234,227,216,.4);padding-bottom:10px;gap:12px"><input type="email" placeholder="Votre e-mail" style="flex:1;background:transparent;border:0;outline:0;color:#F3EEE6;font:inherit;font-size:15px;min-width:0"><button style="background:transparent;border:0;color:#EAE3D8;font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer">S'abonner</button></div></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;padding-top:28px;font-size:13px;color:#B9B2A8;letter-spacing:.03em"><span>© 2026 The Quiet Address</span><div style="display:flex;gap:28px;flex-wrap:wrap"><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Mentions légales</a><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Confidentialité</a><a href="https://instagram.com/" target="_blank" rel="noopener" style="color:#B9B2A8;text-decoration:none">Instagram</a><span><a href="Services.dc.html" style="color:#B9B2A8;text-decoration:none">English</a> · <span style="color:#EAE3D8">Français</span></span></div></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, narrow: false, ovTop: 0 }; renderVals() { const mobile = !!this.props.mobile || this.state.narrow; return { menuOpen: this.state.menuOpen, toggleMenu: () => this._toggleMenu(), ovTop: this.state.ovTop + 'px', navLinks: [{"href":"index-fr.html","label":"Les villes"},{"href":"City-fr.dc.html","label":"Les appartements"},{"href":"Services-fr.dc.html","label":"Services"},{"href":"Journal-fr.dc.html","label":"Le Journal"},{"href":"Approach-fr.dc.html","label":"Notre approche"},{"href":"Contact-fr.dc.html","label":"Demande de séjour"}],  mobile, desktop: !mobile }; } }
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3EEE6}a{color:#2B2926}a:hover{color:#5C6670}</style>
+</helmet>
+<div data-screen-label="Article du Journal" style="container-type:inline-size;background:#F3EEE6;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5cqw,72px)">
+  <a href="index-fr.html" style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926;text-decoration:none">The Quiet Address</a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <nav style="display:flex;flex-wrap:wrap;gap:16px 36px;font-size:14px;letter-spacing:.03em;font-weight:400">
+    <a href="index-fr.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Les villes</a>
+    <a href="City-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Les appartements</a>
+    <a href="Services-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Services</a>
+    <a href="Journal-fr.dc.html" style="text-decoration:none;color:#5C6670;border-bottom:1px solid #5C6670;padding-bottom:2px">Le Journal</a>
+    <a href="Approach-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Notre approche</a>
+  </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:.04em;font-weight:400">
+    <span><a href="Article.dc.html" style="color:#5A554E;text-decoration:none;transition:color .5s" style-hover="color:#2B2926">EN</a> <span style="color:#2B2926">/ FR</span></span>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><a href="Contact-fr.dc.html" style="text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:2px;transition:color .5s,border-color .5s" style-hover="color:#5C6670;border-color:#5C6670">Demande de séjour</a></sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.04em;color:#2B2926;cursor:pointer;padding:10px 0;min-height:44px">Menu</button></sc-if>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ ovTop }};min-height:100vh;z-index:80;background:#F3EEE6;display:flex;flex-direction:column;padding:26px clamp(20px,6cqw,56px) 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <span style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926">The Quiet Address</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5A554E;cursor:pointer;padding:10px 0;min-height:44px">Fermer</button>
+    </div>
+    <nav style="margin-top:clamp(28px,8cqw,52px);display:flex;flex-direction:column">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" style="font-family:'EB Garamond',serif;font-size:clamp(28px,8cqw,34px);line-height:1.1;color:#2B2926;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(43,41,38,.12)">{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <span style="margin-top:clamp(28px,7cqw,44px);font-size:13px;letter-spacing:.04em;color:#5A554E">hello@thequietaddress.com &nbsp;·&nbsp; <span style="color:#5C6670">Paris · Athènes · Nice</span></span>
+  </div>
+</sc-if>
+
+<section style="padding:clamp(40px,6cqw,96px) clamp(20px,5cqw,72px) clamp(40px,5cqw,72px);display:flex;flex-direction:column;gap:22px;max-width:1100px">
+  <a href="Journal-fr.dc.html" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:{{ accent }};text-decoration:none">{{ kicker }}</a>
+  <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(40px,5.2cqw,84px);line-height:1.02;letter-spacing:-.01em;text-wrap:pretty">{{ title }}</h1>
+  <p style="margin:0;font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(20px,1.8cqw,26px);color:#5A554E;max-width:42ch">{{ deck }}</p>
+  <span style="font-size:13px;letter-spacing:.04em;font-weight:400;color:#5A554E">{{ byline }}</span>
+</section>
+
+<section style="height:clamp(360px,56cqw,780px);overflow:hidden"><img loading="eager" decoding="async" ref="{{ heroRef }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:{{ heroPos }};filter:{{ grade }}"></section>
+
+<section style="padding:clamp(56px,7cqw,112px) clamp(20px,5cqw,72px);display:flex;flex-wrap:wrap;gap:clamp(24px,6cqw,120px)">
+  <div style="flex:1 1 220px;display:flex;flex-direction:column;gap:12px;font-size:14px;color:#5A554E;line-height:1.6">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400">Écrit depuis</span>
+    <a href="{{ placeHref }}" style="font-family:'EB Garamond',serif;font-size:22px;color:#2B2926;text-decoration:none;transition:color .5s" style-hover="color:{{ accent }}">{{ place }}</a>
+    <span>{{ placeNote }}</span>
+  </div>
+  <div style="flex:2 1 360px;display:flex;flex-direction:column;gap:26px;font-size:19px;line-height:1.75;max-width:58ch">
+    <sc-for list="{{ bodyTop }}" as="p" hint-placeholder-count="3">
+      <p style="margin:0">{{ p }}</p>
+    </sc-for>
+    <blockquote style="margin:16px 0;padding-left:28px;border-left:1px solid {{ accent }};font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(24px,2cqw,30px);line-height:1.35;color:#5A554E">{{ pull }}</blockquote>
+    <sc-for list="{{ bodyMid }}" as="p" hint-placeholder-count="2">
+      <p style="margin:0">{{ p }}</p>
+    </sc-for>
+  </div>
+</section>
+
+<section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:6px;padding:0 clamp(20px,5cqw,72px)">
+  <sc-for list="{{ plates }}" as="im" hint-placeholder-count="2">
+    <div style="aspect-ratio:4/3;overflow:hidden;background:#EAE3D8"><img loading="lazy" decoding="async" src="{{ im.src }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:{{ im.pos }};filter:{{ im.grade }}"></div>
+  </sc-for>
+</section>
+
+<section style="padding:clamp(40px,5cqw,72px) clamp(20px,5cqw,72px) clamp(72px,9cqw,144px);display:flex;flex-wrap:wrap;gap:clamp(24px,6cqw,120px)">
+  <div style="flex:1 1 220px;min-height:1px"></div>
+  <div style="flex:2 1 360px;display:flex;flex-direction:column;gap:26px;font-size:19px;line-height:1.75;max-width:58ch">
+    <sc-for list="{{ bodyEnd }}" as="p" hint-placeholder-count="2">
+      <p style="margin:0">{{ p }}</p>
+    </sc-for>
+    <p style="margin:8px 0 0;font-family:'EB Garamond',serif;font-style:italic;font-size:21px;color:#5A554E">{{ signature }}</p>
+  </div>
+</section>
+
+<section style="border-top:1px solid rgba(43,41,38,.15);margin:0 clamp(20px,5cqw,72px);padding:clamp(56px,7cqw,104px) 0">
+  <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E;display:block;margin-bottom:32px">À lire ensuite</span>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4cqw,56px)">
+    <sc-for list="{{ next }}" as="n" hint-placeholder-count="2">
+      <a href="{{ n.href }}" style="display:flex;flex-direction:column;gap:14px;text-decoration:none;color:#2B2926">
+        <div style="aspect-ratio:4/3;overflow:hidden;background:#EAE3D8"><img loading="lazy" decoding="async" src="{{ n.photo }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:{{ n.pos }};filter:{{ n.grade }};transition:transform 1.4s ease" style-hover="transform:scale(1.02)"></div>
+        <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:{{ n.accent }}">{{ n.kicker }}</span>
+        <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:26px;line-height:1.2;text-wrap:pretty">{{ n.title }}</h3>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<footer style="background:#3A3631;color:#EAE3D8;padding:clamp(56px,7cqw,96px) clamp(20px,5cqw,72px) 36px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px clamp(32px,4cqw,64px);padding-bottom:clamp(48px,6cqw,80px);border-bottom:1px solid rgba(234,227,216,.18)">
+    <div style="display:flex;flex-direction:column;gap:18px"><span style="font-family:'EB Garamond',serif;font-size:26px">The Quiet Address</span><p style="margin:0;max-width:30ch;color:#B9B2A8;line-height:1.6">Des appartements de caractère à Paris, Athènes et Nice. Les clés remises de la main à la main.</p></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">Les villes</span><a href="City-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Paris</a><a href="City%20Athens-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Athènes</a><a href="City%20Nice-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Nice</a></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">La maison</span><a href="Approach-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Notre approche</a><a href="Services-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Services</a><a href="Journal-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Le Journal</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Demande de séjour</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Propriétaires</a></div>
+    <div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8">Lettres des villes</span><p style="margin:0;color:#B9B2A8;line-height:1.6;max-width:32ch">Une lettre tous les deux mois. Une ville, un appartement, une table qui vaut le détour.</p><div style="display:flex;border-bottom:1px solid rgba(234,227,216,.4);padding-bottom:10px;gap:12px"><input type="email" placeholder="Votre e-mail" style="flex:1;background:transparent;border:0;outline:0;color:#F3EEE6;font:inherit;font-size:15px;min-width:0"><button style="background:transparent;border:0;color:#EAE3D8;font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer">S'abonner</button></div></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;padding-top:28px;font-size:13px;color:#B9B2A8;letter-spacing:.03em"><span>© 2026 The Quiet Address</span><div style="display:flex;gap:28px;flex-wrap:wrap"><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Mentions légales</a><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Confidentialité</a><a href="https://instagram.com/" target="_blank" rel="noopener" style="color:#B9B2A8;text-decoration:none">Instagram</a><span>Français</span></div></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;article&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;zinc&quot;,&quot;options&quot;:[&quot;zinc&quot;,&quot;courtyards&quot;,&quot;kitchen&quot;,&quot;saint-antoine&quot;,&quot;athens-search&quot;,&quot;athens-tables&quot;,&quot;athens-light&quot;,&quot;nice&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Display&quot;}}">
+const GREY = 'saturate(.82) contrast(.96)';
+const FRANK = 'saturate(1.02) contrast(1.1) brightness(1.06)';
+const WARM = 'saturate(.95) contrast(1.02)';
+const ACC = { paris: '#5C6670', athens: '#5F6B4E', nice: '#B07A45' };
+const GRADE = { paris: GREY, athens: FRANK, nice: WARM };
+
+const ARTICLES = {
+  zinc: {
+    city: 'paris', kicker: 'Le Journal · Paris · Lumière',
+    title: 'Zinc, ardoise, et ce gris qui donne à Paris des airs de souvenir',
+    deck: 'Sur les toits du quatrième : pourquoi le temps le plus gris de Paris donne sa plus belle lumière, et comment nous avons choisi les peintures pour l’accompagner.',
+    byline: 'The Quiet Address · septembre 2026 · six minutes',
+    hero: 'assets/w/paris-rooftops.jpg', heroPos: '50% 50%',
+    place: 'Saint-Merri, Paris', placeHref: 'Apartment-fr.dc.html', placeNote: 'Quatrième étage, deux fenêtres à l’ouest.',
+    bodyTop: ['Les visiteurs s’excusent du temps qu’il fait à Paris, et les Parisiens les laissent dire. Il pleut, ou il menace de pleuvoir ; le ciel reste bas, couleur de perle, pendant des jours ; la lumière vient de partout et de nulle part. Ce que personne ne dit, c’est que la ville a été bâtie pour cette lumière-là.', 'Le Paris d’Haussmann, c’est de la pierre crème en bas et du zinc en haut : deux matières qui réclament une lumière douce. En plein soleil, la pierre s’aplatit, blanchit, et les toits se perdent dans l’éblouissement. Sous les nuages, le calcaire tire vers la couleur du pain, le zinc prend une douzaine de gris, du tourterelle à l’étain, et chaque souche de cheminée pose une ombre assez légère pour qu’on la lise. Les photographes d’ici apprennent à attendre le gris.'],
+    pull: 'Les toits sont la vraie façade de la ville. Il suffit d’être au quatrième pour s’en apercevoir.',
+    bodyMid: ['Du studio de Saint-Merri, c’est exactement ce que l’on regarde : l’ardoise, le zinc, un champ de conduits en terre cuite, le gothique flamboyant de l’église en face. Pour meubler la pièce, nous avons pris la palette à la fenêtre. Les murs sont d’un mastic qui paraît chaud contre le ciel ; les boiseries d’un gris qu’un ami du métier appelle zinc et que le marchand de peinture nomme autrement ; le sol est en chêne clair, parce que les toits n’ont aucune couleur chaude à eux et que la pièce en réclamait une.', 'Tout cela plaide pour loger haut et rester longtemps. Paris depuis le trottoir, ce sont des vitrines et de la circulation. Paris depuis une fenêtre du quatrième, un matin gris, c’est une ville de toits ; et sur une semaine, vous avez de bonnes chances d’en connaître trois matins comme celui-là.'],
+    plates: [{ src: 'assets/w/merri-04.jpg', pos: '50% 50%', grade: GREY }, { src: 'assets/w/paris-street.jpg', pos: '50% 50%', grade: GREY }],
+    bodyEnd: ['Côté pratique. Si vous voulez les toits sur vos photographies, montez : l’escalator du Pompidou, la terrasse de l’Institut du monde arabe, le dernier étage de la Samaritaine. Choisissez le jour où la météo annonce des nuages. Et laissez les filtres de côté : la ville en a déjà posé un.'],
+    signature: '— Extrait des lettres de Paris.',
+    next: ['courtyards', 'athens-light'],
+  },
+  courtyards: {
+    city: 'paris', kicker: 'Le Journal · Paris · Rues',
+    title: 'Les cours où l’on peut entrer, et comment le savoir',
+    deck: 'Petit guide de la porte cochère, du digicode et des usages du Paris qui se tient derrière les portes.',
+    byline: 'The Quiet Address · juillet 2026 · cinq minutes',
+    hero: 'assets/w/paris-arch.jpg', heroPos: '50% 70%',
+    place: 'Manège Duphot, Paris', placeHref: 'Apartment%20Duphot-fr.dc.html', placeNote: 'Deuxième étage, sur une cour fermée.',
+    bodyTop: ['Paris garde ses plus belles pièces à l’écart de la rue. Derrière les hautes portes doubles qui interrompent chaque façade — la porte cochère, assez large pour une voiture à cheval — il y a presque toujours une cour, et dans la cour presque toujours quelque chose qui vaut trente secondes : un escalier à rampe de fer forgé, un atelier éclairé, un marronnier qui a survécu à trois propriétaires.', 'La plupart de ces portes sont fermées, et l’usage est simple même quand le droit ne l’est pas. Si la porte est ouverte et qu’aucun panneau ne l’interdit, vous pouvez entrer sous le porche et regarder. Si quelqu’un s’y trouve, vous dites bonjour d’abord et vous regardez ensuite. On ne photographie ni le linge, ni les enfants, ni les gens qui mangent. On ne monte pas l’escalier, et on ne pousse pas une porte qui vient de se refermer derrière un habitant.', 'Les plaques vous situent. Une plaque de cuivre au nom d’une société veut dire que la cour est à demi publique — architectes, galeries et notaires vivent derrière ces portes et attendent des visiteurs. « Code d’accès » ou un clavier veut dire privé. « Résidence surveillée » veut dire un gardien qui a vu toutes les ruses de touriste depuis 1988.'],
+    pull: 'Dire bonjour d’abord, regarder ensuite : c’est tout l’usage.',
+    bodyMid: ['Six cours ouvertes, ou assez ouvertes. Le Village Saint-Paul dans le quatrième, une enfilade de cinq cours d’antiquaires. La cour de Rohan, rue du Jardinet, grillagée mais visible. Le passage de l’Ancre dans le troisième, rose et vert, avec son réparateur de parapluies. La cour de l’hôtel de Sully, qui laisse passer vers la place des Vosges. La cour du Commerce-Saint-André, couverte et passante. Et la cour Damoye, à Bastille, ruelle privée qui tolère qu’on la descende lentement.', 'Notre cour du Manège Duphot est de l’autre sorte : une grille, un gardien, et les ateliers d’une maison de couture sur un côté. Les voyageurs reçoivent le code. C’est l’adresse la plus calme que nous gardons, et la raison en est que personne ne peut voir dedans.'],
+    plates: [{ src: 'assets/w/duphot-03.jpg', pos: '50% 50%', grade: GREY }, { src: 'assets/w/merri-10.jpg', pos: '30% 50%', grade: GREY }],
+    bodyEnd: ['Si une porte se referme devant vous, prenez-le bien : vous regardiez chez quelqu’un. La suivante, dans la même rue, sera ouverte ; il y aura un vélo, un chat, et la lumière qui tombe de six étages de cage d’escalier sur un sol de carreaux noirs et blancs.'],
+    signature: '— Extrait des lettres de Paris.',
+    next: ['kitchen', 'saint-antoine'],
+  },
+  kitchen: {
+    city: 'paris', kicker: 'Le Journal · Paris · Dedans',
+    title: 'Ce dont une petite cuisine parisienne a besoin, et ce dont elle se passe',
+    deck: 'Une plaque suffit. Un bon couteau, non. Notes prises en meublant trente-deux mètres carrés.',
+    byline: 'The Quiet Address · juin 2026 · quatre minutes',
+    hero: 'assets/w/merri-03.jpg', heroPos: '50% 50%',
+    place: 'Saint-Merri, Paris', placeHref: 'Apartment-fr.dc.html', placeNote: 'Cuisine le long d’un mur.',
+    bodyTop: ['La cuisine du studio de Saint-Merri fait un mètre cinquante de plan de travail. Nous l’avons équipée trois fois, et chaque fois nous en avons retiré quelque chose.', 'Ce qui reste : deux feux, un petit four qui ne sert guère qu’à réchauffer, une bouilloire, une cafetière et un moulin à main, un bon couteau, une planche assez grande pour servir, une poêle avec son couvercle, une casserole, une passoire, un économe, un tire-bouchon, une cuillère en bois, et des verres agréables à tenir. Six assiettes, six fourchettes. Un saladier assez grand pour une salade et assez petit pour l’étagère.', 'Ce qui est parti : le blender, le cuiseur à riz, le grille-pain quatre tranches, l’ouvre-boîte électrique, le service à fondue hérité du précédent propriétaire et les douze tasses assorties. Ils occupaient les placards dont les assiettes avaient besoin, et personne ne se fait de smoothie en vacances.'],
+    pull: 'Une cuisine de vacances n’est pas une cuisine de maison en réduction. C’est une cuisine pour six petits-déjeuners et deux bons dîners.',
+    bodyMid: ['Ce n’est pas du minimalisme pour le plaisir. Un voyageur qui arrive à huit heures du soir veut faire bouillir de l’eau, ouvrir une bouteille et couper du pain sans rien déplacer d’abord. C’est le test que nous appliquons : trois choses peuvent-elles se passer en même temps sur un mètre cinquante ?', 'Le marché fait le reste du travail. Avec Beaubourg devant la porte et la rue de Bretagne à douze minutes, cuisiner ici veut dire acheter le matin même — un morceau de poisson, deux tomates, une bouteille — plutôt que remplir un placard que vous abandonnerez dimanche.'],
+    plates: [{ src: 'assets/w/merri-05.jpg', pos: '50% 50%', grade: GREY }, { src: 'assets/w/bievre-03.jpg', pos: '50% 50%', grade: GREY }],
+    bodyEnd: ['Une chose que nous fournissons malgré tout : sel, poivre, huile d’olive, café, et une tablette de chocolat dans le tiroir. Cela nous coûte quatre euros par séjour, et c’est la différence entre arriver dans un appartement et arriver dans une location.'],
+    signature: '— Extrait des lettres de Paris.',
+    next: ['courtyards', 'saint-antoine'],
+  },
+  'saint-antoine': {
+    city: 'paris', kicker: 'Le Journal · Paris · Rues',
+    title: 'La rue Saint-Antoine à huit heures du matin',
+    deck: 'Avant l’ouverture des boutiques, la plus large rue du Marais appartient aux boulangers, aux chiens et à la lumière.',
+    byline: 'The Quiet Address · avril 2026 · quatre minutes',
+    hero: 'assets/w/merri-10.jpg', heroPos: '30% 50%',
+    place: 'Saint-Merri, Paris', placeHref: 'Apartment-fr.dc.html', placeNote: 'À huit minutes de la rue.',
+    bodyTop: ['La rue Saint-Antoine n’est pas une belle rue. Elle est large, bruyante, et les bus y passent. Mais c’est la plus vieille route qui sortait de Paris vers l’est, et pendant quarante minutes après huit heures du matin, c’est la meilleure promenade du quatrième.', 'Les boulangers en sont la raison. Debout depuis quatre heures, vitrines embuées, ils sortent à cette heure-là un pain encore trop chaud pour être tenu. Prenez une baguette chez l’un et un croissant chez l’autre — les deux sont rarement bons au même endroit — et vous avez un petit-déjeuner pour deux euros et une file d’habitants où patienter.', 'Le reste de la rue s’installe encore. Des cageots descendent d’un camion. Un homme arrose le trottoir devant un café qui n’ouvrira pas avant une heure. La fleuriste coupe des tiges dans un seau. Les commerçants se saluent par leur prénom et se plaignent des mêmes choses qu’hier.'],
+    pull: 'Quarante minutes, et elle redevient une rue passante ordinaire.',
+    bodyMid: ['Vers l’est, la rue devient le faubourg Saint-Antoine, quartier du meuble, dont les cours abritent encore des menuisiers. Vers l’ouest, elle se jette dans la rue de Rivoli et cesse d’être intéressante. Allez donc vers l’est, jusqu’à la Bastille, et revenez par la rue de Charonne pour le café.', 'Le dimanche, le rythme change : le Marais se lève tard, les boulangers non, et la rue est assez calme pour entendre les cloches de trois paroisses qui ne s’accordent pas sur l’heure.'],
+    plates: [{ src: 'assets/w/merri-09.jpg', pos: '50% 50%', grade: GREY }, { src: 'assets/w/paris-street.jpg', pos: '50% 50%', grade: GREY }],
+    bodyEnd: ['À neuf heures, les rideaux de fer sont levés, les bus sont pleins, et c’est de nouveau une rue passante ordinaire. C’est ce qu’on gagne à rester une semaine plutôt qu’un week-end : les matins, c’est-à-dire le moment où les villes sont honnêtes.'],
+    signature: '— Extrait des lettres de Paris.',
+    next: ['courtyards', 'zinc'],
+  },
+  'athens-search': {
+    city: 'athens', kicker: 'Le Journal · Athènes · Carnet',
+    title: 'Chercher un deuxième appartement dans une ville qui cache ses plus belles pièces à l’étage',
+    deck: 'Cages d’escalier en marbre, boîtes aux lettres en laiton, polykatoikia : premières notes de la recherche athénienne.',
+    byline: 'The Quiet Address · août 2026 · six minutes',
+    hero: 'assets/w/ath-03.jpg', heroPos: '50% 50%',
+    place: 'Psyri, Athènes', placeHref: 'Apartment%20Athens-fr.dc.html', placeNote: 'Sixième étage, au-dessus des ateliers.',
+    bodyTop: ['Athènes ne se vend pas depuis la rue. Le rez-de-chaussée, c’est des rideaux de fer, des scooters et une quincaillerie ; la beauté commence au deuxième palier et s’améliore jusqu’en haut. C’est la polykatoikia, l’immeuble qui a reconstruit la ville après la guerre : ossature de béton, escalier de marbre, boîtes aux lettres en laiton, un balcon à chaque étage et une terrasse au dernier.', 'Nous avons visité quatorze appartements en six semaines. Deux étaient magnifiques et impossibles à louer — sans ascenseur, septième étage, un escalier qui tourne comme un tire-bouchon. Quatre étaient rénovés jusqu’à l’anonymat : appuis de marbre remplacés par du carrelage, volets de bois par de l’aluminium. Un avait une vue sur l’Acropole qui appartenait en réalité à la pergola du voisin.', 'Ce que nous cherchons est précis : du marbre sous le pied, des menuiseries d’origine, un balcon à l’ouest ou au nord, et un immeuble où quelqu’un arrose encore les plantes de la cage d’escalier. Koukaki et Pangrati en comptent le plus. Exarcheia les a moins chers et plus bruyants.'],
+    pull: 'Le rez-de-chaussée ne dit rien. Demandez toujours à voir le dernier palier.',
+    bodyMid: ['Trois choses apprises. Demandez ce qu’il y a au-dessus de vous, pas en dessous : à Athènes, le bruit vient de la terrasse du haut. Demandez l’orientation du balcon, car un balcon plein ouest est inutilisable en juillet avant neuf heures du soir. Et visitez à midi, quand la lumière est la plus impitoyable, pour que rien ne soit caché.', 'Les papiers sont une éducation à eux seuls : un numéro d’enregistrement de location courte durée, un numéro de passeport pour le formulaire fiscal, et un propriétaire qui détient ou non le titre en son nom. Nous avons renoncé à deux appartements pour les seuls documents.'],
+    plates: [{ src: 'assets/w/ath-04.jpg', pos: '50% 50%', grade: FRANK }, { src: 'assets/w/ath-07.jpg', pos: '50% 50%', grade: FRANK }],
+    bodyEnd: ['En attendant, la terrasse de Psyri reste la seule clé que nous ayons ici, et elle ne désarme pas. Quand la deuxième sera signée, la lettre le dira avant le site.'],
+    signature: '— Extrait des lettres d’Athènes.',
+    next: ['athens-tables', 'athens-light'],
+  },
+  'athens-tables': {
+    city: 'athens', kicker: 'Le Journal · Athènes · Tables',
+    title: 'Manger à Athènes sans réservation, sans vue et sans carte en anglais',
+    deck: 'Six adresses entre Pangrati et Exarcheia où les plats arrivent avant qu’on les commande.',
+    byline: 'The Quiet Address · mai 2026 · cinq minutes',
+    hero: 'assets/w/ath-06.jpg', heroPos: '50% 50%',
+    place: 'Psyri, Athènes', placeHref: 'Apartment%20Athens-fr.dc.html', placeNote: 'À trois minutes de Monastiraki.',
+    bodyTop: ['La règle à Athènes est l’inverse de la règle à Paris : le restaurant avec la vue est celui qu’il faut éviter. Tout ce qui fait face à l’Acropole paie la vue avec la cuisine, et la terrasse sous le rocher, sur Dionysiou Areopagitou, est faite pour un verre, pas pour un dîner.', 'Ce que vous voulez, c’est une taverne au coin d’une rue, dans un quartier où personne n’est en vacances. Il y aura six tables dehors, une carte plastifiée qui n’a pas changé depuis dix ans, et un homme qui vous apporte ce qui est bon aujourd’hui, que vous l’ayez commandé ou non. L’addition pour deux, avec le vin en pichet, sera inférieure à un seul plat des rues touristiques.', 'Commandez comme un Athénien : trois ou quatre petites assiettes pour la table plutôt qu’un plat chacun. Salade grecque, herbes sauvages au citron, courgettes frites, un poisson grillé ou une côtelette d’agneau, et du pain pour finir l’huile. Demandez le vin de la maison : il arrive froid, dans un pichet de métal, et ne coûte presque rien.'],
+    pull: 'Tout ce qui fait face à l’Acropole paie la vue avec la cuisine.',
+    bodyMid: ['Où marcher. Pangrati, autour de la place Varnava, compte quatre bonnes tables à cent mètres les unes des autres et une place pleine d’enfants jusqu’à minuit. Koukaki, de l’autre côté de la colline, est plus calme et un peu plus soigné. Exarcheia est le quartier où mangent les étudiants : tard, pour rien, et très bien — et l’on n’y photographie pas les murs.', 'Psyri, où se trouve notre appartement, offre le plus grand écart de qualité sur la plus petite carte : un atelier de cuir d’un côté de la ruelle, un excellent mezedopoleio de l’autre, et deux pièges à touristes entre les deux. Demandez-nous lequel est lequel : cela change.'],
+    plates: [{ src: 'assets/w/ath-05.jpg', pos: '50% 50%', grade: FRANK }, { src: 'assets/w/ath-08.jpg', pos: '50% 50%', grade: FRANK }],
+    bodyEnd: ['Un avertissement. Les Athéniens dînent à dix heures. Si vous arrivez à sept, vous aurez une excellente table, un serveur patient, et la nette impression d’être en avance à une fête. Prenez un ouzo ailleurs et revenez.'],
+    signature: '— Extrait des lettres d’Athènes.',
+    next: ['athens-search', 'nice'],
+  },
+  'athens-light': {
+    city: 'athens', kicker: 'Le Journal · Athènes · Lumière',
+    title: 'Pourquoi Athènes se photographie à midi, et Paris jamais',
+    deck: 'Une ville est faite de calcaire et de nuages, l’autre de marbre et d’éblouissement. On n’y tient pas l’appareil de la même façon.',
+    byline: 'The Quiet Address · juillet 2026 · quatre minutes',
+    hero: 'assets/w/ath-02.jpg', heroPos: '50% 50%',
+    place: 'Psyri, Athènes', placeHref: 'Apartment%20Athens-fr.dc.html', placeNote: 'Terrasse, face au rocher.',
+    bodyTop: ['Tout ce que nous avions appris en photographiant Paris a dû être désappris à Athènes. À Paris, on attend les nuages, parce que la pierre et le zinc demandent à être adoucis. À Athènes, la lumière est une lame blanche et dure de dix heures du matin à six heures du soir, et la ville est bâtie pour l’encaisser.', 'Le marbre en est la raison. Le marbre du Pentélique tient l’arête, et le soleil direct rend cette arête visible : la cannelure d’une colonne, la lèvre d’une marche, le joint entre deux dalles vieilles de deux mille ans. Sous les nuages, l’Acropole devient grise et plate, comme la photographie d’un moulage en plâtre. À midi en juin, elle est presque trop claire pour être regardée, et elle est magnifique.', 'La chaux fait le même travail à l’échelle domestique. Les ruelles d’Anafiotika sont blanchies, et l’ombre d’une seule branche d’olivier sur un mur, à deux heures de l’après-midi, est une photographie. Il n’y a pas d’équivalent à Paris, où rien n’est blanc et rien n’est net.'],
+    pull: 'À Paris on attend les nuages. À Athènes on attend que l’ombre se déplace.',
+    bodyMid: ['En pratique : photographiez le rocher au milieu de la journée et les quartiers à la fin. À partir de cinq heures, la lumière vient de côté, le béton des polykatoikia prend la couleur du pain, et les balcons s’empilent en bandes orange jusqu’au bas de la rue. C’est l’heure de Koukaki et de Pangrati.', 'Pour l’appartement, nous avons photographié la terrasse deux fois, en juin à onze heures puis à huit heures du soir, et nous avons gardé les deux. La première montre le marbre à l’horizon. La seconde montre ce que l’on éprouve en s’y asseyant.'],
+    plates: [{ src: 'assets/w/ath-01.jpg', pos: '50% 50%', grade: FRANK }, { src: 'assets/w/paris-rooftops.jpg', pos: '50% 50%', grade: GREY }],
+    bodyEnd: ['La même différence traverse toute la marque. Nos photographies de Paris sont étalonnées plus froides et plus plates ; celles d’Athènes gardent leur contraste. Ce n’est pas un filtre choisi dans un bureau : c’est ce à quoi ressemblent vraiment ces deux villes quand on s’y tient debout.'],
+    signature: '— Extrait des lettres d’Athènes.',
+    next: ['zinc', 'athens-search'],
+  },
+  nice: {
+    city: 'nice', kicker: 'Le Journal · Nice · Carnet',
+    title: 'Une troisième ville, et pourquoi ce n’est pas Lisbonne',
+    deck: 'Quatre villes en lice pour le troisième jeu de clés. Nice a gagné sur la lumière, sur les trains et sur le poisson.',
+    byline: 'The Quiet Address · juin 2026 · cinq minutes',
+    hero: 'assets/w/nice-02.jpg', heroPos: '50% 50%',
+    place: 'Front de mer, Nice', placeHref: 'Apartment%20Nice-fr.dc.html', placeNote: 'Troisième étage, face à l’eau.',
+    bodyTop: ['Nous avons examiné quatre villes pour le troisième jeu de clés : Lisbonne, Palerme, Séville et Nice. Trois sont plus à la mode que celle que nous avons choisie, et nous avons choisi Nice quand même, pour des raisons qui paraîtront peu romanesques jusqu’à ce que vous y passiez un mois de février.', 'La première est la lumière d’hiver. Nice regarde le sud, sur la baie des Anges, les Alpes dans le dos ; de novembre à mars, la lumière est claire, basse et chaude à deux heures de l’après-midi. Lisbonne est belle en hiver mais pluvieuse ; Palerme est plus douce et plus grise qu’on ne l’imagine. Nos voyageurs viennent pour quatre à quatorze nuits, et beaucoup viennent hors saison : l’hiver n’est pas un détail.', 'La deuxième est le train. Nice est à quarante minutes de l’Italie, à huit de Villefranche, à une nuit de Paris. On peut s’offrir une journée hors de la ville sans louer de voiture — et la voiture est précisément ce qui gâche un séjour sur la Riviera.'],
+    pull: 'Trois des quatre étaient plus à la mode. Nous avons choisi celle qui sert en février.',
+    bodyMid: ['La troisième est le poisson, qui tient lieu de quelque chose de plus large : Nice a une vie quotidienne que les visiteurs n’ont pas démontée. Le marché du cours Saleya vend encore des légumes à des gens qui les cuisineront. La socca se mange encore debout à onze heures du matin. La vieille ville a été italienne jusqu’en 1860 et garde des horaires et des couleurs italiennes — ocre, rouge sarde, volets verts.', 'Ce que Nice n’est pas : calme en août, bon marché, ou méconnue. Nous ne prétendons pas le contraire. Ce qu’elle est, pour quinze jours en mars ou en octobre, c’est l’une des villes les plus praticables de la Méditerranée.'],
+    plates: [{ src: 'assets/w/nice-05.jpg', pos: '50% 50%', grade: WARM }, { src: 'assets/w/nice-08.jpg', pos: '50% 50%', grade: WARM }],
+    bodyEnd: ['L’appartement que nous avons pris est sur le front de mer, une seule route le séparant de l’eau, avec un balcon carrelé et des palmiers à hauteur de fenêtre. Mathilde en garde les clés et se baigne avant le petit-déjeuner presque toute l’année : c’était le dernier argument dont nous avions besoin.'],
+    signature: '— Extrait des lettres de Nice.',
+    next: ['athens-search', 'zinc'],
+  },
+};
+
+class Component extends DCLogic {
+  _hero = React.createRef();
+  state = { menuOpen: false, narrow: false, ovTop: 0 };
+  componentDidMount() {
+    this._mq = window.matchMedia('(max-width: 1060px)');
+    this._sync = () => this.setState({ narrow: this._mq.matches });
+    this._mq.addEventListener('change', this._sync);
+    this._sync();
+    this._syncHero();
+    const slug = new URLSearchParams(window.location.search).get('a');
+    if (slug && ARTICLES[slug] && slug !== this.state.slug) this.setState({ slug });
+  }
+  componentDidUpdate() { this._syncHero(); }
+  _syncHero() { const el = this._hero.current; const a = ARTICLES[this.state.slug] || ARTICLES[this.props.article] || ARTICLES.zinc; if (el && el.getAttribute('src') !== a.hero) el.src = a.hero; }
+  componentWillUnmount() { this._mq && this._mq.removeEventListener('change', this._sync); document.body.style.overflow = ''; }
+  _toggleMenu() {
+    const open = !this.state.menuOpen;
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ menuOpen: open, ovTop: open ? (window.scrollY || 0) : 0 });
+  }
+  renderVals() {
+    const mobile = !!this.props.mobile || this.state.narrow;
+    const slug = ARTICLES[this.state.slug] ? this.state.slug : (ARTICLES[this.props.article] ? this.props.article : 'zinc');
+    const a = ARTICLES[slug];
+    const next = (a.next || []).map(k => {
+      const n = ARTICLES[k];
+      return { href: 'Article-fr.dc.html?a=' + k, title: n.title, kicker: n.kicker.replace('Le Journal · ', ''), photo: n.hero, pos: n.heroPos, grade: GRADE[n.city], accent: ACC[n.city] };
+    });
+    return {
+      mobile, desktop: !mobile,
+      menuOpen: this.state.menuOpen, toggleMenu: () => this._toggleMenu(), ovTop: this.state.ovTop + 'px',
+      navLinks: [
+        { href: 'index.html', label: 'Les villes' },
+        { href: 'City.dc.html', label: 'Les appartements' },
+        { href: 'Services.dc.html', label: 'Services' },
+        { href: 'Journal.dc.html', label: 'Le Journal' },
+        { href: 'Approach.dc.html', label: 'Notre approche' },
+        { href: 'Contact.dc.html', label: 'Demande de séjour' },
+      ],
+      accent: ACC[a.city], grade: GRADE[a.city],
+      kicker: a.kicker, title: a.title, deck: a.deck, byline: a.byline,
+      heroRef: this._hero, heroPos: a.heroPos,
+      place: a.place, placeHref: a.placeHref, placeNote: a.placeNote,
+      bodyTop: a.bodyTop, pull: a.pull, bodyMid: a.bodyMid, plates: a.plates, bodyEnd: a.bodyEnd,
+      signature: a.signature, next,
+    };
+  }
+}
+</script>
+</body>
+</html>

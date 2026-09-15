@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#F3EEE6}a{color:#2B2926}a:hover{color:#5C6670}</style>
+</helmet>
+<div data-screen-label="The Journal" style="container-type:inline-size;background:#F3EEE6;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5cqw,72px)">
+  <a href="index.html" style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926;text-decoration:none">The Quiet Address</a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <nav style="display:flex;flex-wrap:wrap;gap:16px 36px;font-size:14px;letter-spacing:.03em;font-weight:400">
+    <a href="index.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">The Cities</a>
+    <a href="City.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">The Apartments</a>
+    <a href="Services.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Services</a>
+    <a href="Journal.dc.html" style="text-decoration:none;color:#5C6670;border-bottom:1px solid #5C6670;padding-bottom:2px">The Journal</a>
+    <a href="Approach.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5C6670">Our Approach</a>
+  </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:.04em;font-weight:400">
+    <span><span style="color:#2B2926">EN</span> <a href="Journal-fr.dc.html" style="color:#5A554E;text-decoration:none;transition:color .5s" style-hover="color:#2B2926">/ FR</a></span>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><a href="Contact.dc.html" style="text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:2px;transition:color .5s,border-color .5s" style-hover="color:#5C6670;border-color:#5C6670">Enquire</a></sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.04em;color:#2B2926;cursor:pointer;padding:10px 0;min-height:44px">Menu</button></sc-if>
+  </div>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ ovTop }};min-height:100vh;z-index:80;background:#F3EEE6;display:flex;flex-direction:column;padding:26px clamp(20px,6cqw,56px) 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <span style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926">The Quiet Address</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5A554E;cursor:pointer;padding:10px 0;min-height:44px">Close</button>
+    </div>
+    <nav style="margin-top:clamp(28px,8cqw,52px);display:flex;flex-direction:column">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" style="font-family:'EB Garamond',serif;font-size:clamp(28px,8cqw,34px);line-height:1.1;color:#2B2926;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(43,41,38,.12)">{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <span style="margin-top:clamp(28px,7cqw,44px);font-size:13px;letter-spacing:.04em;color:#5A554E">hello@thequietaddress.com &nbsp;·&nbsp; <span style="color:#5C6670">Paris · Athens · Nice</span></span>
+  </div>
+</sc-if>
+
+<section style="padding:clamp(48px,7cqw,112px) clamp(20px,5cqw,72px) clamp(32px,4cqw,56px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 48px;border-bottom:1px solid rgba(43,41,38,.15)">
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(64px,9cqw,140px);line-height:.92;letter-spacing:-.015em">The Journal</h1>
+    <p style="margin:0;font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(20px,1.7cqw,26px);color:#5A554E;max-width:34ch">Notes from the cities we keep keys in. Streets, light, tables, and the occasional confession.</p>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;letter-spacing:.04em;font-weight:400;padding-bottom:6px">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+      <button onClick="{{ f.pick }}" style="font:inherit;background:transparent;border:0;padding:0 0 4px;cursor:pointer;color:{{ f.color }};border-bottom:1px solid {{ f.line }};transition:color .5s,border-color .5s" style-hover="color:#5C6670">{{ f.label }}</button>
+    </sc-for>
+  </div>
+</section>
+
+<sc-if value="{{ featured }}" hint-placeholder-val="{{ true }}">
+<a href="{{ featured.href }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4cqw,64px);align-items:end;padding:clamp(40px,5cqw,80px) clamp(20px,5cqw,72px);text-decoration:none;color:#2B2926">
+  <div style="grid-column:span 1;aspect-ratio:3/2;overflow:hidden;background:#EAE3D8;position:relative">
+    <sc-if value="{{ featured.photo }}" hint-placeholder-val="{{ true }}"><img loading="lazy" decoding="async" src="{{ featured.photo }}" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(.96)"></sc-if>
+    <sc-if value="{{ featured.slotId }}" hint-placeholder-val="{{ false }}"><image-slot id="{{ featured.slotId }}" shape="rect" placeholder="{{ featured.placeholder }}"></image-slot></sc-if>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:16px;padding-bottom:8px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:{{ featured.accent }}">{{ featured.meta }}</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,3.8cqw,60px);line-height:1.08;letter-spacing:-.005em;text-wrap:pretty;max-width:20ch">{{ featured.title }}</h2>
+    <p style="margin:0;font-size:18px;color:#5A554E;max-width:50ch">{{ featured.deck }}</p>
+    <span style="font-size:13px;letter-spacing:.04em;font-weight:400;color:#5A554E">{{ featured.by }}</span>
+  </div>
+</a>
+</sc-if>
+
+<section style="padding:0 clamp(20px,5cqw,72px) clamp(72px,10cqw,160px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(48px,6cqw,88px) clamp(28px,4cqw,64px)">
+  <sc-for list="{{ rest }}" as="a" hint-placeholder-count="5">
+    <a href="{{ a.href }}" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:#2B2926;border-top:1px solid rgba(43,41,38,.15);padding-top:24px">
+      <div style="aspect-ratio:{{ a.ratio }};overflow:hidden;background:#EAE3D8;position:relative">
+        <sc-if value="{{ a.photo }}" hint-placeholder-val="{{ true }}"><img loading="lazy" decoding="async" src="{{ a.photo }}" alt="" style="width:100%;height:100%;object-fit:cover;object-position:{{ a.pos }};filter:saturate(.82) contrast(.96);transition:transform 1.4s ease" style-hover="transform:scale(1.02)"></sc-if>
+        <sc-if value="{{ a.slotId }}" hint-placeholder-val="{{ false }}"><image-slot id="{{ a.slotId }}" shape="rect" placeholder="{{ a.placeholder }}"></image-slot></sc-if>
+      </div>
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:{{ a.accent }}">{{ a.meta }}</span>
+      <h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,2.2cqw,32px);line-height:1.2;text-wrap:pretty">{{ a.title }}</h3>
+      <p style="margin:0;color:#5A554E;max-width:46ch">{{ a.deck }}</p>
+    </a>
+  </sc-for>
+</section>
+
+<footer style="background:#3A3631;color:#EAE3D8;padding:clamp(56px,7cqw,96px) clamp(20px,5cqw,72px) 36px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px clamp(32px,4cqw,64px);padding-bottom:clamp(48px,6cqw,80px);border-bottom:1px solid rgba(234,227,216,.18)">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:'EB Garamond',serif;font-size:26px">The Quiet Address</span>
+      <p style="margin:0;max-width:30ch;color:#B9B2A8;line-height:1.6">Apartments of character in Paris, Athens and Nice. Keys handed in person.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">The Cities</span>
+      <a href="City.dc.html" style="color:#EAE3D8;text-decoration:none">Paris</a>
+      <a href="City%20Athens.dc.html" style="color:#EAE3D8;text-decoration:none">Athens</a>
+      <a href="City%20Nice.dc.html" style="color:#EAE3D8;text-decoration:none">Nice</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">The House</span>
+      <a href="Approach.dc.html" style="color:#EAE3D8;text-decoration:none">Our Approach</a>
+      <a href="Services.dc.html" style="color:#EAE3D8;text-decoration:none">Services</a><a href="Journal.dc.html" style="color:#EAE3D8;text-decoration:none">The Journal</a>
+      <a href="Contact.dc.html" style="color:#EAE3D8;text-decoration:none">Enquire</a>
+      <a href="Contact.dc.html" style="color:#EAE3D8;text-decoration:none">For owners</a>
+      <a href="Contact.dc.html" style="color:#EAE3D8;text-decoration:none">Contact</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8">City Letters</span>
+      <p style="margin:0;color:#B9B2A8;line-height:1.6;max-width:32ch">A letter every other month. A city, an apartment, a table worth the walk.</p>
+      <div style="display:flex;border-bottom:1px solid rgba(234,227,216,.4);padding-bottom:10px;gap:12px">
+        <input type="email" placeholder="Your email" style="flex:1;background:transparent;border:0;outline:0;color:#F3EEE6;font:inherit;font-size:15px;min-width:0">
+        <button style="background:transparent;border:0;color:#EAE3D8;font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;padding-top:28px;font-size:13px;color:#B9B2A8;letter-spacing:.03em">
+    <span>© 2026 The Quiet Address · Paris</span>
+    <div style="display:flex;gap:28px;flex-wrap:wrap"><a href="Contact.dc.html" style="color:#B9B2A8;text-decoration:none">Legal</a><a href="Contact.dc.html" style="color:#B9B2A8;text-decoration:none">Privacy</a><a href="https://instagram.com/" style="color:#B9B2A8;text-decoration:none" target="_blank" rel="noopener">Instagram</a><span><span style="color:#EAE3D8">English</span> · <a href="Journal-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Français</a></span></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;filter&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;all&quot;,&quot;options&quot;:[&quot;all&quot;,&quot;paris&quot;,&quot;athens&quot;,&quot;nice&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+const ACC = { paris:'#5C6670', athens:'#5F6B4E', nice:'#B07A45' };
+const ARTICLES = [
+  { city:"paris", slug:"zinc", meta:"Paris · Light · September 2026", title:"Zinc, slate and the grey that makes Paris photograph like a memory", deck:"On the roofs of the fourth arrondissement, why the city's dullest weather is its best light, and how we chose the paint to match it.", by:"The Quiet Address", photo:"assets/w/paris-rooftops.jpg", ratio:"3/2", pos:"50% 50%" },
+  { city:"athens", slug:"athens-search", meta:"Athens · Notebook · August 2026", title:"Looking for a second apartment in a city that hides its best rooms upstairs", deck:"Marble stairwells, brass letterboxes and the polykatoikia: first notes from the Athens search.", by:"The Quiet Address", photo:"assets/w/ath-03.jpg", ratio:"4/5" },
+  { city:"paris", slug:"courtyards", meta:"Paris · Streets · July 2026", title:"The courtyards you are allowed into, and how to tell", deck:"A short guide to the porte cochère, the digicode, and the etiquette of the Paris behind the doors.", by:"The Quiet Address", photo:"assets/w/paris-arch.jpg", ratio:"4/5", pos:"50% 70%" },
+  { city:"athens", slug:"athens-light", meta:"Athens · Light · July 2026", title:"Why Athens photographs at noon and Paris never does", deck:"One city is built of limestone and cloud, the other of marble and glare. The cameras have to be used differently.", by:"The Quiet Address", photo:"assets/w/ath-02.jpg", ratio:"3/2", pos:"50% 50%" },
+  { city:"paris", slug:"kitchen", meta:"Paris · Inside · June 2026", title:"What a small Paris kitchen needs, and what it does not", deck:"One hob is enough. A good knife is not optional. Notes from furnishing thirty-two square metres.", by:"The Quiet Address", photo:"assets/w/merri-03.jpg", ratio:"3/2", pos:"50% 50%" },
+  { city:"nice", slug:"nice", meta:"Nice · Notebook · June 2026", title:"A third city, and why it is not Lisbon", deck:"Four cities were in the running for the third set of keys. Nice won on the light, the trains and the fish.", by:"The Quiet Address", photo:"assets/w/nice-02.jpg", ratio:"3/2" },
+  { city:"athens", slug:"athens-tables", meta:"Athens · Tables · May 2026", title:"Eating in Athens without a reservation, a view, or a menu in English", deck:"Six places between Pangrati and Exarcheia where the food arrives before you ask.", by:"The Quiet Address", photo:"assets/w/ath-06.jpg", ratio:"4/5" },
+  { city:"paris", slug:"saint-antoine", meta:"Paris · Streets · April 2026", title:"Rue Saint-Antoine at eight in the morning", deck:"Before the shops open, the widest street in the Marais belongs to bakers, dogs and the light.", by:"The Quiet Address", photo:"assets/w/merri-10.jpg", ratio:"3/2", pos:"30% 50%" },
+];
+class Component extends DCLogic {
+  state = { menuOpen: false, narrow: false, ovTop: 0, filter: this.props.filter ?? 'all' };
+  componentDidMount() {
+    this._mq = window.matchMedia('(max-width: 1060px)');
+    this._sync = () => this.setState({ narrow: this._mq.matches });
+    this._mq.addEventListener('change', this._sync);
+    this._sync();
+  }
+  componentWillUnmount() { this._mq && this._mq.removeEventListener('change', this._sync); document.body.style.overflow = ''; }
+  _toggleMenu() {
+    const open = !this.state.menuOpen;
+    const top = open ? (window.scrollY || 0) : 0;
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ menuOpen: open, ovTop: top });
+  }
+  renderVals() {
+    const mobile = !!this.props.mobile || this.state.narrow;
+    const cur = this.state.filter;
+    const filters = [['all','All'],['paris','Paris'],['athens','Athens'],['nice','Nice']].map(([k,label]) => ({ label, color: k === cur ? '#2B2926' : '#8C7F72', line: k === cur ? '#2B2926' : 'transparent', pick: () => this.setState({ filter: k }) }));
+    const list = ARTICLES.filter(a => cur === 'all' || a.city === cur).map(a => ({ ...a, accent: ACC[a.city], href: "Article.dc.html?a=" + (a.slug || "zinc") }));
+    return { menuOpen: this.state.menuOpen, toggleMenu: () => this._toggleMenu(), ovTop: this.state.ovTop + 'px', navLinks: [{"href":"index.html","label":"The Cities"},{"href":"City.dc.html","label":"The Apartments"},{"href":"Services.dc.html","label":"Services"},{"href":"Journal.dc.html","label":"The Journal"},{"href":"Approach.dc.html","label":"Our Approach"},{"href":"Contact.dc.html","label":"Enquire"}],  mobile, desktop: !mobile, filters, featured: list[0] || null, rest: list.slice(1) };
+  }
+}
+</script>
+</body>
+</html>

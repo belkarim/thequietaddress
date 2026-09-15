@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="container-type:inline-size;width:100%;height:100%;position:relative">
+<sc-if value="{{ isMerri }}" hint-placeholder-val="{{ true }}">
+<svg viewBox="0 0 120 96" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;font-family:'Source Sans 3',sans-serif">
+  <rect x="0" y="0" width="120" height="96" fill="{{ ground }}"></rect>
+  <path d="M0 78 C 24 74, 46 80, 70 76 C 92 72, 108 76, 120 73 L120 90 L0 90 Z" fill="#D9D8D2"></path>
+  <text x="8" y="86" font-size="4.1" fill="#5A554E" letter-spacing=".3">LA SEINE</text>
+  <g stroke="#C6BFB3" stroke-width="1.1" fill="none">
+    <path d="M58 4 L58 70"></path>
+    <path d="M0 58 L120 55"></path>
+    <path d="M0 34 L120 31"></path>
+    <path d="M76 6 L76 56"></path>
+    <path d="M40 10 L40 60"></path>
+    <path d="M58 42 L120 40"></path>
+  </g>
+  <g fill="#E2DBD0">
+    <rect x="62" y="10" width="26" height="17" rx="1"></rect>
+    <rect x="72" y="58" width="22" height="11" rx="1"></rect>
+    <rect x="46" y="36" width="9" height="7" rx="1"></rect>
+  </g>
+  <g font-size="3.7" fill="#5A554E" font-family="'EB Garamond',serif">
+    <text x="64" y="20">Centre</text><text x="64" y="24">Pompidou</text>
+    <text x="74" y="65">Hôtel de Ville</text>
+    <text x="16" y="50">Châtelet</text>
+    <text x="86" y="46">Le Marais</text>
+  </g>
+  <g font-size="3.1" fill="#5A554E" letter-spacing=".2">
+    <text x="61.5" y="50" transform="rotate(-90 61.5 50)">RUE SAINT-MARTIN</text>
+    <text x="4" y="53.5">RUE DE RIVOLI</text>
+    <text x="4" y="29.5">RUE RAMBUTEAU</text>
+    <text x="79.5" y="52" transform="rotate(-90 79.5 52)">RUE DU RENARD</text>
+    <text x="43.5" y="26" transform="rotate(-90 43.5 26)">BD DE SÉBASTOPOL</text>
+  </g>
+  <g>
+    <path d="M46 36 L55 36 L55 43 L46 43 Z" fill="none" stroke="#A99E8E" stroke-width=".5"></path>
+    <text x="43" y="34" font-size="3.5" fill="#5A554E" font-family="'EB Garamond',serif">Saint-Merri</text>
+  </g>
+  <circle cx="55" cy="39" r="5.4" fill="{{ accent }}" opacity=".16"></circle>
+  <circle cx="55" cy="39" r="2" fill="{{ accent }}"></circle>
+</svg>
+</sc-if>
+
+<sc-if value="{{ isDuphot }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 120 96" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;font-family:'Source Sans 3',sans-serif">
+  <rect x="0" y="0" width="120" height="96" fill="{{ ground }}"></rect>
+  <rect x="0" y="74" width="120" height="16" fill="#DFE0D6"></rect>
+  <text x="8" y="84" font-size="4.1" fill="#5A554E" letter-spacing=".3">JARDIN DES TUILERIES</text>
+  <g stroke="#C6BFB3" stroke-width="1.1" fill="none">
+    <path d="M0 16 L120 14"></path>
+    <path d="M46 16 L48 72"></path>
+    <path d="M0 48 L120 46"></path>
+    <path d="M0 66 L120 64"></path>
+    <path d="M84 14 L86 66"></path>
+  </g>
+  <g fill="#E2DBD0">
+    <rect x="34" y="4" width="24" height="10" rx="1"></rect>
+    <rect x="90" y="20" width="24" height="18" rx="1"></rect>
+  </g>
+  <g font-size="3.7" fill="#5A554E" font-family="'EB Garamond',serif">
+    <text x="36" y="11">La Madeleine</text>
+    <text x="93" y="30">Place</text><text x="93" y="34">Vendôme</text>
+    <text x="6" y="43">Concorde</text>
+  </g>
+  <g font-size="3.1" fill="#5A554E" letter-spacing=".2">
+    <text x="6" y="12">BD DE LA MADELEINE</text>
+    <text x="51" y="44" transform="rotate(-88 51 44)">RUE DUPHOT</text>
+    <text x="6" y="44">RUE SAINT-HONORÉ</text>
+    <text x="6" y="62">RUE DE RIVOLI</text>
+    <text x="89" y="52" transform="rotate(-88 89 52)">RUE DE LA PAIX</text>
+  </g>
+  <g>
+    <rect x="50" y="30" width="13" height="10" rx=".5" fill="#EFE9DE" stroke="#A99E8E" stroke-width=".5"></rect>
+    <text x="52" y="28" font-size="3.3" fill="#5A554E" font-family="'EB Garamond',serif">La cour</text>
+  </g>
+  <circle cx="56" cy="35" r="5.4" fill="{{ accent }}" opacity=".16"></circle>
+  <circle cx="56" cy="35" r="2" fill="{{ accent }}"></circle>
+</svg>
+</sc-if>
+
+<sc-if value="{{ isBievre }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 120 96" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;font-family:'Source Sans 3',sans-serif">
+  <rect x="0" y="0" width="120" height="96" fill="{{ ground }}"></rect>
+  <path d="M0 30 C 26 24, 50 34, 74 28 C 96 22, 110 28, 120 25 L120 0 L0 0 Z" fill="#D9D8D2"></path>
+  <path d="M0 30 C 26 24, 50 34, 74 28 C 96 22, 110 28, 120 25" stroke="#C6BFB3" stroke-width=".6" fill="none"></path>
+  <text x="70" y="20" font-size="4.1" fill="#5A554E" letter-spacing=".3">LA SEINE</text>
+  <g fill="#E4DED3">
+    <path d="M20 6 L44 4 L48 16 L24 18 Z"></path>
+  </g>
+  <g font-size="3.7" fill="#5A554E" font-family="'EB Garamond',serif">
+    <text x="22" y="12">Notre-Dame</text>
+    <text x="6" y="66">Place Maubert</text>
+    <text x="86" y="60">Jardin des Plantes</text>
+  </g>
+  <g stroke="#C6BFB3" stroke-width="1.1" fill="none">
+    <path d="M0 58 L120 54"></path>
+    <path d="M0 40 C 30 36, 60 42, 120 36"></path>
+    <path d="M46 33 L40 58"></path>
+    <path d="M64 31 L70 58"></path>
+  </g>
+  <g font-size="3.1" fill="#5A554E" letter-spacing=".2">
+    <text x="6" y="38">QUAI DE LA TOURNELLE</text>
+    <text x="6" y="53">BD SAINT-GERMAIN</text>
+    <text x="49" y="48" transform="rotate(76 49 48)">RUE DE BIÈVRE</text>
+    <text x="68" y="44" transform="rotate(78 68 44)">RUE DES BERNARDINS</text>
+  </g>
+  <circle cx="44" cy="43" r="5.4" fill="{{ accent }}" opacity=".16"></circle>
+  <circle cx="44" cy="43" r="2" fill="{{ accent }}"></circle>
+  <g stroke="{{ accent }}" stroke-width=".5" stroke-dasharray="1.6 1.6" fill="none"><path d="M44 41 C 40 32, 32 24, 32 17"></path></g>
+</svg>
+</sc-if>
+
+<sc-if value="{{ isPsyri }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 120 96" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;font-family:'Source Sans 3',sans-serif">
+  <rect x="0" y="0" width="120" height="96" fill="{{ ground }}"></rect>
+  <path d="M28 74 C 44 62, 62 60, 80 70 C 92 77, 100 84, 104 90 L20 90 Z" fill="#E3E1D6"></path>
+  <path d="M46 70 L74 68 L76 74 L44 76 Z" fill="#D8D5C8"></path>
+  <g stroke="#CBC6B8" stroke-width="1.1" fill="none">
+    <path d="M0 46 L120 44"></path>
+    <path d="M0 30 L120 27"></path>
+    <path d="M52 6 L50 46"></path>
+    <path d="M72 6 L70 46"></path>
+    <path d="M0 60 L120 57"></path>
+  </g>
+  <g fill="#E6E3D8">
+    <rect x="78" y="32" width="22" height="12" rx="1"></rect>
+    <rect x="10" y="48" width="22" height="10" rx="1"></rect>
+  </g>
+  <g font-size="3.7" fill="#5A554E" font-family="'EB Garamond',serif">
+  </g>
+  <g font-size="3.1" fill="#5A554E" letter-spacing=".2">
+  </g>
+  <circle cx="52" cy="22" r="5.4" fill="{{ accent }}" opacity=".18"></circle>
+  <circle cx="52" cy="22" r="2" fill="{{ accent }}"></circle>
+  <g stroke="{{ accent }}" stroke-width=".5" stroke-dasharray="1.6 1.6" fill="none"><path d="M53 25 C 56 40, 58 56, 60 66"></path></g>
+</svg>
+</sc-if>
+
+<sc-if value="{{ isNice }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 120 96" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block;font-family:'Source Sans 3',sans-serif">
+  <rect x="0" y="0" width="120" height="96" fill="{{ ground }}"></rect>
+  <path d="M0 62 C 30 58, 60 64, 90 60 C 104 58, 114 60, 120 59 L120 90 L0 90 Z" fill="#D5DCD9"></path>
+  <text x="10" y="80" font-size="4.6" fill="#4F5B58" letter-spacing=".3" font-family="'EB Garamond',serif">Baie des Anges</text>
+  <path d="M0 14 C 24 8, 48 16, 70 10 C 92 4, 110 12, 120 8 L120 0 L0 0 Z" fill="#E3DBCB"></path>
+  <g stroke="#CDBFA9" stroke-width="1.1" fill="none">
+    <path d="M0 52 C 30 48, 60 54, 90 50 C 104 48, 114 50, 120 49"></path>
+    <path d="M0 34 C 30 30, 60 36, 120 31"></path>
+    <path d="M36 34 L34 52"></path>
+    <path d="M88 31 L92 50"></path>
+  </g>
+  <g fill="#EADFCF">
+    <rect x="92" y="34" width="24" height="14" rx="1"></rect>
+  </g>
+  <g font-size="3.7" fill="#5A554E" font-family="'EB Garamond',serif">
+    <text x="94" y="42">Vieux-Nice</text>
+  </g>
+  <circle cx="48" cy="45" r="5.4" fill="{{ accent }}" opacity=".18"></circle>
+  <circle cx="48" cy="45" r="2" fill="{{ accent }}"></circle>
+  <g stroke="{{ accent }}" stroke-width=".5" stroke-dasharray="1.6 1.6" fill="none"><path d="M48 48 L48 60"></path></g>
+</svg>
+</sc-if>
+
+<sc-for list="{{ labels }}" as="lb" hint-placeholder-count="3">
+  <span style="position:absolute;left:{{ lb.left }};top:{{ lb.top }};transform:{{ lb.tf }};transform-origin:{{ lb.org }};white-space:nowrap;font-family:{{ lb.font }};font-size:{{ lb.size }};letter-spacing:{{ lb.ls }};color:{{ lb.color }};line-height:1">{{ lb.text }}</span>
+</sc-for>
+<span style="position:absolute;left:16px;bottom:14px;font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E">{{ note }}</span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;place&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;merri&quot;,&quot;options&quot;:[&quot;merri&quot;,&quot;duphot&quot;,&quot;bievre&quot;,&quot;psyri&quot;,&quot;nice&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;en&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;fr&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:640,&quot;height&quot;:480}}">
+const GROUND = { merri: '#EDE9E2', duphot: '#EDE9E2', bievre: '#EDE9E2', psyri: '#F2F0E8', nice: '#F4EDE2' };
+const ACCENT = { merri: '#5C6670', duphot: '#5C6670', bievre: '#5C6670', psyri: '#5F6B4E', nice: '#B07A45' };
+const HERE = { en: 'The apartment', fr: 'L’appartement', el: 'Το διαμέρισμα' };
+const VIEW = {
+  bievre: { en: 'VIEW OF NOTRE-DAME', fr: 'VUE SUR NOTRE-DAME', el: 'ΘΕΑ ΣΤΗΝ ΝΟΤΡ-ΝΤΑΜ' },
+  psyri: { en: 'VIEW FROM THE TERRACE', fr: 'VUE DE LA TERRASSE', el: 'ΘΕΑ ΑΠΟ ΤΗΝ ΤΑΡΑΤΣΑ' },
+  nice: { en: 'VIEW FROM THE BALCONY', fr: 'VUE DU BALCON', el: 'ΘΕΑ ΑΠΟ ΤΟ ΜΠΑΛΚΟΝΙ' },
+};
+const NOTE = { en: 'Sketch map, not to scale', fr: 'Plan schématique, sans échelle', el: 'Σχηματικό σχέδιο, εκτός κλίμακας' };
+const PSYRI_STREETS = [
+  { key: 'ermou', at: [6, 42], rot: false, en: 'ERMOU', fr: 'ERMOU', el: 'ΕΡΜΟΥ' },
+  { key: 'aischylou', at: [6, 26], rot: false, en: 'AISCHYLOU', fr: 'AISCHYLOU', el: 'ΑΙΣΧΥΛΟΥ' },
+  { key: 'adrianou', at: [40, 59], rot: false, en: 'ADRIANOU', fr: 'ADRIANOU', el: 'ΑΔΡΙΑΝΟΥ' },
+  { key: 'lepeniotou', at: [53, 45], rot: true, en: 'LEPENIOTOU', fr: 'LEPENIOTOU', el: 'ΛΕΠΕΝΙΩΤΟΥ' },
+  { key: 'miaouli', at: [73, 45], rot: true, en: 'MIAOULI', fr: 'MIAOULI', el: 'ΜΙΑΟΥΛΗ' },
+];
+const PSYRI = {
+  rock:  { en: 'Acropolis', fr: 'Acropole', el: 'Ακρόπολη' },
+  monas: { en: 'Monastiraki', fr: 'Monastiraki', el: 'Μοναστηράκι' },
+  agora: { en: 'Ancient Agora', fr: 'Agora antique', el: 'Αρχαία Αγορά' },
+  psyri: { en: 'Psyri', fr: 'Psyri', el: 'Ψυρρή' },
+};
+const NICE_EXTRA = {
+  hills: { en: 'HILLS · TERRACED GARDENS', fr: 'COLLINES · CULTURES EN TERRASSES', el: 'ΛΟΦΟΙ · ΑΝΑΒΑΘΜΙΔΕΣ' },
+  airport: { en: 'To the airport', fr: 'Vers l’aéroport', el: 'Προς το αεροδρόμιο' },
+  prom: { en: 'SEAFRONT PROMENADE', fr: 'PROMENADE DU BORD DE MER', el: 'ΠΑΡΑΛΙΑΚΟΣ ΠΕΡΙΠΑΤΟΣ' },
+};
+const SPOTS = {
+  merri:  { here: [30, 50] },
+  duphot: { here: [34, 50] },
+  bievre: { here: [50, 47], view: [10, 25] },
+  psyri:  { here: [57, 22], view: [62, 53] },
+  nice:   { here: [53, 46], view: [50, 60] },
+};
+const U = 100 / 120;
+const pos = (x, y) => ({ left: (x * U).toFixed(2) + '%', top: (y / 96 * 100).toFixed(2) + '%' });
+class Component extends DCLogic {
+  renderVals() {
+    const place = this.props.place || 'merri';
+    const lang = ['en', 'fr', 'el'].indexOf(this.props.lang) >= 0 ? this.props.lang : 'en';
+    const accent = ACCENT[place] || '#5C6670';
+    const spot = SPOTS[place] || SPOTS.merri;
+    const serif = "'EB Garamond',serif";
+    const sans = "'Source Sans 3',sans-serif";
+    const flat = { tf: 'translateY(-100%)', org: '0 100%' };
+    const upright = { tf: 'rotate(-90deg)', org: '0 100%' };
+    const labels = [{ ...flat, ...pos(spot.here[0], spot.here[1]), text: HERE[lang], font: serif, size: 'clamp(15px,' + (3.8 * U).toFixed(2) + 'cqw,28px)', ls: '0', color: '#2B2926' }];
+    if (spot.view && VIEW[place]) labels.push({ ...flat, ...pos(spot.view[0], spot.view[1]), text: VIEW[place][lang], font: sans, size: 'clamp(11px,' + (2.9 * U).toFixed(2) + 'cqw,20px)', ls: '.14em', color: '#5A554E' });
+    if (place === 'psyri') {
+      PSYRI_STREETS.forEach(s => labels.push({ ...(s.rot ? upright : flat), ...pos(s.at[0], s.at[1]), text: s[lang], font: sans, size: 'clamp(11px,' + (3.1 * U).toFixed(2) + 'cqw,20px)', ls: '.14em', color: '#5A554E' }));
+      labels.push({ ...flat, ...pos(46, 84), text: PSYRI.rock[lang], font: serif, size: 'clamp(15px,' + (4.3 * U).toFixed(2) + 'cqw,30px)', ls: '.04em', color: '#4F5940' });
+      labels.push({ ...flat, ...pos(80, 41), text: PSYRI.monas[lang], font: serif, size: 'clamp(13px,' + (3.7 * U).toFixed(2) + 'cqw,26px)', ls: '0', color: '#5A554E' });
+      labels.push({ ...flat, ...pos(11, 55), text: PSYRI.agora[lang], font: serif, size: 'clamp(13px,' + (3.7 * U).toFixed(2) + 'cqw,26px)', ls: '0', color: '#5A554E' });
+      labels.push({ ...flat, ...pos(93, 24), text: PSYRI.psyri[lang], font: serif, size: 'clamp(13px,' + (3.7 * U).toFixed(2) + 'cqw,26px)', ls: '0', color: '#5A554E' });
+    }
+    if (place === 'nice') {
+      labels.push({ ...flat, ...pos(8, 10), text: NICE_EXTRA.hills[lang], font: sans, size: 'clamp(11px,' + (2.9 * U).toFixed(2) + 'cqw,20px)', ls: '.14em', color: '#5A554E' });
+      labels.push({ ...flat, ...pos(6, 31), text: NICE_EXTRA.airport[lang], font: serif, size: 'clamp(13px,' + (3.4 * U).toFixed(2) + 'cqw,24px)', ls: '0', color: '#5A554E' });
+      labels.push({ ...flat, ...pos(6, 51), text: NICE_EXTRA.prom[lang], font: sans, size: 'clamp(11px,' + (2.9 * U).toFixed(2) + 'cqw,20px)', ls: '.14em', color: '#5A554E' });
+    }
+    return {
+      isMerri: place === 'merri', isDuphot: place === 'duphot', isBievre: place === 'bievre',
+      isPsyri: place === 'psyri', isNice: place === 'nice',
+      ground: GROUND[place] || '#EDE9E2', accent,
+      labels, note: NOTE[lang],
+    };
+  }
+}
+</script>
+</body>
+</html>

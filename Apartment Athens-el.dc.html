@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#F6F4EF}a{color:#2B2926}a:hover{color:#5F6B4E}::placeholder{color:#B9B2A8}</style>
+</helmet>
+<div data-screen-label="Apartment — Lepeniotou, Psyri" style="container-type:inline-size;background:#F6F4EF;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5cqw,72px)">
+  <a href="index-el.html" style="display:flex;align-items:baseline;gap:14px;font-family:'EB Garamond',serif;font-size:23px;color:#2B2926;text-decoration:none"><span>The Quiet Address</span><span style="width:1px;height:18px;background:#5F6B4E;align-self:center"></span><span style="font-style:italic;color:#5F6B4E">Αθήνα</span></a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <nav style="display:flex;flex-wrap:wrap;gap:16px 36px;font-size:14px;letter-spacing:.03em;font-weight:400">
+    <a href="index-el.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">Οι πόλεις</a>
+    <a href="City.dc.html" style="text-decoration:none;color:#5F6B4E;border-bottom:1px solid #5F6B4E;padding-bottom:2px">Τα διαμερίσματα</a>
+    <a href="Services.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">Υπηρεσίες</a>
+    <a href="Journal.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">Το Ημερολόγιο</a>
+    <a href="Approach.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">Η προσέγγισή μας</a>
+  </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:.04em;font-weight:400">
+    <span><a href="Apartment%20Athens.dc.html" style="color:#5A554E;text-decoration:none">EN</a> <a href="Apartment%20Athens-fr.dc.html" style="color:#5A554E;text-decoration:none">/ FR</a> <span style="color:#2B2926">/ ΕΛ</span></span>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><a href="Contact-el.dc.html" style="text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:2px;transition:color .5s,border-color .5s" style-hover="color:#5F6B4E;border-color:#5F6B4E">Αίτημα διαμονής</a></sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.04em;color:#2B2926;cursor:pointer;padding:10px 0;min-height:44px">Menu</button></sc-if>
+  </div>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ ovTop }};min-height:100vh;z-index:80;background:#F6F4EF;display:flex;flex-direction:column;padding:26px clamp(20px,6cqw,56px) 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <span style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926">The Quiet Address</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5A554E;cursor:pointer;padding:10px 0;min-height:44px">Κλείσιμο</button>
+    </div>
+    <nav style="margin-top:clamp(28px,8cqw,52px);display:flex;flex-direction:column">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" style="font-family:'EB Garamond',serif;font-size:clamp(28px,8cqw,34px);line-height:1.1;color:#2B2926;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(43,41,38,.12)">{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <span style="margin-top:clamp(28px,7cqw,44px);font-size:13px;letter-spacing:.04em;color:#5A554E">hello@thequietaddress.com &nbsp;·&nbsp; <span style="color:#5F6B4E">Παρίσι · Αθήνα · Νίκαια</span></span>
+  </div>
+</sc-if>
+
+<section style="display:flex;flex-direction:column;gap:6px">
+  <div style="height:clamp(480px,60cqw,860px);overflow:hidden;position:relative;background:#E8E5DD">
+    <img onClick="{{ open0 }}" loading="lazy" decoding="async" src="assets/w/ath-01.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 55%;filter:saturate(1.0) contrast(1.06) brightness(1.03)">
+    <span style="position:absolute;right:clamp(20px,5cqw,72px);bottom:24px;font-size:12px;letter-spacing:.1em;color:#F3EEE6;background:#24221F;padding:5px 11px">{{ photoFirst }}</span>
+  </div>
+  <div style="height:clamp(320px,34cqw,520px);overflow:hidden;background:#E8E5DD"><img onClick="{{ open1 }}" loading="lazy" decoding="async" src="assets/w/ath-02.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px">
+    <div style="aspect-ratio:16/9;overflow:hidden;background:#E8E5DD"><img onClick="{{ open2 }}" loading="lazy" decoding="async" src="assets/w/ath-06.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+    <div style="aspect-ratio:16/9;overflow:hidden;background:#E8E5DD"><img onClick="{{ open3 }}" loading="lazy" decoding="async" src="assets/w/ath-04.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px">
+    <div style="aspect-ratio:3/4;overflow:hidden;background:#E8E5DD"><img onClick="{{ open4 }}" loading="lazy" decoding="async" src="assets/w/ath-03.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+    <div style="aspect-ratio:3/4;overflow:hidden;background:#E8E5DD"><img onClick="{{ open5 }}" loading="lazy" decoding="async" src="assets/w/ath-05.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+    <div style="aspect-ratio:3/4;overflow:hidden;background:#E8E5DD"><img onClick="{{ open6 }}" loading="lazy" decoding="async" src="assets/w/ath-08.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  </div>
+  <div style="height:clamp(280px,30cqw,460px);overflow:hidden;background:#E8E5DD"><img onClick="{{ open7 }}" loading="lazy" decoding="async" src="assets/w/ath-07.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  <button onClick="{{ open0 }}" style="align-self:flex-end;background:transparent;border:0;font:inherit;margin:16px clamp(20px,5cqw,72px) 0;font-size:13px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#5A554E;border-bottom:1px solid rgba(43,41,38,.3);padding-bottom:2px;transition:color .5s;cursor:pointer" style-hover="color:#5F6B4E">{{ photoAll }}</button>
+</section>
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ lbTop }};height:100vh;z-index:90;background:#24221F;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px clamp(16px,4cqw,40px);color:#EAE3D8;font-size:13px;letter-spacing:.06em">
+      <span>{{ lbCount }}</span>
+      <button onClick="{{ lbClose }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#EAE3D8;cursor:pointer;padding:10px 0;min-height:44px">Κλείσιμο</button>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 clamp(8px,2cqw,24px)">
+      <img ref="{{ lbRef }}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;display:block">
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,4cqw,40px) 28px">
+      <button onClick="{{ lbPrev }}" style="background:transparent;border:1px solid rgba(234,227,216,.4);font:inherit;font-size:13px;letter-spacing:.08em;color:#EAE3D8;cursor:pointer;padding:14px 26px;min-height:48px">Προηγούμενη</button>
+      <button onClick="{{ lbNext }}" style="background:transparent;border:1px solid rgba(234,227,216,.4);font:inherit;font-size:13px;letter-spacing:.08em;color:#EAE3D8;cursor:pointer;padding:14px 26px;min-height:48px">Επόμενη</button>
+    </div>
+  </div>
+</sc-if>
+
+<section style="padding:clamp(48px,6cqw,96px) clamp(20px,5cqw,72px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5F6B4E">Αθήνα · Ψυρρή</span>
+    <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(48px,6cqw,96px);line-height:1;letter-spacing:-.01em">Λεπενιώτου</h1>
+    <p style="margin:0;font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(20px,1.8cqw,26px);color:#5A554E;max-width:28ch">Ένα μικρό δωμάτιο κι ένας μεγάλος κήπος στον αέρα, έξι ορόφους πάνω από του Ψυρρή, με τον Παρθενώνα απέναντι.</p>
+    <p style="margin:12px 0 0;font-size:13px;letter-spacing:.04em;color:#5A554E;font-weight:400">2 άτομα · 25 τ.μ. μέσα, 60 τ.μ. ταράτσα · 6ος όροφος, ανελκυστήρας · από τέσσερις έως δεκατέσσερις νύχτες</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.7;max-width:56ch;padding-top:clamp(0px,1cqw,14px)">
+    <p style="margin:0">Οι αναλογίες είναι αντίστροφες από τα συνηθισμένα: είκοσι πέντε τετραγωνικά μέσα, εξήντα έξω. Η ταράτσα είναι φυτεμένη και σκιερή — γιασεμί σε πέργκολα, λεβάντα και φοίνικες σε ζαρντινιέρες, ένα μακρύ πέτρινο τραπέζι για οκτώ — και στέκεται αρκετά ψηλά πάνω από τις στέγες του Ψυρρή για να φαίνεται καθαρά η Ακρόπολη απέναντι. Τη νύχτα ο βράχος φωτίζεται, κι αυτό το τραπέζι είναι η καλύτερη θέση στην Αθήνα.</p>
+    <p style="margin:0">Μέσα, ένα καλοφτιαγμένο δωμάτιο, με χαμηλό φωτισμό και πράσινους τοίχους: διπλό κρεβάτι 160 × 200 σε χτιστό βάθρο, με πάπλωμα από πούπουλα χήνας· δερμάτινος καναπές, ένα κιλίμι, ένα σοβαρό ζευγάρι ηχεία, και μια οθόνη που κατεβαίνει από το ταβάνι όταν τη θέλετε. Ενδοδαπέδια θέρμανση τον χειμώνα, αθόρυβη ψύξη το καλοκαίρι. Η ντουζιέρα είναι γυάλινη από δύο πλευρές και από πάνω, με παράθυρο σε μια ροδιά: πλένεστε μέσα στα φύλλα τη μέρα και κάτω από τον ουρανό τη νύχτα.</p>
+    <p style="margin:0">Είναι ένα μέρος για να ξυπνάτε νωρίς, να βγάζετε τον καφέ έξω, και να βλέπετε το φως να φτάνει στο μάρμαρο πριν σηκωθεί η πόλη.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(72px,9cqw,144px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5cqw,80px);align-items:center">
+  <div style="position:relative;aspect-ratio:5/4;overflow:hidden">
+    <dc-import name="NeighbourhoodMap" place="psyri" lang="el" hint-size="100%,100%" style="display:block;width:100%;height:100%"></dc-import>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5F6B4E">Η γειτονιά</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(32px,3.2cqw,48px);line-height:1.15;text-wrap:pretty;max-width:20ch">Ψυρρή: εργαστήρια, ταβέρνες, και η πιο σύντομη διαδρομή προς όλα τα αρχαία.</h2>
+    <p style="margin:0;max-width:50ch;font-size:17px">Η οδός Λεπενιώτου είναι ένας στενός δρόμος στου Ψυρρή, της παλιάς συνοικίας των μαστόρων μεταξύ Μοναστηρακίου και αγοράς. Δερματοτεχνεία και σιδηρικά δουλεύουν ακόμη στο ισόγειο· το βράδυ τα ίδια σοκάκια γεμίζουν ταβέρνες και μικρά μπαρ. Η πλατεία Μοναστηρακίου και το μετρό είναι τρία λεπτά, η Αρχαία Αγορά πέντε, και η είσοδος της Ακρόπολης ένα τέταρτο με τα πόδια μέσα από την Πλάκα.</p>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;color:#5A554E;border-top:1px solid rgba(43,41,38,.12);padding-top:18px">
+      <span>Μοναστηράκι · 3′ &nbsp;·&nbsp; Αρχαία Αγορά · 5′ &nbsp;·&nbsp; Πλάκα · 7′ &nbsp;·&nbsp; είσοδος Ακρόπολης · 15′ &nbsp;·&nbsp; Μουσείο Ακρόπολης · 18′</span>
+      <span>Μετρό Μοναστηράκι · 3′ &nbsp;·&nbsp; αεροδρόμιο με μετρό · 45′ &nbsp;·&nbsp; πλοία Πειραιά · 25′</span>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<section style="padding:clamp(64px,8cqw,120px) clamp(20px,5cqw,72px) 0">
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:clamp(32px,4cqw,56px)">
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">Με μια ματιά</span>
+    <span style="width:140px;height:1px;background:rgba(43,41,38,.35)"></span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4cqw,56px) clamp(40px,6cqw,96px)">
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18"/><circle cx="14.5" cy="12" r=".6" fill="#2B2926"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">1</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Στούντιο, ένα δωμάτιο</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5l6-2 4 2 6-2v14l-6 2-4-2-6 2z"/><path d="M12 8a2.4 2.4 0 0 1 2.4 2.4c0 1.8-2.4 4.2-2.4 4.2s-2.4-2.4-2.4-4.2A2.4 2.4 0 0 1 12 8z"/></svg></span>
+      
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:4px"><span>Ψυρρή, Αθήνα</span><span>Μετρό Μοναστηράκι, 3′</span><span>Είσοδος Ακρόπολης, 15′</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18v-6h20v6"/><path d="M2 12V9h8v3"/><rect x="12" y="8" width="10" height="4" rx="1"/><path d="M2 18v2M22 18v2"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">1</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Διπλό κρεβάτι, 160 × 200</span><span>2 άτομα</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h11v7h7v7H3z"/><path d="M14 12h7"/><path d="M14 5v7"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">25</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Τετραγωνικά μέσα</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M12 20V9"/><path d="M6 9h12l-6-5z"/><path d="M8 20v-4h8v4"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">60</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Τετραγωνικά ταράτσας</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18"/><path d="M12 3v18"/><path d="M9 9l0-2.2M9 6.8l-1 1.2M9 6.8l1 1.2"/><path d="M15 15v2.2M15 17.2l-1-1.2M15 17.2l1-1.2"/></svg></span>
+      
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:4px"><span>6ος όροφος</span><span>Ανελκυστήρας</span></div>
+    </div>
+  </div>
+</section>
+<section style="padding:clamp(56px,7cqw,112px) clamp(20px,5cqw,72px)">
+  <div style="border-top:1px solid rgba(43,41,38,.15);padding-top:clamp(36px,4cqw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(32px,4cqw,64px)">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">Παροχές</span>
+      <div style="display:flex;flex-wrap:wrap;gap:28px 36px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a11 11 0 0 1 15 0"/><path d="M7.5 12.5a7 7 0 0 1 9 0"/><path d="M10.5 16a3 3 0 0 1 3 0"/><circle cx="12" cy="19" r=".7" fill="#2B2926"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Γρήγορο wifi</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.6"/><path d="M12 10.4c0-3 1.2-5 3-5s2.4 3-3 5"/><path d="M13.6 12c3 0 5 1.2 5 3s-3 2.4-5-3"/><path d="M12 13.6c0 3-1.2 5-3 5s-2.4-3 3-5"/><path d="M10.4 12c-3 0-5-1.2-5-3s3-2.4 5 3"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Ψύξη</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h18"/><path d="M5 11v9M19 11v9"/><path d="M7 11V7h10v4"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Κουζίνα</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M12 20V9"/><path d="M6 9h12l-6-5z"/><path d="M8 20v-4h8v4"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Ταράτσα</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#5A554E;line-height:1.5">
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Διπλό κρεβάτι σε χτιστό βάθρο</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Πάπλωμα από πούπουλα χήνας, σεντόνια σατέν</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Δερμάτινος καναπές και κιλίμι</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Hi-fi με ηχεία δαπέδου</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Οθόνη που κατεβαίνει από το ταβάνι</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Γραφείο</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#5A554E;line-height:1.5">
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Κουζίνα σε έναν τοίχο</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Ενδοδαπέδια θέρμανση</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Κεντρική ψύξη</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Ντουζιέρα με γυάλινη οροφή, παράθυρο στον κήπο</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Πέργκολα με γιασεμί, πέτρινο τραπέζι για οκτώ</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Κατοικίδια δεκτά</span>
+    </div>
+  </div>
+</section>
+<section style="background:#ECE9E1;padding:clamp(64px,8cqw,120px) clamp(20px,5cqw,72px)">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:clamp(36px,5cqw,64px)">
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">Κάθε διαμονή περιλαμβάνει</span>
+    <span style="width:120px;height:1px;background:rgba(43,41,38,.35)"></span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(32px,4cqw,56px);justify-items:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="4"/><path d="M12 12h9"/><path d="M17 12v3M20 12v2"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Κλειδιά<br>στο χέρι</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16l-1.5 11H5.5z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Ψωμί, καφές<br>και λάδι στην άφιξη</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a11 11 0 0 1 15 0"/><path d="M7.5 12.5a7 7 0 0 1 9 0"/><path d="M10.5 16a3 3 0 0 1 3 0"/><circle cx="12" cy="19" r=".7" fill="#2B2926"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Wifi οπτικής ίνας</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3l-6 8"/><path d="M5 13h9l2 8H7z"/><path d="M9 16l-.5 5M12 16v5"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Καθαρισμός και<br>φρέσκα λευκά είδη</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v16H4z"/><path d="M13 4h7v16h-7z"/><path d="M11 4v16"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Γραπτός οδηγός<br>της πόλης</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 8l9 6 9-6"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Ένας άνθρωπος,<br>ένα μήνυμα μακριά</span></div>
+  </div>
+</section>
+
+<section style="background:#ECE9E1;padding:clamp(72px,10cqw,160px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#4F5940">Οδηγός της γειτονιάς</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,3.6cqw,56px);line-height:1.12;text-wrap:pretty;max-width:16ch">Η Αθήνα, πριν από τη ζέστη.</h2>
+    <div style="aspect-ratio:4/5;overflow:hidden;max-width:360px;margin-top:12px"><img loading="lazy" decoding="async" src="assets/w/ath-01.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(1.02) contrast(1.1) brightness(1.06)"></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.7;max-width:56ch">
+    <p style="margin:0">Ανεβείτε μέσα από την Πλάκα στην Ακρόπολη μόλις ανοίγει, στις οκτώ: για μισή ώρα θα την έχετε σχεδόν μόνοι σας. Κατεβείτε από τη νότια πλαγιά, μπροστά από το Θέατρο του Διονύσου, και πάρτε πρωινό στη Διονυσίου Αρεοπαγίτου, τον μακρύ πεζόδρομο κάτω από τον βράχο. Έπειτα το μουσείο, όσο είναι ακόμη δροσερά.</p>
+    <p style="margin:0">Το απόγευμα, μείνετε στη γειτονιά: τα εργαστήρια στη Λεπενιώτου και στην Αισχύλου, το παζάρι στο Μοναστηράκι, και τα Αναφιώτικα πάνω από την Πλάκα, που μοιάζουν με νησιώτικο χωριό επειδή τα έφτιαξαν νησιώτες. Πηγαίνετε αργά, όταν έχουν φύγει τα γκρουπ. Για το βράδυ, περπατήστε ως το Κουκάκι ή το Παγκράτι, όπου τρώνε οι Αθηναίοι, και αφήστε μας να κλείσουμε το τραπέζι. Κρατάμε μια λίστα με μέρη όπου τα πιάτα φτάνουν πριν τα ζητήσετε και κοστίζουν ελάχιστα σε σχέση με αυτό που φοβάστε.</p>
+    <p style="margin:0">Και μετά πάλι πάνω στην ταράτσα, έξι ορόφους πάνω από έναν δρόμο που μόλις αρχίζει τη βραδιά του. Ο Παρθενώνας είναι φωτισμένος μέχρι τα μεσάνυχτα.</p>
+    <p style="margin:8px 0 0;font-family:'EB Garamond',serif;font-style:italic;font-size:21px;color:#5A554E">— Αυτός που κρατά τα κλειδιά στην Αθήνα</p>
+  </div>
+</section>
+
+<section style="padding:clamp(72px,10cqw,160px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E">Αίτημα διαμονής</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,3.6cqw,56px);line-height:1.12;text-wrap:pretty;max-width:16ch">Πείτε μας για τη διαμονή σας.</h2>
+    <p style="margin:0;max-width:40ch;color:#5A554E">Διαλέξτε ημερομηνίες και γράψτε μας: ένας άνθρωπος, όχι μηχάνημα, απαντά μέσα στην ημέρα, επιβεβαιώνει τις ημερομηνίες και στέλνει ένα σύντομο συμφωνητικό.</p>
+    <p style="margin:0;font-size:13px;letter-spacing:.04em;color:#5A554E;font-weight:400">Λευκά είδη, καθαρισμός και δημοτικοί φόροι περιλαμβάνονται στην τιμή.</p>
+  </div>
+  <dc-import name="StayForm" nightly="{{ 360 }}" min-nights="{{ 4 }}" max-guests="{{ 2 }}" accent="#5F6B4E" lang="el" hint-size="100%,900px" style="display:block;width:100%"></dc-import>
+</section>
+
+<footer style="background:#3A3631;color:#EAE3D8;padding:clamp(56px,7cqw,96px) clamp(20px,5cqw,72px) 36px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px clamp(32px,4cqw,64px);padding-bottom:clamp(48px,6cqw,80px);border-bottom:1px solid rgba(234,227,216,.18)">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:'EB Garamond',serif;font-size:26px">The Quiet Address</span>
+      <p style="margin:0;max-width:30ch;color:#B9B2A8;line-height:1.6">Διαμερίσματα με χαρακτήρα στο Παρίσι, την Αθήνα και τη Νίκαια. Τα κλειδιά δίνονται στο χέρι.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">Οι πόλεις</span>
+      <a href="City.dc.html" style="color:#EAE3D8;text-decoration:none">Παρίσι</a>
+      <a href="City%20Athens-el.dc.html" style="color:#EAE3D8;text-decoration:none">Αθήνα</a>
+      <a href="City%20Nice.dc.html" style="color:#EAE3D8;text-decoration:none">Νίκαια</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">Ο οίκος</span>
+      <a href="Approach.dc.html" style="color:#EAE3D8;text-decoration:none">Η προσέγγισή μας</a>
+      <a href="Services.dc.html" style="color:#EAE3D8;text-decoration:none">Υπηρεσίες</a><a href="Journal.dc.html" style="color:#EAE3D8;text-decoration:none">Το Ημερολόγιο</a>
+      <a href="Contact-el.dc.html" style="color:#EAE3D8;text-decoration:none">Αίτημα διαμονής</a>
+      <a href="Contact-el.dc.html" style="color:#EAE3D8;text-decoration:none">Για ιδιοκτήτες</a>
+      <a href="Contact-el.dc.html" style="color:#EAE3D8;text-decoration:none">Επικοινωνία</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8">Γράμματα των πόλεων</span>
+      <p style="margin:0;color:#B9B2A8;line-height:1.6;max-width:32ch">Ένα γράμμα κάθε δύο μήνες. Μια πόλη, ένα διαμέρισμα, ένα τραπέζι που αξίζει τον περίπατο.</p>
+      <div style="display:flex;border-bottom:1px solid rgba(234,227,216,.4);padding-bottom:10px;gap:12px">
+        <input type="email" placeholder="Το email σας" style="flex:1;background:transparent;border:0;outline:0;color:#F3EEE6;font:inherit;font-size:15px;min-width:0">
+        <button style="background:transparent;border:0;color:#EAE3D8;font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer">Εγγραφή</button>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;padding-top:28px;font-size:13px;color:#B9B2A8;letter-spacing:.03em">
+    <span>© 2026 The Quiet Address · Παρίσι · Αθήνα</span>
+    <div style="display:flex;gap:28px;flex-wrap:wrap"><a href="Contact-el.dc.html" style="color:#B9B2A8;text-decoration:none">Νομικά</a><a href="Contact-el.dc.html" style="color:#B9B2A8;text-decoration:none">Απόρρητο</a><a href="https://instagram.com/" style="color:#B9B2A8;text-decoration:none" target="_blank" rel="noopener">Instagram</a><span><span style="color:#EAE3D8">English</span> · <a href="Apartment%20Athens-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Français</a> · <span style="color:#B9B2A8">Ελληνικά</span></span></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const PHOTOS = ["assets/w/ath-01.jpg","assets/w/ath-02.jpg","assets/w/ath-06.jpg","assets/w/ath-04.jpg","assets/w/ath-03.jpg","assets/w/ath-05.jpg","assets/w/ath-08.jpg","assets/w/ath-07.jpg"];
+const PHOTO_WORDS = {"8":"οκτώ","9":"εννέα","10":"δέκα","11":"έντεκα","12":"δώδεκα"};
+class Component extends DCLogic {
+  _img = React.createRef();
+  state = { menuOpen: false, narrow: false, ovTop: 0, lb: -1, lbTop: 0 };
+  componentDidMount() {
+    this._mq = window.matchMedia('(max-width: 1060px)');
+    this._sync = () => this.setState({ narrow: this._mq.matches });
+    this._mq.addEventListener('change', this._sync);
+    this._sync();
+  }
+  componentWillUnmount() { this._mq && this._mq.removeEventListener('change', this._sync); document.body.style.overflow = ''; }
+  _toggleMenu() {
+    const open = !this.state.menuOpen;
+    const top = open ? (window.scrollY || 0) : 0;
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ menuOpen: open, ovTop: top });
+  }
+  _syncPhoto() { const el = this._img && this._img.current; if (el && this.state.lb >= 0 && el.src !== PHOTOS[this.state.lb]) el.src = PHOTOS[this.state.lb]; }
+  componentDidUpdate() { this._syncPhoto(); }
+  _openPhoto(i) { document.body.style.overflow = 'hidden'; this.setState({ lb: i, lbTop: window.scrollY || 0 }); }
+  _closePhoto() { document.body.style.overflow = ''; this.setState({ lb: -1 }); }
+  _stepPhoto(d) { const n = PHOTOS.length; this.setState({ lb: (this.state.lb + d + n) % n }); }
+  renderVals() { const mobile = !!this.props.mobile || this.state.narrow; return { photoFirst: '1 / ' + PHOTOS.length, photoAll: (WORD => 'Και τις ' + WORD + ' φωτογραφίες')(PHOTO_WORDS[PHOTOS.length] || PHOTOS.length),  lbOpen: this.state.lb >= 0, lbRef: this._img, lbTop: this.state.lbTop + 'px', lbCount: (Math.max(0, this.state.lb) + 1) + ' / ' + PHOTOS.length, lbClose: () => this._closePhoto(), lbPrev: () => this._stepPhoto(-1), lbNext: () => this._stepPhoto(1), open0: () => this._openPhoto(0), open1: () => this._openPhoto(1), open2: () => this._openPhoto(2), open3: () => this._openPhoto(3), open4: () => this._openPhoto(4), open5: () => this._openPhoto(5), open6: () => this._openPhoto(6), open7: () => this._openPhoto(7),  menuOpen: this.state.menuOpen, toggleMenu: () => this._toggleMenu(), ovTop: this.state.ovTop + 'px', navLinks: [{"href":"index-el.html","label":"Οι πόλεις"},{"href":"City.dc.html","label":"Τα διαμερίσματα"},{"href":"Services.dc.html","label":"Υπηρεσίες"},{"href":"Journal.dc.html","label":"Το Ημερολόγιο"},{"href":"Approach.dc.html","label":"Η προσέγγισή μας"},{"href":"Contact-el.dc.html","label":"Αίτημα διαμονής"}],  mobile, desktop: !mobile }; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Design tool originals — not referenced by any page, kept locally only
+uploads/
+
+# Full-resolution masters (228 MB). Only assets/w/ is served; the masters are
+# the source for it and stay on local disk. Note that assets/w/ crops are
+# hand-framed, so they cannot simply be regenerated from these.
+/assets/*
+!/assets/w/
+
+# Netlify
+.netlify/
+
+# Secrets — Brevo keys live in the Netlify environment, never in the repo
+.env
+.env.*
+
+# Node
+node_modules/

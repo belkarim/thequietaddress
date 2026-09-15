@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#F6F4EF}a{color:#2B2926}a:hover{color:#5F6B4E}::placeholder{color:#B9B2A8}</style>
+</helmet>
+<div data-screen-label="Apartment — Lepeniotou, Psyri" style="container-type:inline-size;background:#F6F4EF;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5cqw,72px)">
+  <a href="index.html" style="display:flex;align-items:baseline;gap:14px;font-family:'EB Garamond',serif;font-size:23px;color:#2B2926;text-decoration:none"><span>The Quiet Address</span><span style="width:1px;height:18px;background:#5F6B4E;align-self:center"></span><span style="font-style:italic;color:#5F6B4E">Athens</span></a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <nav style="display:flex;flex-wrap:wrap;gap:16px 36px;font-size:14px;letter-spacing:.03em;font-weight:400">
+    <a href="index.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">The Cities</a>
+    <a href="City.dc.html" style="text-decoration:none;color:#5F6B4E;border-bottom:1px solid #5F6B4E;padding-bottom:2px">The Apartments</a>
+    <a href="Services.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">Services</a>
+    <a href="Journal.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">The Journal</a>
+    <a href="Approach.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#5F6B4E">Our Approach</a>
+  </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:.04em;font-weight:400">
+    <span><span style="color:#2B2926">EN</span> <a href="Apartment%20Athens-fr.dc.html" style="color:#5A554E;text-decoration:none;transition:color .5s" style-hover="color:#2B2926">/ FR</a> <a href="Apartment%20Athens-el.dc.html" style="color:#5A554E;text-decoration:none">/ ΕΛ</a></span>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><a href="Contact.dc.html" style="text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:2px;transition:color .5s,border-color .5s" style-hover="color:#5F6B4E;border-color:#5F6B4E">Enquire</a></sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.04em;color:#2B2926;cursor:pointer;padding:10px 0;min-height:44px">Menu</button></sc-if>
+  </div>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ ovTop }};min-height:100vh;z-index:80;background:#F6F4EF;display:flex;flex-direction:column;padding:26px clamp(20px,6cqw,56px) 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <span style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926">The Quiet Address</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5A554E;cursor:pointer;padding:10px 0;min-height:44px">Close</button>
+    </div>
+    <nav style="margin-top:clamp(28px,8cqw,52px);display:flex;flex-direction:column">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" style="font-family:'EB Garamond',serif;font-size:clamp(28px,8cqw,34px);line-height:1.1;color:#2B2926;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(43,41,38,.12)">{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <span style="margin-top:clamp(28px,7cqw,44px);font-size:13px;letter-spacing:.04em;color:#5A554E">hello@thequietaddress.com &nbsp;·&nbsp; <span style="color:#5F6B4E">Paris · Athens · Nice</span></span>
+  </div>
+</sc-if>
+
+<section style="display:flex;flex-direction:column;gap:6px">
+  <div style="height:clamp(480px,60cqw,860px);overflow:hidden;position:relative;background:#E8E5DD">
+    <img onClick="{{ open0 }}" loading="lazy" decoding="async" src="assets/w/ath-01.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 55%;filter:saturate(1.0) contrast(1.06) brightness(1.03)">
+    <span style="position:absolute;right:clamp(20px,5cqw,72px);bottom:24px;font-size:12px;letter-spacing:.1em;color:#F3EEE6;background:#24221F;padding:5px 11px">{{ photoFirst }}</span>
+  </div>
+  <div style="height:clamp(320px,34cqw,520px);overflow:hidden;background:#E8E5DD"><img onClick="{{ open1 }}" loading="lazy" decoding="async" src="assets/w/ath-02.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px">
+    <div style="aspect-ratio:16/9;overflow:hidden;background:#E8E5DD"><img onClick="{{ open2 }}" loading="lazy" decoding="async" src="assets/w/ath-06.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+    <div style="aspect-ratio:16/9;overflow:hidden;background:#E8E5DD"><img onClick="{{ open3 }}" loading="lazy" decoding="async" src="assets/w/ath-04.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px">
+    <div style="aspect-ratio:3/4;overflow:hidden;background:#E8E5DD"><img onClick="{{ open4 }}" loading="lazy" decoding="async" src="assets/w/ath-03.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+    <div style="aspect-ratio:3/4;overflow:hidden;background:#E8E5DD"><img onClick="{{ open5 }}" loading="lazy" decoding="async" src="assets/w/ath-05.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+    <div style="aspect-ratio:3/4;overflow:hidden;background:#E8E5DD"><img onClick="{{ open6 }}" loading="lazy" decoding="async" src="assets/w/ath-08.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  </div>
+  <div style="height:clamp(280px,30cqw,460px);overflow:hidden;background:#E8E5DD"><img onClick="{{ open7 }}" loading="lazy" decoding="async" src="assets/w/ath-07.jpg" alt="" style="cursor:zoom-in;width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:saturate(1.0) contrast(1.06) brightness(1.03)"></div>
+  <button onClick="{{ open0 }}" style="align-self:flex-end;background:transparent;border:0;font:inherit;margin:16px clamp(20px,5cqw,72px) 0;font-size:13px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#5A554E;border-bottom:1px solid rgba(43,41,38,.3);padding-bottom:2px;transition:color .5s;cursor:pointer" style-hover="color:#5F6B4E">{{ photoAll }}</button>
+</section>
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ lbTop }};height:100vh;z-index:90;background:#24221F;display:flex;flex-direction:column">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px clamp(16px,4cqw,40px);color:#EAE3D8;font-size:13px;letter-spacing:.06em">
+      <span>{{ lbCount }}</span>
+      <button onClick="{{ lbClose }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#EAE3D8;cursor:pointer;padding:10px 0;min-height:44px">Close</button>
+    </div>
+    <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:0 clamp(8px,2cqw,24px)">
+      <img ref="{{ lbRef }}" alt="" style="max-width:100%;max-height:100%;object-fit:contain;display:block">
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(16px,4cqw,40px) 28px">
+      <button onClick="{{ lbPrev }}" style="background:transparent;border:1px solid rgba(234,227,216,.4);font:inherit;font-size:13px;letter-spacing:.08em;color:#EAE3D8;cursor:pointer;padding:14px 26px;min-height:48px">Previous</button>
+      <button onClick="{{ lbNext }}" style="background:transparent;border:1px solid rgba(234,227,216,.4);font:inherit;font-size:13px;letter-spacing:.08em;color:#EAE3D8;cursor:pointer;padding:14px 26px;min-height:48px">Next</button>
+    </div>
+  </div>
+</sc-if>
+
+<section style="padding:clamp(48px,6cqw,96px) clamp(20px,5cqw,72px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5F6B4E">Athens · Psyri</span>
+    <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(48px,6cqw,96px);line-height:1;letter-spacing:-.01em">Lepeniotou</h1>
+    <p style="margin:0;font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(20px,1.8cqw,26px);color:#5A554E;max-width:28ch">A small room and a large garden in the sky, six floors above Psyri, with the Parthenon in front of it.</p>
+    <p style="margin:12px 0 0;font-size:13px;letter-spacing:.04em;color:#5A554E;font-weight:400">Sleeps 2 · 25 m² inside, 60 m² terrace · Sixth floor, lift · Four to fourteen nights</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.7;max-width:56ch;padding-top:clamp(0px,1cqw,14px)">
+    <p style="margin:0">The proportions are the other way round from most apartments: twenty-five square metres indoors, sixty outdoors. The terrace is planted and shaded — jasmine over a pergola, lavender and palms in troughs, a long stone table for eight — and it sits high enough above the rooftops of Psyri that the Acropolis stands clear in front of it. At night the rock is lit and the table is the best seat in Athens.</p>
+    <p style="margin:0">Inside, one well-made room, low-lit and green-walled: a queen bed on a built platform, 160 by 200, with a goose-down duvet; a leather sofa, a kilim, a serious pair of speakers, and a screen that folds down from the ceiling when you want it. Underfloor heating for winter, quiet cooling for summer. The shower is glass on two sides and glass overhead, with a window onto a pomegranate tree, so you wash among leaves by day and under the sky at night.</p>
+    <p style="margin:0">It is a place to wake up early, carry coffee outside, and watch the light hit the marble before the city is up.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(72px,9cqw,144px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,5cqw,80px);align-items:center">
+  <div style="position:relative;aspect-ratio:5/4;overflow:hidden">
+    <dc-import name="NeighbourhoodMap" place="psyri" lang="en" hint-size="100%,100%" style="display:block;width:100%;height:100%"></dc-import>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5F6B4E">The neighbourhood</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(32px,3.2cqw,48px);line-height:1.15;text-wrap:pretty;max-width:20ch">Psyri: workshops, tavernas, and the shortest walk to everything ancient.</h2>
+    <p style="margin:0;max-width:50ch;font-size:17px">Odos Lepeniotou is a narrow street in Psyri, the old artisans’ quarter between Monastiraki and the market. Leather workshops and hardware shops still work at street level; in the evening the same lanes fill with tavernas and small bars. Monastiraki square and its metro are three minutes away, the Ancient Agora five, and the Acropolis entrance a quarter of an hour on foot through Plaka.</p>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:15px;color:#5A554E;border-top:1px solid rgba(43,41,38,.12);padding-top:18px">
+      <span>Monastiraki · 3 min &nbsp;·&nbsp; Ancient Agora · 5 min &nbsp;·&nbsp; Plaka · 7 min &nbsp;·&nbsp; Acropolis entrance · 15 min &nbsp;·&nbsp; Acropolis Museum · 18 min</span>
+      <span>Metro Monastiraki · 3 min &nbsp;·&nbsp; Airport by metro · 45 min &nbsp;·&nbsp; Piraeus ferries · 25 min</span>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<section style="padding:clamp(64px,8cqw,120px) clamp(20px,5cqw,72px) 0">
+  <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:clamp(32px,4cqw,56px)">
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">At a glance</span>
+    <span style="width:140px;height:1px;background:rgba(43,41,38,.35)"></span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4cqw,56px) clamp(40px,6cqw,96px)">
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18"/><circle cx="14.5" cy="12" r=".6" fill="#2B2926"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">1</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Studio, one room</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5l6-2 4 2 6-2v14l-6 2-4-2-6 2z"/><path d="M12 8a2.4 2.4 0 0 1 2.4 2.4c0 1.8-2.4 4.2-2.4 4.2s-2.4-2.4-2.4-4.2A2.4 2.4 0 0 1 12 8z"/></svg></span>
+      
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:4px"><span>Psyri, Athens</span><span>Metro Monastiraki, 3 min</span><span>Acropolis entrance, 15 min</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18v-6h20v6"/><path d="M2 12V9h8v3"/><rect x="12" y="8" width="10" height="4" rx="1"/><path d="M2 18v2M22 18v2"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">1</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Queen bed, 160 × 200</span><span>Sleeps 2</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h11v7h7v7H3z"/><path d="M14 12h7"/><path d="M14 5v7"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">25</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Square metres inside</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M12 20V9"/><path d="M6 9h12l-6-5z"/><path d="M8 20v-4h8v4"/></svg></span>
+      <span style="font-family:'EB Garamond',serif;font-size:34px;line-height:1;color:#2B2926;flex:none">60</span>
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:6px"><span>Square metres of terrace</span></div>
+    </div>
+    <div style="display:flex;align-items:flex-start;gap:20px">
+      <span style="flex:none;margin-top:2px"><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18"/><path d="M12 3v18"/><path d="M9 9l0-2.2M9 6.8l-1 1.2M9 6.8l1 1.2"/><path d="M15 15v2.2M15 17.2l-1-1.2M15 17.2l1-1.2"/></svg></span>
+      
+      <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;letter-spacing:.06em;line-height:1.5;color:#5A554E;padding-top:4px"><span>Sixth floor</span><span>Lift</span></div>
+    </div>
+  </div>
+</section>
+<section style="padding:clamp(56px,7cqw,112px) clamp(20px,5cqw,72px)">
+  <div style="border-top:1px solid rgba(43,41,38,.15);padding-top:clamp(36px,4cqw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(32px,4cqw,64px)">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">Amenities</span>
+      <div style="display:flex;flex-wrap:wrap;gap:28px 36px">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a11 11 0 0 1 15 0"/><path d="M7.5 12.5a7 7 0 0 1 9 0"/><path d="M10.5 16a3 3 0 0 1 3 0"/><circle cx="12" cy="19" r=".7" fill="#2B2926"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Fast wifi</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1.6"/><path d="M12 10.4c0-3 1.2-5 3-5s2.4 3-3 5"/><path d="M13.6 12c3 0 5 1.2 5 3s-3 2.4-5-3"/><path d="M12 13.6c0 3-1.2 5-3 5s-2.4-3 3-5"/><path d="M10.4 12c-3 0-5-1.2-5-3s3-2.4 5 3"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Cooling</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11h18"/><path d="M5 11v9M19 11v9"/><path d="M7 11V7h10v4"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Kitchen</span></div>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:10px;width:78px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M12 20V9"/><path d="M6 9h12l-6-5z"/><path d="M8 20v-4h8v4"/></svg></span><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.3">Terrace</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#5A554E;line-height:1.5">
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Queen bed on a built platform</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Goose-down duvet, cotton-satin linen</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Leather sofa and kilim</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Hi-fi with floor speakers</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Screen that folds from the ceiling</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Desk</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px;color:#5A554E;line-height:1.5">
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Kitchen along one wall</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Underfloor heating</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Central cooling</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Glass-roofed shower, garden window</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Jasmine pergola, stone table for eight</span>
+      <span style="display:flex;gap:14px"><span style="color:#5F6B4E">—</span>Pets welcome</span>
+    </div>
+  </div>
+</section>
+<section style="background:#ECE9E1;padding:clamp(64px,8cqw,120px) clamp(20px,5cqw,72px)">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:clamp(36px,5cqw,64px)">
+    <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:400;color:#2B2926">Every stay includes</span>
+    <span style="width:120px;height:1px;background:rgba(43,41,38,.35)"></span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(32px,4cqw,56px);justify-items:center">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="12" r="4"/><path d="M12 12h9"/><path d="M17 12v3M20 12v2"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Keys handed<br>in person</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16l-1.5 11H5.5z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Bread, coffee<br>and oil on arrival</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9a11 11 0 0 1 15 0"/><path d="M7.5 12.5a7 7 0 0 1 9 0"/><path d="M10.5 16a3 3 0 0 1 3 0"/><circle cx="12" cy="19" r=".7" fill="#2B2926"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Fibre wifi</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3l-6 8"/><path d="M5 13h9l2 8H7z"/><path d="M9 16l-.5 5M12 16v5"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Cleaning and<br>fresh linen</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v16H4z"/><path d="M13 4h7v16h-7z"/><path d="M11 4v16"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">A written<br>city guide</span></div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:14px;max-width:170px"><span><svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#2B2926" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 8l9 6 9-6"/></svg></span><span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#5A554E;text-align:center;line-height:1.6">Someone local,<br>a message away</span></div>
+  </div>
+</section>
+
+<section style="background:#ECE9E1;padding:clamp(72px,10cqw,160px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#4F5940">Neighbourhood guide</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,3.6cqw,56px);line-height:1.12;text-wrap:pretty;max-width:16ch">Athens, before the heat.</h2>
+    <div style="aspect-ratio:4/5;overflow:hidden;max-width:360px;margin-top:12px"><img loading="lazy" decoding="async" src="assets/w/ath-01.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(1.02) contrast(1.1) brightness(1.06)"></div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:22px;font-size:18px;line-height:1.7;max-width:56ch">
+    <p style="margin:0">Walk up through Plaka to the Acropolis when it opens, at eight, and you will have it more or less to yourself for half an hour. Come down the south slope, past the theatre of Dionysus, and have breakfast on Dionysiou Areopagitou, the long pedestrian street under the rock. Then the museum, while it is still cool.</p>
+    <p style="margin:0">In the afternoon, stay in the neighbourhood: the workshops on Lepeniotou and Aiscylou, the flea market at Monastiraki, and Anafiotika above Plaka, which looks like an island village because islanders built it. Go late, when the tour groups have left. For the evening, walk over to Koukaki or Pangrati, where Athenians eat, and let us book you a table. We keep a list of places where the food arrives before you ask and costs a fraction of what you fear.</p>
+    <p style="margin:0">And then back up to the terrace, six floors above a street that is only starting its evening. The Parthenon is lit until midnight.</p>
+    <p style="margin:8px 0 0;font-family:'EB Garamond',serif;font-style:italic;font-size:21px;color:#5A554E">— Who holds the keys in Athens</p>
+  </div>
+</section>
+
+<section style="padding:clamp(72px,10cqw,160px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px clamp(40px,8cqw,120px);align-items:start">
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#5A554E">Enquire</span>
+    <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,3.6cqw,56px);line-height:1.12;text-wrap:pretty;max-width:16ch">Tell us about your stay.</h2>
+    <p style="margin:0;max-width:40ch;color:#5A554E">Choose your dates and write to us: a person, not a machine, replies within the day, confirms the dates, and sends a short agreement.</p>
+    <p style="margin:0;font-size:13px;letter-spacing:.04em;color:#5A554E;font-weight:400">Linen, cleaning and local taxes included in the rate.</p>
+  </div>
+  <dc-import name="StayForm" nightly="{{ 360 }}" min-nights="{{ 4 }}" max-guests="{{ 2 }}" accent="#5F6B4E" lang="en" hint-size="100%,900px" style="display:block;width:100%"></dc-import>
+</section>
+
+<footer style="background:#3A3631;color:#EAE3D8;padding:clamp(56px,7cqw,96px) clamp(20px,5cqw,72px) 36px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px clamp(32px,4cqw,64px);padding-bottom:clamp(48px,6cqw,80px);border-bottom:1px solid rgba(234,227,216,.18)">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <span style="font-family:'EB Garamond',serif;font-size:26px">The Quiet Address</span>
+      <p style="margin:0;max-width:30ch;color:#B9B2A8;line-height:1.6">Apartments of character in Paris, Athens and Nice. Keys handed in person.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">The Cities</span>
+      <a href="City.dc.html" style="color:#EAE3D8;text-decoration:none">Paris</a>
+      <a href="City%20Athens.dc.html" style="color:#EAE3D8;text-decoration:none">Athens</a>
+      <a href="City%20Nice.dc.html" style="color:#EAE3D8;text-decoration:none">Nice</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">The House</span>
+      <a href="Approach.dc.html" style="color:#EAE3D8;text-decoration:none">Our Approach</a>
+      <a href="Services.dc.html" style="color:#EAE3D8;text-decoration:none">Services</a><a href="Journal.dc.html" style="color:#EAE3D8;text-decoration:none">The Journal</a>
+      <a href="Contact.dc.html" style="color:#EAE3D8;text-decoration:none">Enquire</a>
+      <a href="Contact.dc.html" style="color:#EAE3D8;text-decoration:none">For owners</a>
+      <a href="Contact.dc.html" style="color:#EAE3D8;text-decoration:none">Contact</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8">City Letters</span>
+      <p style="margin:0;color:#B9B2A8;line-height:1.6;max-width:32ch">A letter every other month. A city, an apartment, a table worth the walk.</p>
+      <div style="display:flex;border-bottom:1px solid rgba(234,227,216,.4);padding-bottom:10px;gap:12px">
+        <input type="email" placeholder="Your email" style="flex:1;background:transparent;border:0;outline:0;color:#F3EEE6;font:inherit;font-size:15px;min-width:0">
+        <button style="background:transparent;border:0;color:#EAE3D8;font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer">Subscribe</button>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;padding-top:28px;font-size:13px;color:#B9B2A8;letter-spacing:.03em">
+    <span>© 2026 The Quiet Address · Paris · Athens</span>
+    <div style="display:flex;gap:28px;flex-wrap:wrap"><a href="Contact.dc.html" style="color:#B9B2A8;text-decoration:none">Legal</a><a href="Contact.dc.html" style="color:#B9B2A8;text-decoration:none">Privacy</a><a href="https://instagram.com/" style="color:#B9B2A8;text-decoration:none" target="_blank" rel="noopener">Instagram</a><span><span style="color:#EAE3D8">English</span> · <a href="Apartment%20Athens-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Français</a> · <span style="color:#B9B2A8">Ελληνικά</span></span></div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const PHOTOS = ["assets/w/ath-01.jpg","assets/w/ath-02.jpg","assets/w/ath-06.jpg","assets/w/ath-04.jpg","assets/w/ath-03.jpg","assets/w/ath-05.jpg","assets/w/ath-08.jpg","assets/w/ath-07.jpg"];
+const PHOTO_WORDS = {"8":"eight","9":"nine","10":"ten","11":"eleven","12":"twelve"};
+class Component extends DCLogic {
+  _img = React.createRef();
+  state = { menuOpen: false, narrow: false, ovTop: 0, lb: -1, lbTop: 0 };
+  componentDidMount() {
+    this._mq = window.matchMedia('(max-width: 1060px)');
+    this._sync = () => this.setState({ narrow: this._mq.matches });
+    this._mq.addEventListener('change', this._sync);
+    this._sync();
+  }
+  componentWillUnmount() { this._mq && this._mq.removeEventListener('change', this._sync); document.body.style.overflow = ''; }
+  _toggleMenu() {
+    const open = !this.state.menuOpen;
+    const top = open ? (window.scrollY || 0) : 0;
+    document.body.style.overflow = open ? 'hidden' : '';
+    this.setState({ menuOpen: open, ovTop: top });
+  }
+  _syncPhoto() { const el = this._img && this._img.current; if (el && this.state.lb >= 0 && el.src !== PHOTOS[this.state.lb]) el.src = PHOTOS[this.state.lb]; }
+  componentDidUpdate() { this._syncPhoto(); }
+  _openPhoto(i) { document.body.style.overflow = 'hidden'; this.setState({ lb: i, lbTop: window.scrollY || 0 }); }
+  _closePhoto() { document.body.style.overflow = ''; this.setState({ lb: -1 }); }
+  _stepPhoto(d) { const n = PHOTOS.length; this.setState({ lb: (this.state.lb + d + n) % n }); }
+  renderVals() { const mobile = !!this.props.mobile || this.state.narrow; return { photoFirst: '1 / ' + PHOTOS.length, photoAll: (WORD => 'All ' + WORD + ' photographs')(PHOTO_WORDS[PHOTOS.length] || PHOTOS.length),  lbOpen: this.state.lb >= 0, lbRef: this._img, lbTop: this.state.lbTop + 'px', lbCount: (Math.max(0, this.state.lb) + 1) + ' / ' + PHOTOS.length, lbClose: () => this._closePhoto(), lbPrev: () => this._stepPhoto(-1), lbNext: () => this._stepPhoto(1), open0: () => this._openPhoto(0), open1: () => this._openPhoto(1), open2: () => this._openPhoto(2), open3: () => this._openPhoto(3), open4: () => this._openPhoto(4), open5: () => this._openPhoto(5), open6: () => this._openPhoto(6), open7: () => this._openPhoto(7),  menuOpen: this.state.menuOpen, toggleMenu: () => this._toggleMenu(), ovTop: this.state.ovTop + 'px', navLinks: [{"href":"index.html","label":"The Cities"},{"href":"City.dc.html","label":"The Apartments"},{"href":"Services.dc.html","label":"Services"},{"href":"Journal.dc.html","label":"The Journal"},{"href":"Approach.dc.html","label":"Our Approach"},{"href":"Contact.dc.html","label":"Enquire"}],  mobile, desktop: !mobile }; }
+}
+</script>
+</body>
+</html>

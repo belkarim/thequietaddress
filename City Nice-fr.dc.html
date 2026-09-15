@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#F4EDE2}a{color:#2B2926}a:hover{color:#B07A45}</style>
+</helmet>
+<div data-screen-label="Ville — Nice" style="container-type:inline-size;background:#F4EDE2;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+<header style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px clamp(20px,5cqw,72px)">
+  <a href="index-fr.html" style="display:flex;align-items:baseline;gap:14px;font-family:'EB Garamond',serif;font-size:23px;color:#2B2926;text-decoration:none"><span>The Quiet Address</span><span style="width:1px;height:18px;background:#B07A45;align-self:center"></span><span style="font-style:italic;color:#B07A45">Nice</span></a>
+  <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+  <nav style="display:flex;flex-wrap:wrap;gap:16px 36px;font-size:14px;letter-spacing:.03em;font-weight:400">
+    <a href="index-fr.html" style="text-decoration:none;color:#B07A45;border-bottom:1px solid #B07A45;padding-bottom:2px">Les villes</a>
+    <a href="City-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#B07A45">Les appartements</a>
+    <a href="Services-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#B07A45">Services</a>
+    <a href="Journal-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#B07A45">Le Journal</a>
+    <a href="Approach-fr.dc.html" style="text-decoration:none;color:#2B2926;transition:color .5s" style-hover="color:#B07A45">Notre approche</a>
+  </nav>
+  </sc-if>
+  <div style="display:flex;align-items:center;gap:28px;font-size:13px;letter-spacing:.04em;font-weight:400">
+    <span><a href="City%20Nice.dc.html" style="color:#5A554E;text-decoration:none;transition:color .5s" style-hover="color:#2B2926">EN</a> <span style="color:#2B2926">/ FR</span></span>
+    <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}"><a href="Contact-fr.dc.html" style="text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:2px;transition:color .5s,border-color .5s" style-hover="color:#B07A45;border-color:#B07A45">Demande de séjour</a></sc-if>
+    <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}"><button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.04em;color:#2B2926;cursor:pointer;padding:10px 0;min-height:44px">Menu</button></sc-if>
+  </div>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;top:{{ ovTop }};min-height:100vh;z-index:80;background:#F4EDE2;display:flex;flex-direction:column;padding:26px clamp(20px,6cqw,56px) 40px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <span style="font-family:'EB Garamond',serif;font-size:23px;color:#2B2926">The Quiet Address</span>
+      <button onClick="{{ toggleMenu }}" style="background:transparent;border:0;font:inherit;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#5A554E;cursor:pointer;padding:10px 0;min-height:44px">Fermer</button>
+    </div>
+    <nav style="margin-top:clamp(28px,8cqw,52px);display:flex;flex-direction:column">
+      <sc-for list="{{ navLinks }}" as="l" hint-placeholder-count="6">
+        <a href="{{ l.href }}" style="font-family:'EB Garamond',serif;font-size:clamp(28px,8cqw,34px);line-height:1.1;color:#2B2926;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(43,41,38,.12)">{{ l.label }}</a>
+      </sc-for>
+    </nav>
+    <span style="margin-top:clamp(28px,7cqw,44px);font-size:13px;letter-spacing:.04em;color:#5A554E">hello@thequietaddress.com &nbsp;·&nbsp; <span style="color:#B07A45">Paris · Athènes · Nice</span></span>
+  </div>
+</sc-if>
+
+<section style="position:relative;height:clamp(560px,58cqw,840px);overflow:hidden;background:#E9DECF">
+  <img loading="lazy" decoding="async" src="assets/w/nice-01.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 45%;filter:saturate(.95) contrast(1.04) brightness(1.03)">
+  
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,41,38,.05) 40%,rgba(43,41,38,.55) 100%);pointer-events:none"></div>
+  <div style="position:absolute;left:clamp(20px,5cqw,72px);right:clamp(20px,5cqw,72px);bottom:clamp(36px,6cqw,80px);color:#F3EEE6;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;pointer-events:none">
+    <div style="display:flex;flex-direction:column;gap:16px"><div style="width:48px;height:2px;background:#B07A45"></div><h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(72px,11cqw,160px);line-height:.9;letter-spacing:-.015em">Nice</h1></div>
+    <p style="margin:0;font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(20px,1.7cqw,26px);line-height:1.4;max-width:30ch">Des palmiers à hauteur de fenêtre, des façades peintes, la mer en face.</p>
+  </div>
+</section>
+
+<section style="padding:clamp(64px,8cqw,128px) clamp(20px,5cqw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px clamp(40px,8cqw,120px)">
+  <p style="margin:0;font-family:'EB Garamond',serif;font-size:clamp(28px,2.6cqw,40px);line-height:1.25;text-wrap:pretty;max-width:22ch">Notre troisième ville, et la première au bord de l'eau. Un appartement sur le front de mer, ouvert dès maintenant.</p>
+  <div style="display:flex;flex-direction:column;gap:20px;font-size:18px;line-height:1.65;max-width:54ch;padding-top:8px">
+    <p style="margin:0">Nice a été italienne jusqu'en 1860 et ne l'a jamais tout à fait cessé. La vieille ville est un écheveau de ruelles piétonnes peintes dans les ocres et les rouges de Turin et de Gênes : volets de bois, une église baroque une place sur deux, et un marché qui vend fleurs et légumes au même endroit depuis deux siècles.</p>
+    <p style="margin:0">Nous l'avons préférée à Lisbonne et à Palerme pour trois raisons : la lumière en hiver, le train qui rejoint l'Italie en quarante minutes, et le poisson.</p>
+  </div>
+</section>
+
+<section style="display:flex;flex-direction:column">
+  <div style="display:flex;flex-wrap:wrap;border-top:1px solid rgba(43,41,38,.12)">
+    <a href="Apartment%20Nice-fr.dc.html" style="flex:1 1 480px;min-height:420px;aspect-ratio:4/3;overflow:hidden;display:block;background:#E9DECF"><img loading="lazy" decoding="async" src="assets/w/nice-03.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02);transition:transform 1.6s ease"></a>
+    <div style="flex:1 1 360px;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:clamp(40px,5cqw,88px) clamp(20px,5cqw,72px)">
+      <span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B07A45">Seafront</span>
+      <h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(36px,3.4cqw,52px);line-height:1.1">Bord de Mer</h2>
+      <p style="margin:0;font-family:'EB Garamond',serif;font-style:italic;font-size:20px;color:#5A554E">Un balcon sur la mer, les palmiers à hauteur de fenêtre.</p>
+      <p style="margin:0;max-width:46ch">Un angle de fenêtres tourné vers la mer, un balcon carrelé sur toute la largeur du séjour, et une chambre calme à l'arrière, au-dessus des cultures en terrasses. La baignade est en face ; on rejoint la vieille ville à pied, le long de l'eau.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;margin-top:6px"><a href="Apartment%20Nice-fr.dc.html" style="font-size:14px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:3px;transition:color .5s,border-color .5s" style-hover="color:#B07A45;border-color:#B07A45">Voir l'appartement</a><span style="font-size:13px;color:#5A554E">2 à 4 personnes · 60 m² · 3e étage, ascenseur</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#EADFCF;padding:clamp(72px,10cqw,160px) clamp(20px,5cqw,72px)">
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px 40px;margin-bottom:clamp(36px,5cqw,72px)"><h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,3.6cqw,56px);line-height:1.1">Nice, à notre façon</h2><span style="font-family:'EB Garamond',serif;font-style:italic;font-size:19px;color:#5A554E">Un guide de la ville par Mathilde, telle que les Niçois la vivent.</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(32px,4cqw,64px);align-items:start">
+    <div style="aspect-ratio:3/4;overflow:hidden;background:#E9DECF;position:relative"><img loading="lazy" decoding="async" src="assets/w/nice-02.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;filter:saturate(.95) contrast(1.04) brightness(1.03)"></div>
+    <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B07A45">Le matin</span><h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:26px;line-height:1.2">Se baigner, puis le marché</h3><p style="margin:0;color:#5A554E">Avant huit heures, les galets sous le quai des États-Unis appartiennent aux Niçois. Puis le cours Saleya : fleurs et légumes tous les jours sauf le lundi, jour de la brocante.</p></div>
+    <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B07A45">L'après-midi</span><h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:26px;line-height:1.2">La colline, et l'Italie en train</h3><p style="margin:0;color:#5A554E">Montez la colline du Château en fin de journée, pour les toits et la baie. Ou prenez le train du littoral : Villefranche en huit minutes, Menton en trente-cinq, Vintimille en quarante.</p></div>
+    <div style="display:flex;flex-direction:column;gap:14px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B07A45">Le soir</span><h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:26px;line-height:1.2">La socca, puis le port</h3><p style="margin:0;color:#5A554E">La socca debout dans la vieille ville, puis, de l'autre côté de la colline, le port et ses restaurants de poisson sans chichis. Demandez-nous la table.</p></div>
+  </div>
+</section>
+
+<section style="padding:clamp(72px,10cqw,160px) clamp(20px,5cqw,72px)">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding-bottom:28px;border-bottom:1px solid rgba(43,41,38,.15);margin-bottom:clamp(32px,4cqw,56px)"><h2 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,3.6cqw,56px);line-height:1.1">Le Journal <span style="font-style:italic;color:#B07A45">— Nice</span></h2><a href="Journal-fr.dc.html" style="font-size:14px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.35);padding-bottom:3px">Tous les articles</a></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,4cqw,56px)">
+    <a href="Article-fr.dc.html?a=nice" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:#2B2926"><div style="aspect-ratio:4/3;overflow:hidden;background:#E9DECF"><img loading="lazy" decoding="async" src="assets/w/nice-08.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02)"></div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B07A45">Carnet</span><h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:26px;line-height:1.2;text-wrap:pretty">Une troisième ville, et pourquoi ce n'est pas Lisbonne</h3></a>
+    <a href="Article-fr.dc.html?a=athens-light" style="display:flex;flex-direction:column;gap:18px;text-decoration:none;color:#2B2926"><div style="aspect-ratio:4/3;overflow:hidden;background:#E9DECF"><img loading="lazy" decoding="async" src="assets/w/nice-06.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02)"></div><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B07A45">Couleur</span><h3 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:26px;line-height:1.2;text-wrap:pretty">Ocre, rouge sarde : les règles pour peindre une façade niçoise</h3></a>
+  </div>
+</section>
+
+<footer style="background:#3A3631;color:#EAE3D8;padding:clamp(56px,7cqw,96px) clamp(20px,5cqw,72px) 36px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:48px clamp(32px,4cqw,64px);padding-bottom:clamp(48px,6cqw,80px);border-bottom:1px solid rgba(234,227,216,.18)">
+    <div style="display:flex;flex-direction:column;gap:18px"><span style="font-family:'EB Garamond',serif;font-size:26px">The Quiet Address</span><p style="margin:0;max-width:30ch;color:#B9B2A8;line-height:1.6">Des appartements de caractère à Paris, Athènes et Nice. Les clés remises de la main à la main.</p></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">Les villes</span><a href="City-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Paris</a><a href="City%20Athens-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Athènes</a><a href="City%20Nice-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Nice</a></div>
+    <div style="display:flex;flex-direction:column;gap:12px;font-size:15px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8;margin-bottom:6px">La maison</span><a href="Approach-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Notre approche</a><a href="Services-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Services</a><a href="Journal-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Le Journal</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Demande de séjour</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Propriétaires</a><a href="Contact-fr.dc.html" style="color:#EAE3D8;text-decoration:none">Contact</a></div>
+    <div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:#B9B2A8">Lettres des villes</span><p style="margin:0;color:#B9B2A8;line-height:1.6;max-width:32ch">Une lettre tous les deux mois. Une ville, un appartement, une table qui vaut le détour.</p><div style="display:flex;border-bottom:1px solid rgba(234,227,216,.4);padding-bottom:10px;gap:12px"><input type="email" placeholder="Votre e-mail" style="flex:1;background:transparent;border:0;outline:0;color:#F3EEE6;font:inherit;font-size:15px;min-width:0"><button style="background:transparent;border:0;color:#EAE3D8;font:inherit;font-size:13px;letter-spacing:.06em;cursor:pointer">S'abonner</button></div></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 32px;padding-top:28px;font-size:13px;color:#B9B2A8;letter-spacing:.03em"><span>© 2026 The Quiet Address · Nice</span><div style="display:flex;gap:28px;flex-wrap:wrap"><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Mentions légales</a><a href="Contact-fr.dc.html" style="color:#B9B2A8;text-decoration:none">Confidentialité</a><a href="https://instagram.com/" style="color:#B9B2A8;text-decoration:none" target="_blank" rel="noopener">Instagram</a><span><a href="City%20Nice.dc.html" style="color:#B9B2A8;text-decoration:none">English</a> · <span style="color:#EAE3D8">Français</span></span></div></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mobile&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, narrow: false, ovTop: 0 }; renderVals() { const mobile = !!this.props.mobile || this.state.narrow; return { menuOpen: this.state.menuOpen, toggleMenu: () => this._toggleMenu(), ovTop: this.state.ovTop + 'px', navLinks: [{"href":"index-fr.html","label":"Les villes"},{"href":"City-fr.dc.html","label":"Les appartements"},{"href":"Services-fr.dc.html","label":"Services"},{"href":"Journal-fr.dc.html","label":"Le Journal"},{"href":"Approach-fr.dc.html","label":"Notre approche"},{"href":"Contact-fr.dc.html","label":"Demande de séjour"}],  mobile, desktop: !mobile }; } }
+</script>
+</body>
+</html>

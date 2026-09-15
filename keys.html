@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F3EEE6}a{color:#2B2926}a:hover{color:#5C6670}::placeholder{color:#B9B2A8}</style>
+</helmet>
+<div data-screen-label="Stay in touch (QR)" style="container-type:inline-size;min-height:100vh;background:#F3EEE6;color:#2B2926;font-family:'Source Sans 3',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column">
+
+<header style="padding:24px clamp(20px,5cqw,64px) 0;display:flex;justify-content:center">
+  <a href="index.html" style="font-family:'EB Garamond',serif;font-size:26px;letter-spacing:.005em;color:#2B2926;text-decoration:none;transition:color .5s" style-hover="color:#5C6670">The Quiet Address</a>
+</header>
+
+<div style="box-sizing:border-box;max-width:560px;width:100%;margin:0 auto;padding:clamp(28px,6cqw,56px) clamp(20px,5cqw,40px) clamp(40px,8cqw,72px);display:flex;flex-direction:column;gap:clamp(28px,5cqw,40px)">
+
+  <div style="aspect-ratio:4/5;overflow:hidden;background:#EAE3D8">
+    <img loading="eager" decoding="async" src="assets/w/merri-02.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(.96)">
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;color:#5A554E">Before you go</span>
+    <h1 style="margin:0;font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(34px,9cqw,46px);line-height:1.08;letter-spacing:-.005em;text-wrap:pretty">Thank you for leaving the place as you found it.</h1>
+    <p style="margin:0;font-size:17px;line-height:1.65;color:#2B2926">We hope the week was a good one. We keep only a few apartments, so dates come free rarely and new keys even more rarely.</p>
+    <sc-if value="{{ asking }}" hint-placeholder-val="{{ true }}"><p style="margin:0;font-size:17px;line-height:1.65;color:#5A554E">If you would like to hear about them before anyone else, leave your name below. No discounts, no offers — first word, because there is not much to go round.</p></sc-if>
+  </div>
+
+  <sc-if value="{{ asking }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-direction:column;gap:26px;border-top:1px solid rgba(43,41,38,.15);padding-top:clamp(26px,5cqw,36px)">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <label style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5A554E">First name</label>
+        <input value="{{ name }}" onChange="{{ setName }}" placeholder="Eleanor" autocomplete="given-name" style="font-family:'EB Garamond',serif;font-size:24px;color:#2B2926;background:transparent;border:0;border-bottom:1px solid #8C7F72;outline:0;padding:0 2px 10px;min-height:48px;transition:border-color .4s" style-focus="border-color:#2B2926">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <label style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5A554E">Email</label>
+        <input type="email" inputmode="email" value="{{ email }}" onChange="{{ setEmail }}" placeholder="you@example.com" autocomplete="email" style="font-family:'EB Garamond',serif;font-size:24px;color:#2B2926;background:transparent;border:0;border-bottom:1px solid #8C7F72;outline:0;padding:0 2px 10px;min-height:48px;transition:border-color .4s" style-focus="border-color:#2B2926">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <label style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5A554E">Which cities interest you</label>
+        <div style="display:flex;flex-direction:column;gap:1px;background:rgba(43,41,38,.15);border:1px solid rgba(43,41,38,.15)">
+          <sc-for list="{{ cities }}" as="c" hint-placeholder-count="3">
+            <button onClick="{{ c.pick }}" style="background:{{ c.bg }};border:0;font:inherit;text-align:left;padding:16px 18px;min-height:56px;cursor:pointer;display:flex;align-items:baseline;gap:14px;transition:background .4s">
+              <span style="font-family:'EB Garamond',serif;font-size:21px;color:{{ c.color }}">{{ c.name }}</span>
+              <span style="font-size:13px;color:#5A554E;letter-spacing:.03em">{{ c.note }}</span>
+              <span style="margin-left:auto;font-size:13px;color:{{ c.markColor }}">{{ c.mark }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </div>
+      <button onClick="{{ submit }}" style="align-self:stretch;font-family:'Source Sans 3',sans-serif;font-size:14px;letter-spacing:.08em;font-weight:400;padding:18px 32px;min-height:56px;background:{{ btnBg }};border:1px solid {{ btnBorder }};color:{{ btnColor }};cursor:{{ btnCursor }};transition:background .6s,color .6s">Keep me posted</button>
+      <p style="margin:0;font-size:14px;line-height:1.6;color:#5A554E">{{ status }}</p>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ done }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:20px;border-top:1px solid rgba(43,41,38,.15);padding-top:clamp(26px,5cqw,36px)">
+      <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;color:#5C6670">One last step</span>
+      <p style="margin:0;font-family:'EB Garamond',serif;font-size:clamp(24px,6cqw,30px);line-height:1.3">{{ confirmLine }}</p>
+      <p style="margin:0;font-size:16px;line-height:1.65;color:#5A554E">Open it and click the link to confirm. Until you do, we send nothing — it is how we make sure our letters reach real people who asked for them.</p>
+      <p style="margin:0;font-size:14px;color:#5A554E;line-height:1.6">Nothing arrived within the hour? Look in the promotions folder, or write to <a href="mailto:hello@thequietaddress.com" style="color:#5A554E">hello@thequietaddress.com</a> and we will add you by hand.</p>
+    </div>
+  </sc-if>
+
+  <div style="border-top:1px solid rgba(43,41,38,.12);padding-top:24px;display:flex;flex-direction:column;gap:14px">
+    <a href="City.dc.html" style="font-size:14px;letter-spacing:.04em;font-weight:400;text-decoration:none;color:#2B2926;border-bottom:1px solid rgba(43,41,38,.3);align-self:flex-start;padding-bottom:3px;transition:color .5s,border-color .5s" style-hover="color:#5C6670;border-color:#5C6670">See the apartments</a>
+    <span style="font-size:13px;color:#5A554E;letter-spacing:.03em">A letter every other month at most. One click to leave, always. <a href="keys-fr.html" style="color:#5A554E;text-decoration:none;border-bottom:1px solid rgba(43,41,38,.25)">En français</a></span>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;en&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;fr&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;$preview&quot;:{&quot;width&quot;:420,&quot;height&quot;:1100}}">
+class Component extends DCLogic {
+  state = { name: '', email: '', cities: [], sent: false, tried: false };
+  _toggleCity(k) {
+    const has = this.state.cities.indexOf(k) >= 0;
+    const next = has ? this.state.cities.filter(c => c !== k) : this.state.cities.concat([k]);
+    this.setState({ cities: next, tried: false });
+  }
+  renderVals() {
+    const fr = this.props.lang === 'fr';
+    const { name, email, cities: picked, sent, tried } = this.state;
+    const defs = fr
+      ? [['paris','Paris','trois appartements'],['athens','Athènes','un appartement'],['nice','Nice','un appartement']]
+      : [['paris','Paris','three apartments'],['athens','Athens','one apartment'],['nice','Nice','one apartment']];
+    const cities = defs.map(([k, nm, note]) => {
+      const on = picked.indexOf(k) >= 0;
+      return {
+        name: nm, note,
+        bg: on ? '#EFEAE1' : '#F7F4EE',
+        color: on ? '#2B2926' : '#5A554E',
+        mark: on ? '✓' : '',
+        markColor: '#4E5761',
+        pick: () => this._toggleCity(k),
+      };
+    });
+    const okEmail = /.+@.+\..+/.test(email);
+    const ready = name.trim().length > 0 && okEmail && picked.length > 0;
+    let status;
+    if (!tried) status = fr
+      ? 'Plusieurs villes possibles. Nous n’écrivons jamais plus d’une fois tous les deux mois, et jamais pour vendre autre chose.'
+      : 'Pick as many as you like. We write no more than once every other month, and never to sell you anything else.';
+    else if (!name.trim()) status = fr ? 'Il nous manque votre prénom.' : 'We are missing your first name.';
+    else if (!okEmail) status = fr ? 'Cette adresse ne semble pas complète.' : 'That address does not look complete.';
+    else status = fr ? 'Choisissez au moins une ville.' : 'Choose at least one city.';
+    return {
+      asking: !sent, done: sent, cities, name, email,
+      setName: e => this.setState({ name: e.target.value, tried: false }),
+      setEmail: e => this.setState({ email: e.target.value, tried: false }),
+      submit: () => ready ? this.setState({ sent: true }) : this.setState({ tried: true }),
+      btnBg: ready ? '#2B2926' : 'transparent',
+      btnBorder: ready ? '#2B2926' : 'rgba(43,41,38,.35)',
+      btnColor: ready ? '#F3EEE6' : '#5A554E',
+      btnCursor: ready ? 'pointer' : 'default',
+      status,
+      confirmLine: fr
+        ? 'Un message part vers ' + (email || 'votre adresse') + '.'
+        : 'A message is on its way to ' + (email || 'your address') + '.',
+    };
+  }
+}
+</script>
+</body>
+</html>
